@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+:root {
+  --color-brown-red: #452829;
+  --color-grey: #57595b;
+  --color-pink-cream: #e8d1c5;
+  --color-beige-cream: #f3e8df;
+  --color-dark-yellow: #d4af37;
+}
+
+/* Font pair: Manrope (display/headings), Work Sans (body/nav) */
+@theme inline {
+  --color-brown-red: #452829;
+  --color-grey: #57595b;
+  --color-pink-cream: #e8d1c5;
+  --color-beige-cream: #f3e8df;
+  --color-dark-yellow: #d4af37;
+  --font-sans: var(--font-work-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-brown-red);
+  color: var(--color-beige-cream);
+  font-family: var(--font-work-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
