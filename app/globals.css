@@ -1,27 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  /* Hero section warm palette */
-  --color-brown-red: #452829;
-  --color-grey: #57595b;
-  --color-pink-cream: #e8d1c5;
-  --color-beige-cream: #f3e8df;
-  --color-dark-yellow: #d4af37;
-  /* What We Build section warm palette */
-  --color-light-bg: #f1f0e4;
-  --color-dark-text: #3e3f29;
-  --color-muted-text: #7d8d86;
-  --color-accent-pointer: #bca88d;
-  /* Proof section warm palette */
-  --color-proof-light: #f6f0f0;
-  --color-proof-cream: #f2e2b1;
-  --color-proof-tan: #d5c7a3;
-  --color-proof-brown: #bdb395;
-  /* CTA section warm rose palette */
-  --color-cta-cream: #f1e5d1;
-  --color-cta-rose: #dbb5b5;
-  --color-cta-mauve: #c39898;
-  --color-cta-brown: #987070;
+  /* New color palette */
+  --color-lemon: #FFFF3A;
+  --color-dark-grey: #212121;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  /* Legacy color mappings for compatibility */
+  --color-brown-red: #000000;
+  --color-grey: #212121;
+  --color-pink-cream: #FFFFFF;
+  --color-beige-cream: #FFFFFF;
+  --color-dark-yellow: #FFFF3A;
 }
 
 
@@ -29,23 +19,15 @@
 
 /* Font pair: Manrope (display/headings), Work Sans (body/nav) */
 @theme inline {
-  --color-brown-red: #452829;
-  --color-grey: #57595b;
-  --color-pink-cream: #e8d1c5;
-  --color-beige-cream: #f3e8df;
-  --color-dark-yellow: #d4af37;
-  --color-light-bg: #f1f0e4;
-  --color-dark-text: #3e3f29;
-  --color-muted-text: #7d8d86;
-  --color-accent-pointer: #bca88d;
-  --color-proof-light: #f6f0f0;
-  --color-proof-cream: #f2e2b1;
-  --color-proof-tan: #d5c7a3;
-  --color-proof-brown: #bdb395;
-  --color-cta-cream: #f1e5d1;
-  --color-cta-rose: #dbb5b5;
-  --color-cta-mauve: #c39898;
-  --color-cta-brown: #987070;
+  --color-lemon: #FFFF3A;
+  --color-dark-grey: #212121;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-brown-red: #000000;
+  --color-grey: #212121;
+  --color-pink-cream: #FFFFFF;
+  --color-beige-cream: #FFFFFF;
+  --color-dark-yellow: #FFFF3A;
   --font-sans: var(--font-work-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 }
@@ -55,8 +37,8 @@ html {
 }
 
 body {
-  background: var(--color-brown-red);
-  color: var(--color-beige-cream);
+  background: var(--color-white);
+  color: var(--color-black);
   font-family: var(--font-work-sans), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

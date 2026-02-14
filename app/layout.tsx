@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Manrope, Work_Sans } from "next/font/google";
-import Navbar from "@/components/Navbar";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -29,7 +28,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${manrope.variable} ${workSans.variable}`}>
       <body className="min-h-screen antialiased">
-        <Navbar />
         {children}
       </body>
     </html>

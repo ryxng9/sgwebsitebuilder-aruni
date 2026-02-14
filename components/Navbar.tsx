@@ -10,8 +10,15 @@ const NAVBAR_SCROLLED_HEIGHT_CLASS = "h-20";
 /** Padding-top to use for content that sits below the fixed navbar. */
 export const NAVBAR_OFFSET_CLASS = "pt-24";
 
+const serviceLinks = [
+  { href: "/services/e-commerce", label: "E-commerce" },
+  { href: "/services/business-web-design", label: "Business Web Design" },
+  { href: "/services/custom-web-development", label: "Custom Web Development" },
+  { href: "/services/website-management", label: "Website Management" },
+  { href: "/services/seo", label: "SEO" },
+];
+
 const defaultNavLinks = [
-  { href: "/services", label: "Services" },
   { href: "/pricing", label: "Pricing" },
   { href: "/work", label: "Work" },
   { href: "/blog", label: "Blog" },
@@ -20,6 +27,23 @@ const defaultNavLinks = [
 
 export type NavLink = { href: string; label: string };
 
+export type ColorScheme = {
+  initial: {
+    bg: string;
+    text: string;
+    buttonBg: string;
+    buttonText: string;
+    buttonHoverBg: string;
+  };
+  scrolled: {
+    bg: string;
+    text: string;
+    buttonBg: string;
+    buttonText: string;
+    buttonHoverBg: string;
+  };
+};
+
 type NavbarProps = {
   brandName?: string;
   brandHref?: string;
@@ -27,6 +51,24 @@ type NavbarProps = {
   contactHref?: string;
   contactLabel?: string;
   className?: string;
+  colorScheme?: ColorScheme;
+};
+
+const defaultColorScheme: ColorScheme = {
+  initial: {
+    bg: "bg-[#FFFF3A]",
+    text: "text-black",
+    buttonBg: "bg-[#212121]",
+    buttonText: "text-white",
+    buttonHoverBg: "hover:bg-black",
+  },
+  scrolled: {
+    bg: "bg-white",
+    text: "text-black",
+    buttonBg: "bg-[#212121]",
+    buttonText: "text-white",
+    buttonHoverBg: "hover:bg-black",
+  },
 };
 
 export default function Navbar({
@@ -36,9 +78,13 @@ export default function Navbar({
   contactHref = "/contact",
   contactLabel = "Contact",
   className = "",
+  colorScheme = defaultColorScheme,
 }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const sentinelRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const sentinel = sentinelRef.current;
@@ -58,14 +104,28 @@ export default function Navbar({
     return () => observer.disconnect();
   }, []);
 
+  const handleMouseEnter = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+    setServicesOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setServicesOpen(false);
+    }, 150);
+  };
+
   const isCompact = scrolled;
+  const colors = isCompact ? colorScheme.scrolled : colorScheme.initial;
 
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 flex items-center transition-all duration-300 ease-out ${className} ${isCompact
-          ? `${NAVBAR_SCROLLED_HEIGHT_CLASS} bg-beige-cream`
-          : `${NAVBAR_HEIGHT_CLASS} bg-brown-red`
+          ? `${NAVBAR_SCROLLED_HEIGHT_CLASS} ${colors.bg}`
+          : `${NAVBAR_HEIGHT_CLASS} ${colors.bg}`
           }`}
         role="banner"
       >
@@ -74,8 +134,8 @@ export default function Navbar({
           <Link
             href={brandHref}
             className={`font-display tracking-tight transition-all duration-300 ${isCompact
-              ? "text-brown-red hover:opacity-90 text-lg"
-              : "text-beige-cream hover:opacity-90 text-xl"
+              ? `${colors.text} hover:opacity-90 text-lg`
+              : `${colors.text} hover:opacity-90 text-xl`
               }`}
           >
             {brandName}
@@ -83,14 +143,43 @@ export default function Navbar({
 
           {/* Center: Nav Links */}
           <nav className="hidden md:flex items-center gap-6 lg:gap-8 font-sans absolute left-1/2 transform -translate-x-1/2" aria-label="Main">
+            {/* Services Dropdown */}
+            <div 
+              className="relative" 
+              ref={dropdownRef}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <Link
+                href="/services"
+                className={`text-[15px] transition-all duration-300 ${colors.text} hover:opacity-90 flex items-center gap-1`}
+              >
+                Services
+                <svg className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </Link>
+              
+              {servicesOpen && (
+                <div className="absolute top-full left-0 mt-2 w-64 bg-white border border-black/10 rounded-lg shadow-xl py-2 z-50">
+                  {serviceLinks.map(({ href, label }) => (
+                    <Link
+                      key={href}
+                      href={href}
+                      className="block px-4 py-2.5 text-[15px] text-black hover:bg-[#FFFF3A]/10 transition-colors"
+                    >
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+            
             {links.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className={`text-[15px] transition-all duration-300 ${isCompact
-                  ? "text-brown-red hover:opacity-90"
-                  : "text-beige-cream hover:opacity-90"
-                  }`}
+                className={`text-[15px] transition-all duration-300 ${colors.text} hover:opacity-90`}
               >
                 {label}
               </Link>
@@ -100,10 +189,7 @@ export default function Navbar({
           {/* Right: Contact Button */}
           <Link
             href={contactHref}
-            className={`text-[15px] font-medium px-6 py-2.5 rounded-lg shadow-lg transition-all duration-200 ${isCompact
-              ? "bg-brown-red text-beige-cream hover:bg-brown-red/90 hover:shadow-xl"
-              : "bg-beige-cream text-brown-red hover:bg-pink-cream hover:shadow-xl"
-              }`}
+            className={`text-[15px] font-medium px-6 py-2.5 rounded-lg shadow-lg transition-all duration-200 ${colors.buttonBg} ${colors.buttonText} ${colors.buttonHoverBg} hover:shadow-xl`}
           >
             {contactLabel}
           </Link>

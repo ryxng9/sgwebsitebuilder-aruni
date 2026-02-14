@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-export default function HeroWave() {
+export default function HeroWaveServices() {
   const pathRef = useRef<SVGPathElement>(null);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function HeroWave() {
       >
         <defs>
           {/* Gradient for the glow effect - lemon */}
-          <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <linearGradient id="waveGradientServices" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="#FFFF3A" />
             <stop offset="33%" stopColor="#FFFF3A" />
             <stop offset="66%" stopColor="#FFFF3A" />
@@ -31,7 +31,7 @@ export default function HeroWave() {
           </linearGradient>
 
           {/* Filter for glow effect */}
-          <filter id="glow">
+          <filter id="glowServices">
             <feGaussianBlur stdDeviation="4" result="coloredBlur" />
             <feMerge>
               <feMergeNode in="coloredBlur" />
@@ -55,10 +55,10 @@ export default function HeroWave() {
         <path
           d="M0,100 Q150,80 300,100 T600,100 T900,100 T1200,100"
           fill="none"
-          stroke="url(#waveGradient)"
+          stroke="url(#waveGradientServices)"
           strokeWidth="6"
           strokeLinecap="round"
-          filter="url(#glow)"
+          filter="url(#glowServices)"
           className="wave-glow"
         />
       </svg>
