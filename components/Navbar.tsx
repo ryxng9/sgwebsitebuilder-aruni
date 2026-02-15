@@ -152,7 +152,7 @@ export default function Navbar({
             >
               <Link
                 href="/services"
-                className={`text-[15px] transition-all duration-300 ${colors.text} hover:opacity-90 flex items-center gap-1`}
+                className={`text-[15px] transition-all duration-300 ${colors.text} hover:underline flex items-center gap-1`}
               >
                 Services
                 <svg className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -179,7 +179,7 @@ export default function Navbar({
               <Link
                 key={href}
                 href={href}
-                className={`text-[15px] transition-all duration-300 ${colors.text} hover:opacity-90`}
+                className={`text-[15px] transition-all duration-300 ${colors.text} hover:underline`}
               >
                 {label}
               </Link>
@@ -189,7 +189,7 @@ export default function Navbar({
           {/* Right: Contact Button */}
           <Link
             href={contactHref}
-            className={`text-[15px] font-medium px-6 py-2.5 rounded-lg shadow-lg transition-all duration-200 ${colors.buttonBg} ${colors.buttonText} ${colors.buttonHoverBg} hover:shadow-xl`}
+            className={`text-[15px] font-medium px-6 py-2.5 rounded-lg shadow-lg transition-all duration-200 ${colors.buttonBg} ${colors.buttonText} ${colors.buttonHoverBg} hover:shadow-xl hover:-translate-y-0.5`}
           >
             {contactLabel}
           </Link>

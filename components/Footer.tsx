@@ -20,7 +20,7 @@ const whatWeDo = [
 export default function Footer() {
     return (
         <footer
-            className="w-full bg-white border-t border-black/10"
+            className="w-full bg-[#FFFF3A] border-t border-black/10"
             role="contentinfo"
         >
             <div className="w-full max-w-6xl mx-auto px-6 py-16 sm:py-20">
@@ -30,10 +30,10 @@ export default function Footer() {
                         <h2 className="font-display font-semibold text-black text-lg tracking-tight">
                             SGWebsiteBuilder
                         </h2>
-                        <p className="font-sans text-black/80 text-[15px] leading-relaxed max-w-xs">
+                        <p className="font-sans text-[#212121] text-[15px] leading-relaxed max-w-xs">
                             High-converting websites built for SMEs, founders, and startups.
                         </p>
-                        <p className="font-sans text-black/60 text-sm pt-2">
+                        <p className="font-sans text-[#212121]/70 text-sm pt-2">
                             © 2026 SGWebsiteBuilder
                         </p>
                     </div>
@@ -49,7 +49,7 @@ export default function Footer() {
                                     <li key={href}>
                                         <Link
                                             href={href}
-                                            className="font-sans text-black/75 text-[15px] hover:text-[#FFFF3A] transition-colors"
+                                            className="font-sans text-[#212121] text-[15px] hover:text-[#212121] hover:underline transition-all"
                                         >
                                             {label}
                                         </Link>
@@ -68,7 +68,7 @@ export default function Footer() {
                             {whatWeDo.map((item) => (
                                 <li
                                     key={item}
-                                    className="font-sans text-black/75 text-[15px]"
+                                    className="font-sans text-[#212121] text-[15px]"
                                 >
                                     {item}
                                 </li>
@@ -84,19 +84,19 @@ export default function Footer() {
                         <div className="space-y-3">
                             <Link
                                 href="/contact"
-                                className="inline-block font-sans text-[15px] font-medium px-5 py-2.5 rounded-lg bg-[#212121] text-white hover:bg-black transition-colors"
+                                className="inline-block font-sans text-[15px] font-medium px-5 py-2.5 rounded-lg bg-black text-white hover:bg-[#212121] transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                             >
                                 Start a project
                             </Link>
-                            <p className="font-sans text-black/75 text-[15px]">
+                            <p className="font-sans text-[#212121] text-[15px]">
                                 <a
                                     href="mailto:hello@sgwebsitebuilder.com"
-                                    className="hover:text-[#FFFF3A] transition-colors"
+                                    className="hover:text-[#212121] hover:underline transition-all"
                                 >
                                     hello@sgwebsitebuilder.com
                                 </a>
                             </p>
-                            <p className="font-sans text-black/60 text-sm">
+                            <p className="font-sans text-[#212121]/70 text-sm">
                                 Singapore
                             </p>
                         </div>

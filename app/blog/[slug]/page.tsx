@@ -200,25 +200,25 @@ export default async function BlogPostPage({
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="w-full px-6 py-20 sm:py-28 bg-white/30">
+        {/* CTA Section — BLACK SECTION */}
+        <section className="w-full px-6 py-20 sm:py-28 bg-black">
           <div className="w-full max-w-4xl mx-auto text-center">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
+            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
               Want to Work With Us?
             </h2>
-            <p className="mt-6 font-sans text-base sm:text-lg text-black/75 leading-relaxed max-w-2xl mx-auto">
-              Let's discuss your project and create something exceptional together.
+            <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] leading-relaxed max-w-2xl mx-auto">
+              Let's discuss your <strong className="font-semibold text-[#FFFF3A]">project</strong> and create something <strong className="font-semibold text-[#FFFF3A]">exceptional</strong> together.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#212121] text-white hover:bg-black transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#FFFF3A] text-black hover:bg-[#FFFF3A]/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
                 Get in Touch
               </Link>
               <Link
                 href="/blog"
-                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg border-2 border-black text-black bg-transparent hover:bg-black/5 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg border-2 border-white text-white bg-transparent hover:bg-white/10 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
               >
                 Read More Posts
               </Link>

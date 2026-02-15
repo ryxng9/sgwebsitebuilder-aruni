@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Navbar, { NAVBAR_HEIGHT_CLASS, ColorScheme } from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import HeroWavePricing from "@/components/HeroWavePricing";
 
 const pricingCards = [
@@ -112,26 +113,29 @@ export default function Pricing() {
           </div>
         </section>
 
-        {/* Typical Project Ranges Section */}
-        <section className="w-full px-6 py-24 sm:py-32">
+        {/* Typical Project Ranges Section — BLACK SECTION */}
+        <section className="w-full px-6 py-24 sm:py-32 bg-black">
           <div className="w-full max-w-6xl mx-auto">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-16">
+            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-8">
               Typical Project Ranges
             </h2>
+            <p className="font-sans text-base sm:text-lg text-[#FFFF3A] text-center max-w-2xl mx-auto leading-relaxed mb-16">
+              Projects are priced based on <strong className="font-semibold text-[#FFFF3A]">scope</strong> and <strong className="font-semibold text-[#FFFF3A]">complexity</strong>. These are general ranges.
+            </p>
 
             <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
               {pricingCards.map((card) => (
                 <div
                   key={card.title}
-                  className="rounded-2xl border border-black/15 bg-white/60 backdrop-blur-sm p-8 lg:p-10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
+                  className="rounded-2xl border border-white/15 bg-white/5 backdrop-blur-sm p-8 lg:p-10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
                 >
-                  <h3 className="font-display font-semibold text-black text-xl sm:text-2xl tracking-tight mb-4">
+                  <h3 className="font-display font-semibold text-white text-xl sm:text-2xl tracking-tight mb-4">
                     {card.title}
                   </h3>
                   <div className="font-display font-bold text-[#FFFF3A] text-2xl sm:text-3xl mb-6">
                     {card.price}
                   </div>
-                  <p className="font-sans text-black/75 text-[15px] sm:text-base leading-relaxed">
+                  <p className="font-sans text-white text-[15px] sm:text-base leading-relaxed">
                     {card.description}
                   </p>
                 </div>
@@ -140,14 +144,17 @@ export default function Pricing() {
           </div>
         </section>
 
-        {/* What Affects Cost Section */}
-        <section className="w-full px-6 py-24 sm:py-32 bg-white/40">
+        {/* What Affects Cost Section — BLACK SECTION */}
+        <section className="w-full px-6 py-24 sm:py-32 bg-black">
           <div className="w-full max-w-4xl mx-auto">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-12">
+            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-8">
               What Affects Cost
             </h2>
+            <p className="font-sans text-base sm:text-lg text-[#FFFF3A] text-center max-w-2xl mx-auto leading-relaxed mb-12">
+              Several factors influence <strong className="font-semibold text-[#FFFF3A]">project pricing</strong>.
+            </p>
 
-            <ul className="space-y-4 font-sans text-black/75 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+            <ul className="space-y-4 font-sans text-white text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
               {costFactors.map((factor) => (
                 <li key={factor} className="flex gap-3">
                   <span className="text-[#FFFF3A] shrink-0 mt-1" aria-hidden>•</span>
@@ -192,19 +199,19 @@ export default function Pricing() {
           </div>
         </section>
 
-        {/* Soft CTA Section */}
-        <section className="w-full px-6 py-20 sm:py-28 bg-white/40">
+        {/* Soft CTA Section — BLACK SECTION */}
+        <section className="w-full px-6 py-20 sm:py-28 bg-black">
           <div className="w-full max-w-4xl mx-auto text-center">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
+            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
               If This Aligns With Your Expectations
             </h2>
-            <p className="mt-6 font-sans text-base sm:text-lg text-black/75 leading-relaxed max-w-2xl mx-auto">
-              We work with teams who value clarity and quality. If you're looking for a development partner who aligns with these principles, let's start a conversation.
+            <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] leading-relaxed max-w-2xl mx-auto">
+              We work with teams who value <strong className="font-semibold text-[#FFFF3A]">clarity</strong> and <strong className="font-semibold text-[#FFFF3A]">quality</strong>. If you're looking for a development partner who aligns with these principles, let's start a conversation.
             </p>
             <div className="mt-10">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#212121] text-black hover:bg-black transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-white"
+                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#FFFF3A] text-black hover:bg-[#FFFF3A]/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#FFFF3A] focus:ring-offset-2 focus:ring-offset-black"
               >
                 Start a Project
               </Link>
@@ -213,117 +220,7 @@ export default function Pricing() {
         </section>
 
         {/* Footer */}
-        <footer className="w-full bg-white border-t border-black/10" role="contentinfo">
-          <div className="w-full max-w-6xl mx-auto px-6 py-16 sm:py-20">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-              {/* Column 1 – Brand */}
-              <div className="space-y-4">
-                <h2 className="font-display font-semibold text-black text-lg tracking-tight">
-                  SGWebsiteBuilder
-                </h2>
-                <p className="font-sans text-black/75 text-[15px] leading-relaxed max-w-xs">
-                  High-converting websites built for SMEs, founders, and startups.
-                </p>
-                <p className="font-sans text-black/75/70 text-sm pt-2">
-                  © 2026 SGWebsiteBuilder
-                </p>
-              </div>
-
-              {/* Column 2 – Pages */}
-              <div className="space-y-4">
-                <h3 className="font-display font-semibold text-black text-base tracking-tight">
-                  Pages
-                </h3>
-                <nav aria-label="Footer navigation">
-                  <ul className="space-y-3">
-                    <li>
-                      <Link href="/" className="font-sans text-black/75 text-[15px] hover:text-[#FFFF3A] transition-colors">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/services" className="font-sans text-black/75 text-[15px] hover:text-[#FFFF3A] transition-colors">
-                        Services
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/work" className="font-sans text-black/75 text-[15px] hover:text-[#FFFF3A] transition-colors">
-                        Work
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/pricing" className="font-sans text-black/75 text-[15px] hover:text-[#FFFF3A] transition-colors">
-                        Pricing
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/blog" className="font-sans text-black/75 text-[15px] hover:text-[#FFFF3A] transition-colors">
-                        Blog
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/company" className="font-sans text-black/75 text-[15px] hover:text-[#FFFF3A] transition-colors">
-                        Company
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/contact" className="font-sans text-black/75 text-[15px] hover:text-[#FFFF3A] transition-colors">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-
-              {/* Column 3 – What We Do */}
-              <div className="space-y-4">
-                <h3 className="font-display font-semibold text-black text-base tracking-tight">
-                  What We Do
-                </h3>
-                <ul className="space-y-3">
-                  <li className="font-sans text-black/75 text-[15px]">
-                    Website development
-                  </li>
-                  <li className="font-sans text-black/75 text-[15px]">
-                    Conversion-focused builds
-                  </li>
-                  <li className="font-sans text-black/75 text-[15px]">
-                    Design-ready implementation
-                  </li>
-                  <li className="font-sans text-black/75 text-[15px]">
-                    Scalable production builds
-                  </li>
-                </ul>
-              </div>
-
-              {/* Column 4 – Contact */}
-              <div className="space-y-4">
-                <h3 className="font-display font-semibold text-black text-base tracking-tight">
-                  Contact
-                </h3>
-                <div className="space-y-3">
-                  <Link
-                    href="/contact"
-                    className="inline-block font-sans text-[15px] font-medium px-5 py-2.5 rounded-lg bg-[#212121] text-black hover:bg-black transition-colors"
-                  >
-                    Start a project
-                  </Link>
-                  <p className="font-sans text-black/75 text-[15px]">
-                    <a
-                      href="mailto:hello@sgwebsitebuilder.com"
-                      className="hover:text-[#FFFF3A] transition-colors"
-                    >
-                      hello@sgwebsitebuilder.com
-                    </a>
-                  </p>
-                  <p className="font-sans text-black/75/70 text-sm">
-                    Singapore
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </main>
     </>
   );

@@ -179,7 +179,7 @@ export default function Contact() {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="w-full font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#212121] text-black hover:bg-black transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-white"
+                  className="w-full font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#212121] text-white hover:bg-black transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-white"
                 >
                   Start the Conversation
                 </button>

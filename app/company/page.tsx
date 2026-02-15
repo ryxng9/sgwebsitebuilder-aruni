@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Navbar, { NAVBAR_HEIGHT_CLASS, ColorScheme } from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const principles = [
   {
@@ -89,23 +90,26 @@ export default function Company() {
           </div>
         </section>
 
-        {/* Our Standards Section */}
-        <section className="w-full px-6 py-24 sm:py-32">
+        {/* Our Standards Section — BLACK SECTION */}
+        <section className="w-full px-6 py-24 sm:py-32 bg-black">
           <div className="w-full max-w-5xl mx-auto">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-16">
+            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-8">
               Our Standards
             </h2>
+            <p className="font-sans text-base sm:text-lg text-[#FFFF3A] text-center max-w-2xl mx-auto leading-relaxed mb-16">
+              We hold ourselves to <strong className="font-semibold text-[#FFFF3A]">high standards</strong> in everything we deliver.
+            </p>
 
             <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
               {principles.map((principle) => (
                 <div
                   key={principle.title}
-                  className="rounded-xl border border-black/20 bg-white/40 backdrop-blur-sm p-8 lg:p-10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
+                  className="rounded-xl border border-white/20 bg-white/10 backdrop-blur-sm p-8 lg:p-10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
                 >
-                  <h3 className="font-display font-semibold text-black text-lg sm:text-xl tracking-tight mb-3">
+                  <h3 className="font-display font-semibold text-white text-lg sm:text-xl tracking-tight mb-3">
                     {principle.title}
                   </h3>
-                  <p className="font-sans text-black/75 text-[15px] sm:text-base leading-relaxed">
+                  <p className="font-sans text-white text-[15px] sm:text-base leading-relaxed">
                     {principle.description}
                   </p>
                 </div>
@@ -136,19 +140,19 @@ export default function Company() {
           </div>
         </section>
 
-        {/* Soft CTA Section */}
-        <section className="w-full px-6 py-20 sm:py-28">
+        {/* Soft CTA Section — BLACK SECTION */}
+        <section className="w-full px-6 py-20 sm:py-28 bg-black">
           <div className="w-full max-w-4xl mx-auto text-center">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
+            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
               If This Sounds Like a Good Fit
             </h2>
-            <p className="mt-6 font-sans text-base sm:text-lg text-black/75 leading-relaxed max-w-2xl mx-auto">
-              We work with teams who value clarity, quality, and straightforward collaboration. If that aligns with how you operate, let's start a conversation.
+            <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] leading-relaxed max-w-2xl mx-auto">
+              We work with teams who value <strong className="font-semibold text-[#FFFF3A]">clarity</strong>, <strong className="font-semibold text-[#FFFF3A]">quality</strong>, and straightforward collaboration. If that aligns with how you operate, let's start a conversation.
             </p>
             <div className="mt-10">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#212121] text-white hover:bg-[#212121]/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-white"
+                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#FFFF3A] text-black hover:bg-[#FFFF3A]/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#FFFF3A] focus:ring-offset-2 focus:ring-offset-black"
               >
                 Start a Conversation
               </Link>
@@ -157,117 +161,7 @@ export default function Company() {
         </section>
 
         {/* Footer */}
-        <footer className="w-full bg-white border-t border-black/10" role="contentinfo">
-          <div className="w-full max-w-6xl mx-auto px-6 py-16 sm:py-20">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-              {/* Column 1 – Brand */}
-              <div className="space-y-4">
-                <h2 className="font-display font-semibold text-black text-lg tracking-tight">
-                  SGWebsiteBuilder
-                </h2>
-                <p className="font-sans text-black/75 text-[15px] leading-relaxed max-w-xs">
-                  High-converting websites built for SMEs, founders, and startups.
-                </p>
-                <p className="font-sans text-black/60 text-sm pt-2">
-                  © 2026 SGWebsiteBuilder
-                </p>
-              </div>
-
-              {/* Column 2 – Pages */}
-              <div className="space-y-4">
-                <h3 className="font-display font-semibold text-black text-base tracking-tight">
-                  Pages
-                </h3>
-                <nav aria-label="Footer navigation">
-                  <ul className="space-y-3">
-                    <li>
-                      <Link href="/" className="font-sans text-black/75 text-[15px] hover:text-black transition-colors">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/services" className="font-sans text-black/75 text-[15px] hover:text-black transition-colors">
-                        Services
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/work" className="font-sans text-black/75 text-[15px] hover:text-black transition-colors">
-                        Work
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/pricing" className="font-sans text-black/75 text-[15px] hover:text-black transition-colors">
-                        Pricing
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/blog" className="font-sans text-black/75 text-[15px] hover:text-black transition-colors">
-                        Blog
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/company" className="font-sans text-black/75 text-[15px] hover:text-black transition-colors">
-                        Company
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/contact" className="font-sans text-black/75 text-[15px] hover:text-black transition-colors">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-
-              {/* Column 3 – What We Do */}
-              <div className="space-y-4">
-                <h3 className="font-display font-semibold text-black text-base tracking-tight">
-                  What We Do
-                </h3>
-                <ul className="space-y-3">
-                  <li className="font-sans text-black/75 text-[15px]">
-                    Website development
-                  </li>
-                  <li className="font-sans text-black/75 text-[15px]">
-                    Conversion-focused builds
-                  </li>
-                  <li className="font-sans text-black/75 text-[15px]">
-                    Design-ready implementation
-                  </li>
-                  <li className="font-sans text-black/75 text-[15px]">
-                    Scalable production builds
-                  </li>
-                </ul>
-              </div>
-
-              {/* Column 4 – Contact */}
-              <div className="space-y-4">
-                <h3 className="font-display font-semibold text-black text-base tracking-tight">
-                  Contact
-                </h3>
-                <div className="space-y-3">
-                  <Link
-                    href="/contact"
-                    className="inline-block font-sans text-[15px] font-medium px-5 py-2.5 rounded-lg bg-[#212121] text-white hover:bg-[#212121]/90 transition-colors shadow-md hover:shadow-lg hover:-translate-y-0.5"
-                  >
-                    Start a project
-                  </Link>
-                  <p className="font-sans text-black/75 text-[15px]">
-                    <a
-                      href="mailto:hello@sgwebsitebuilder.com"
-                      className="hover:text-black transition-colors"
-                    >
-                      hello@sgwebsitebuilder.com
-                    </a>
-                  </p>
-                  <p className="font-sans text-black/60 text-sm">
-                    Singapore
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </main>
     </>
   );

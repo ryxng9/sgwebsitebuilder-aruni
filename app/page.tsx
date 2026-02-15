@@ -105,68 +105,68 @@ export default function Home() {
         </div>
       </section>
 
-      {/* What we build — light background section with new color scheme */}
-      <section className="w-full px-6 pt-32 sm:pt-40 pb-24 sm:pb-32 bg-white">
+      {/* What we build — BLACK SECTION */}
+      <section className="w-full px-6 pt-32 sm:pt-40 pb-24 sm:pb-32 bg-black">
         <div className="w-full max-w-6xl mx-auto">
-          <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-2xl mx-auto">
+          <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-2xl mx-auto">
             What we build
           </h2>
-          <p className="mt-6 font-sans text-base sm:text-lg text-black/75 text-center max-w-xl mx-auto leading-relaxed">
-            Websites built to convert, scale, and perform in production.
+          <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] text-center max-w-xl mx-auto leading-relaxed">
+            Websites built to <strong className="font-semibold text-[#FFFF3A]">convert</strong>, <strong className="font-semibold text-[#FFFF3A]">scale</strong>, and <strong className="font-semibold text-[#FFFF3A]">perform</strong> in production.
           </p>
 
           <div className="mt-16 grid sm:grid-cols-2 gap-8 sm:gap-10 max-w-4xl mx-auto">
             {/* Conversion-focused websites */}
-            <div className="rounded-2xl border border-black/10 bg-white/40 backdrop-blur-sm p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
-              <h3 className="font-display font-semibold text-black text-lg sm:text-xl tracking-tight">
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
+              <h3 className="font-display font-semibold text-white text-lg sm:text-xl tracking-tight">
                 Conversion-focused websites
               </h3>
-              <p className="mt-4 font-sans text-black/75 text-[15px] sm:text-base leading-relaxed">
-                Websites designed around clear user journeys, built to turn visitors into customers.
+              <p className="mt-4 font-sans text-white text-[15px] sm:text-base leading-relaxed">
+                Websites designed around clear user journeys, built to turn <strong className="font-semibold text-white">visitors into customers</strong>.
               </p>
             </div>
 
             {/* Design-ready development */}
-            <div className="rounded-2xl border border-black/10 bg-white/40 backdrop-blur-sm p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
-              <h3 className="font-display font-semibold text-black text-lg sm:text-xl tracking-tight">
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
+              <h3 className="font-display font-semibold text-white text-lg sm:text-xl tracking-tight">
                 Design-ready development
               </h3>
-              <p className="mt-4 font-sans text-black/75 text-[15px] sm:text-base leading-relaxed">
-                We work seamlessly with designers or founders, delivering pixel-accurate, build-ready sites.
+              <p className="mt-4 font-sans text-white text-[15px] sm:text-base leading-relaxed">
+                We work seamlessly with designers or founders, delivering <strong className="font-semibold text-white">pixel-accurate</strong>, build-ready sites.
               </p>
             </div>
 
             {/* Clean, scalable builds */}
-            <div className="rounded-2xl border border-black/10 bg-white/40 backdrop-blur-sm p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
-              <h3 className="font-display font-semibold text-black text-lg sm:text-xl tracking-tight">
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
+              <h3 className="font-display font-semibold text-white text-lg sm:text-xl tracking-tight">
                 Clean, scalable builds
               </h3>
-              <p className="mt-4 font-sans text-black/75 text-[15px] sm:text-base leading-relaxed">
-                Production-grade code that's easy to maintain, extend, and grow with your business.
+              <p className="mt-4 font-sans text-white text-[15px] sm:text-base leading-relaxed">
+                <strong className="font-semibold text-white">Production-grade code</strong> that's easy to maintain, extend, and grow with your business.
               </p>
             </div>
 
             {/* Launch-ready delivery */}
-            <div className="rounded-2xl border border-black/10 bg-white/40 backdrop-blur-sm p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
-              <h3 className="font-display font-semibold text-black text-lg sm:text-xl tracking-tight">
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
+              <h3 className="font-display font-semibold text-white text-lg sm:text-xl tracking-tight">
                 Launch-ready delivery
               </h3>
-              <p className="mt-4 font-sans text-black/75 text-[15px] sm:text-base leading-relaxed">
-                Optimised for performance, SEO, and real-world usage — ready to ship, not "almost done".
+              <p className="mt-4 font-sans text-white text-[15px] sm:text-base leading-relaxed">
+                Optimised for <strong className="font-semibold text-white">performance, SEO</strong>, and real-world usage — ready to ship, not "almost done".
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Proof — work samples and process */}
+      {/* Proof — work samples and process — WHITE SECTION */}
       <section className="w-full px-6 py-24 sm:py-32 bg-white">
         <div className="w-full max-w-6xl mx-auto">
           {/* Header */}
           <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-2xl mx-auto">
             Proven through practice
           </h2>
-          <p className="mt-6 font-sans text-base sm:text-lg text-black/75 text-center max-w-xl mx-auto leading-relaxed">
+          <p className="mt-6 font-sans text-base sm:text-lg text-[#212121] text-center max-w-xl mx-auto leading-relaxed">
             Real-world builds, backed by a clear and reliable process.
           </p>
 
@@ -177,10 +177,10 @@ export default function Home() {
               <div className="aspect-[4/3] rounded-lg bg-gradient-to-br from-[#FFFF3A]/20 to-[#FFFF3A]/20 mb-6 flex items-center justify-center border border-black/20">
                 <span className="font-sans text-black/75 text-sm">Project Preview</span>
               </div>
-              <p className="font-sans text-black text-[15px] sm:text-base font-medium leading-relaxed">
+              <p className="font-sans text-black text-[15px] sm:text-base font-semibold leading-relaxed">
                 Lead-generation site for a local SME
               </p>
-              <p className="mt-3 font-sans text-black/75 text-sm sm:text-[15px] leading-relaxed">
+              <p className="mt-3 font-sans text-[#212121] text-sm sm:text-[15px] leading-relaxed">
                 Built to improve enquiry quality and page speed
               </p>
             </div>
@@ -190,10 +190,10 @@ export default function Home() {
               <div className="aspect-[4/3] rounded-lg bg-gradient-to-br from-[#FFFF3A]/20 to-[#FFFF3A]/20 mb-6 flex items-center justify-center border border-black/20">
                 <span className="font-sans text-black/75 text-sm">Project Preview</span>
               </div>
-              <p className="font-sans text-black text-[15px] sm:text-base font-medium leading-relaxed">
+              <p className="font-sans text-black text-[15px] sm:text-base font-semibold leading-relaxed">
                 E-commerce rebuild for a growing startup
               </p>
-              <p className="mt-3 font-sans text-black/75 text-sm sm:text-[15px] leading-relaxed">
+              <p className="mt-3 font-sans text-[#212121] text-sm sm:text-[15px] leading-relaxed">
                 Scalable architecture designed for conversion and retention
               </p>
             </div>
@@ -203,10 +203,10 @@ export default function Home() {
               <div className="aspect-[4/3] rounded-lg bg-gradient-to-br from-[#FFFF3A]/20 to-[#FFFF3A]/20 mb-6 flex items-center justify-center border border-black/20">
                 <span className="font-sans text-black/75 text-sm">Project Preview</span>
               </div>
-              <p className="font-sans text-black text-[15px] sm:text-base font-medium leading-relaxed">
+              <p className="font-sans text-black text-[15px] sm:text-base font-semibold leading-relaxed">
                 SaaS marketing site with product demos
               </p>
-              <p className="mt-3 font-sans text-black/75 text-sm sm:text-[15px] leading-relaxed">
+              <p className="mt-3 font-sans text-[#212121] text-sm sm:text-[15px] leading-relaxed">
                 Clean design focused on trial signups and feature clarity
               </p>
             </div>
@@ -223,7 +223,7 @@ export default function Home() {
                 <h3 className="font-display font-semibold text-black text-base sm:text-lg tracking-tight">
                   Strategy
                 </h3>
-                <p className="font-sans text-black/75 text-[15px] leading-relaxed">
+                <p className="font-sans text-[#212121] text-[15px] leading-relaxed">
                   Define goals, audience, and conversion intent
                 </p>
               </div>
@@ -236,7 +236,7 @@ export default function Home() {
                 <h3 className="font-display font-semibold text-black text-base sm:text-lg tracking-tight">
                   Structure
                 </h3>
-                <p className="font-sans text-black/75 text-[15px] leading-relaxed">
+                <p className="font-sans text-[#212121] text-[15px] leading-relaxed">
                   Plan pages, content hierarchy, and user flow
                 </p>
               </div>
@@ -249,7 +249,7 @@ export default function Home() {
                 <h3 className="font-display font-semibold text-black text-base sm:text-lg tracking-tight">
                   Build
                 </h3>
-                <p className="font-sans text-black/75 text-[15px] leading-relaxed">
+                <p className="font-sans text-[#212121] text-[15px] leading-relaxed">
                   Clean, scalable, production-ready code
                 </p>
               </div>
@@ -262,7 +262,7 @@ export default function Home() {
                 <h3 className="font-display font-semibold text-black text-base sm:text-lg tracking-tight">
                   Launch
                 </h3>
-                <p className="font-sans text-black/75 text-[15px] leading-relaxed">
+                <p className="font-sans text-[#212121] text-[15px] leading-relaxed">
                   Performance, SEO, and deployment ready
                 </p>
               </div>
@@ -271,19 +271,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA — final call-to-action */}
-      <section className="w-full px-6 py-20 sm:py-28 bg-white">
+      {/* CTA — final call-to-action — BLACK SECTION */}
+      <section className="w-full px-6 py-20 sm:py-28 bg-black">
         <div className="w-full max-w-4xl mx-auto text-center">
-          <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
+          <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
             Have a project in mind?
           </h2>
-          <p className="mt-6 font-sans text-base sm:text-lg text-black/75 leading-relaxed max-w-2xl mx-auto">
-            Tell us what you're building, and we'll let you know if we're a good fit.
+          <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] leading-relaxed max-w-2xl mx-auto">
+            Tell us what you're <strong className="font-semibold text-[#FFFF3A]">building</strong>, and we'll let you know if we're a <strong className="font-semibold text-[#FFFF3A]">good fit</strong>.
           </p>
           <div className="mt-10">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#212121] text-white hover:bg-black transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-white"
+              className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#FFFF3A] text-black hover:bg-[#FFFF3A]/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#FFFF3A] focus:ring-offset-2 focus:ring-offset-black"
             >
               Start a project
             </Link>
