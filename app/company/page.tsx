@@ -147,7 +147,10 @@ export default function Company() {
               If This Sounds Like a Good Fit
             </h2>
             <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] leading-relaxed max-w-2xl mx-auto">
-              We work with teams who value <strong className="font-semibold text-[#FFFF3A]">clarity</strong>, <strong className="font-semibold text-[#FFFF3A]">quality</strong>, and straightforward collaboration. If that aligns with how you operate, let's start a conversation.
+              Let's start a conversation
+            </p>
+            <p className="mt-4 font-sans text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
+              We work with teams who value clarity, quality, and straightforward collaboration. If that aligns with how you operate, reach out.
             </p>
             <div className="mt-10">
               <Link

@@ -206,7 +206,10 @@ export default function Pricing() {
               If This Aligns With Your Expectations
             </h2>
             <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] leading-relaxed max-w-2xl mx-auto">
-              We work with teams who value <strong className="font-semibold text-[#FFFF3A]">clarity</strong> and <strong className="font-semibold text-[#FFFF3A]">quality</strong>. If you're looking for a development partner who aligns with these principles, let's start a conversation.
+              Let's start a conversation
+            </p>
+            <p className="mt-4 font-sans text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
+              We work with teams who value clarity and quality. If you're looking for a development partner who aligns with these principles, reach out.
             </p>
             <div className="mt-10">
               <Link

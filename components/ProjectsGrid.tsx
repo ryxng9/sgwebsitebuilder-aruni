@@ -31,13 +31,55 @@ interface ProjectsGridProps {
 
 export default function ProjectsGrid({ projects }: ProjectsGridProps) {
   const [showAll, setShowAll] = useState(false);
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const INITIAL_DISPLAY = 12; // 4 rows x 3 columns
   
-  const displayedProjects = showAll ? projects : projects.slice(0, INITIAL_DISPLAY);
-  const hasMore = projects.length > INITIAL_DISPLAY;
+  // Get unique types from projects
+  const availableTypes = Array.from(new Set(projects.map(p => p.type)));
+  
+  // Toggle type selection
+  const toggleType = (type: string) => {
+    setSelectedTypes(prev => 
+      prev.includes(type) 
+        ? prev.filter(t => t !== type)
+        : [...prev, type]
+    );
+  };
+  
+  // Filter projects by selected types
+  const filteredProjects = selectedTypes.length > 0
+    ? projects.filter(p => selectedTypes.includes(p.type))
+    : projects;
+  
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, INITIAL_DISPLAY);
+  const hasMore = filteredProjects.length > INITIAL_DISPLAY;
 
   return (
     <>
+      {/* Type Filter */}
+      {availableTypes.length > 0 && (
+        <div className="mb-8">
+          <h3 className="font-sans font-medium text-black/80 text-sm uppercase tracking-wide mb-4">
+            Filter by Type
+          </h3>
+          <div className="flex flex-wrap gap-3">
+            {availableTypes.map((type) => (
+              <button
+                key={type}
+                onClick={() => toggleType(type)}
+                className={`px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wide transition-all duration-200 ${
+                  selectedTypes.includes(type)
+                    ? 'bg-[#FFFF3A] text-black shadow-md'
+                    : 'bg-white border border-black/20 text-black/70 hover:border-black/40'
+                }`}
+              >
+                {typeLabels[type] || type}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {displayedProjects.map((project) => (
           <Link
@@ -103,7 +145,7 @@ export default function ProjectsGrid({ projects }: ProjectsGridProps) {
             onClick={() => setShowAll(!showAll)}
             className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg border-2 border-black text-black bg-transparent hover:bg-black/5 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
           >
-            {showAll ? "Show Less" : `Load More (${projects.length - INITIAL_DISPLAY} more)`}
+            {showAll ? "Show Less" : `Load More (${filteredProjects.length - INITIAL_DISPLAY} more)`}
           </button>
         </div>
       )}

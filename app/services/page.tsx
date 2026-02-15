@@ -373,7 +373,10 @@ export default function Services() {
               If This Approach Aligns With You
             </h2>
             <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] leading-relaxed max-w-2xl mx-auto">
-              This page explains how we work. If you're looking for a development partner who values <strong className="font-semibold text-[#FFFF3A]">clarity</strong>, <strong className="font-semibold text-[#FFFF3A]">quality</strong>, and <strong className="font-semibold text-[#FFFF3A]">collaboration</strong>, let's start a conversation.
+              Let's start a conversation
+            </p>
+            <p className="mt-4 font-sans text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
+              This page explains how we work. If you're looking for a development partner who values clarity, quality, and collaboration, reach out.
             </p>
             <div className="mt-10">
               <Link

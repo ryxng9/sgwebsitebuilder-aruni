@@ -112,7 +112,7 @@ export default function Home() {
             What we build
           </h2>
           <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] text-center max-w-xl mx-auto leading-relaxed">
-            Websites built to <strong className="font-semibold text-[#FFFF3A]">convert</strong>, <strong className="font-semibold text-[#FFFF3A]">scale</strong>, and <strong className="font-semibold text-[#FFFF3A]">perform</strong> in production.
+            Websites built to convert, scale, and perform
           </p>
 
           <div className="mt-16 grid sm:grid-cols-2 gap-8 sm:gap-10 max-w-4xl mx-auto">
@@ -121,8 +121,8 @@ export default function Home() {
               <h3 className="font-display font-semibold text-white text-lg sm:text-xl tracking-tight">
                 Conversion-focused websites
               </h3>
-              <p className="mt-4 font-sans text-white text-[15px] sm:text-base leading-relaxed">
-                Websites designed around clear user journeys, built to turn <strong className="font-semibold text-white">visitors into customers</strong>.
+              <p className="mt-4 font-sans text-white/70 text-[15px] sm:text-base leading-relaxed">
+                Websites designed around clear user journeys, built to turn visitors into customers.
               </p>
             </div>
 
@@ -131,8 +131,8 @@ export default function Home() {
               <h3 className="font-display font-semibold text-white text-lg sm:text-xl tracking-tight">
                 Design-ready development
               </h3>
-              <p className="mt-4 font-sans text-white text-[15px] sm:text-base leading-relaxed">
-                We work seamlessly with designers or founders, delivering <strong className="font-semibold text-white">pixel-accurate</strong>, build-ready sites.
+              <p className="mt-4 font-sans text-white/70 text-[15px] sm:text-base leading-relaxed">
+                We work seamlessly with designers or founders, delivering pixel-accurate, build-ready sites.
               </p>
             </div>
 
@@ -141,8 +141,8 @@ export default function Home() {
               <h3 className="font-display font-semibold text-white text-lg sm:text-xl tracking-tight">
                 Clean, scalable builds
               </h3>
-              <p className="mt-4 font-sans text-white text-[15px] sm:text-base leading-relaxed">
-                <strong className="font-semibold text-white">Production-grade code</strong> that's easy to maintain, extend, and grow with your business.
+              <p className="mt-4 font-sans text-white/70 text-[15px] sm:text-base leading-relaxed">
+                Production-grade code that's easy to maintain, extend, and grow with your business.
               </p>
             </div>
 
@@ -151,8 +151,8 @@ export default function Home() {
               <h3 className="font-display font-semibold text-white text-lg sm:text-xl tracking-tight">
                 Launch-ready delivery
               </h3>
-              <p className="mt-4 font-sans text-white text-[15px] sm:text-base leading-relaxed">
-                Optimised for <strong className="font-semibold text-white">performance, SEO</strong>, and real-world usage — ready to ship, not "almost done".
+              <p className="mt-4 font-sans text-white/70 text-[15px] sm:text-base leading-relaxed">
+                Optimised for performance, SEO, and real-world usage — ready to ship, not "almost done".
               </p>
             </div>
           </div>
@@ -278,7 +278,10 @@ export default function Home() {
             Have a project in mind?
           </h2>
           <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] leading-relaxed max-w-2xl mx-auto">
-            Tell us what you're <strong className="font-semibold text-[#FFFF3A]">building</strong>, and we'll let you know if we're a <strong className="font-semibold text-[#FFFF3A]">good fit</strong>.
+            Let's talk
+          </p>
+          <p className="mt-4 font-sans text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
+            Tell us what you're building, and we'll let you know if we're a good fit.
           </p>
           <div className="mt-10">
             <Link

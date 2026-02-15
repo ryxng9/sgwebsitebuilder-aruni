@@ -57,13 +57,55 @@ interface BlogGridProps {
 
 export default function BlogGrid({ posts }: BlogGridProps) {
   const [showAll, setShowAll] = useState(false);
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const INITIAL_DISPLAY = 12; // 4 rows x 3 columns
   
-  const displayedPosts = showAll ? posts : posts.slice(0, INITIAL_DISPLAY);
-  const hasMore = posts.length > INITIAL_DISPLAY;
+  // Get unique types from posts
+  const availableTypes = Array.from(new Set(posts.map(p => p.type)));
+  
+  // Toggle type selection
+  const toggleType = (type: string) => {
+    setSelectedTypes(prev => 
+      prev.includes(type) 
+        ? prev.filter(t => t !== type)
+        : [...prev, type]
+    );
+  };
+  
+  // Filter posts by selected types
+  const filteredPosts = selectedTypes.length > 0
+    ? posts.filter(p => selectedTypes.includes(p.type))
+    : posts;
+  
+  const displayedPosts = showAll ? filteredPosts : filteredPosts.slice(0, INITIAL_DISPLAY);
+  const hasMore = filteredPosts.length > INITIAL_DISPLAY;
 
   return (
     <>
+      {/* Type Filter */}
+      {availableTypes.length > 0 && (
+        <div className="mb-8">
+          <h3 className="font-sans font-medium text-black/80 text-sm uppercase tracking-wide mb-4">
+            Filter by Type
+          </h3>
+          <div className="flex flex-wrap gap-3">
+            {availableTypes.map((type) => (
+              <button
+                key={type}
+                onClick={() => toggleType(type)}
+                className={`px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wide transition-all duration-200 ${
+                  selectedTypes.includes(type)
+                    ? 'bg-[#FFFF3A] text-black shadow-md'
+                    : 'bg-white border border-black/20 text-black/70 hover:border-black/40'
+                }`}
+              >
+                {typeLabels[type] || type}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {displayedPosts.map((post) => (
           <Link
@@ -124,7 +166,7 @@ export default function BlogGrid({ posts }: BlogGridProps) {
             onClick={() => setShowAll(!showAll)}
             className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg border-2 border-black text-black bg-transparent hover:bg-black/5 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
           >
-            {showAll ? "Show Less" : `Load More (${posts.length - INITIAL_DISPLAY} more)`}
+            {showAll ? "Show Less" : `Load More (${filteredPosts.length - INITIAL_DISPLAY} more)`}
           </button>
         </div>
       )}

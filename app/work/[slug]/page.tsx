@@ -203,7 +203,10 @@ export default async function WorkDetailPage({
               Interested in a Similar Project?
             </h2>
             <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] leading-relaxed max-w-2xl mx-auto">
-              Let's discuss how we can create something <strong className="font-semibold text-[#FFFF3A]">exceptional</strong> for your business.
+              Let's create something exceptional
+            </p>
+            <p className="mt-4 font-sans text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
+              Discuss how we can help bring your vision to life with a similar approach.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
