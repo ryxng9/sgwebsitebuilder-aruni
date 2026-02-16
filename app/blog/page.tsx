@@ -183,22 +183,22 @@ export default async function Blog() {
           </section>
         )}
 
-        {/* CTA Section — BLACK SECTION */}
-        <section className="w-full px-6 py-20 sm:py-28 bg-black">
+        {/* CTA Section — WHITE SECTION */}
+        <section className="w-full px-6 py-20 sm:py-28 bg-white border-t border-black/10">
           <div className="w-full max-w-4xl mx-auto text-center">
-            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
+            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
               Want to Work With Us?
             </h2>
             <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] leading-relaxed max-w-2xl mx-auto">
               Let's create something exceptional
             </p>
-            <p className="mt-4 font-sans text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
+            <p className="mt-4 font-sans text-base sm:text-lg text-black/70 leading-relaxed max-w-2xl mx-auto">
               Discuss your project and see how we can help bring your vision to life.
             </p>
             <div className="mt-10">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#FFFF3A] text-black hover:bg-[#FFFF3A]/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#FFFF3A] focus:ring-offset-2 focus:ring-offset-black"
+                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#212121] text-white hover:bg-black transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#212121] focus:ring-offset-2"
               >
                 Get in Touch
               </Link>

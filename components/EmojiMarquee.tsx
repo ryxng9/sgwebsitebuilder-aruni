@@ -1,28 +1,28 @@
 "use client";
 
 export default function EmojiMarquee() {
-  const emojis = ["⚡", "🚀", "💻", "🎯", "✨", "🔥", "💡", "🎨", "📱", "⚙️", "🌟", "💪"];
+  const businesses = ["DBS", "SIA", "Sheng Siong", "NTUC", "WeBull", "Singtel", "StarHub", "Grab", "Shopee", "Lazada", "CapitaLand", "Keppel"];
   
   return (
     <div className="w-full overflow-hidden bg-[#FFFF3A]/5 border-y border-black/10 py-8">
       <div className="marquee-container">
         <div className="marquee-content">
-          {/* First set of emojis */}
-          {emojis.map((emoji, index) => (
+          {/* First set of business names */}
+          {businesses.map((business, index) => (
             <span
-              key={`emoji-1-${index}`}
-              className="inline-block mx-8 text-4xl sm:text-5xl opacity-60 hover:opacity-100 transition-opacity"
+              key={`business-1-${index}`}
+              className="inline-block mx-12 font-display font-bold text-2xl sm:text-3xl text-black/40 hover:text-black/70 transition-colors"
             >
-              {emoji}
+              {business}
             </span>
           ))}
           {/* Duplicate set for seamless loop */}
-          {emojis.map((emoji, index) => (
+          {businesses.map((business, index) => (
             <span
-              key={`emoji-2-${index}`}
-              className="inline-block mx-8 text-4xl sm:text-5xl opacity-60 hover:opacity-100 transition-opacity"
+              key={`business-2-${index}`}
+              className="inline-block mx-12 font-display font-bold text-2xl sm:text-3xl text-black/40 hover:text-black/70 transition-colors"
             >
-              {emoji}
+              {business}
             </span>
           ))}
         </div>

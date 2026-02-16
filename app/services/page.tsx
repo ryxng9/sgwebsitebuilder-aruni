@@ -202,23 +202,23 @@ export default function Services() {
           </div>
         </section>
 
-        {/* Types of Projects We Take Section — BLACK SECTION */}
-        <section className="w-full px-6 py-24 sm:py-32 bg-black">
+        {/* Types of Projects We Take Section — WHITE SECTION */}
+        <section className="w-full px-6 py-24 sm:py-32 bg-white">
           <div className="w-full max-w-6xl mx-auto">
-            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-3xl mx-auto mb-8">
+            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-3xl mx-auto mb-8">
               Types of Projects We Take
             </h2>
             <p className="font-sans text-base sm:text-lg text-[#FFFF3A] text-center max-w-2xl mx-auto leading-relaxed mb-16">
-              We work best with teams who have <strong className="font-semibold text-[#FFFF3A]">clear goals</strong> and <strong className="font-semibold text-[#FFFF3A]">defined requirements</strong>.
+              We work best with teams who have clear goals and defined requirements.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
               {/* Good Fit */}
-              <div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-8 lg:p-10 shadow-lg">
-                <h3 className="font-display font-semibold text-white text-xl sm:text-2xl tracking-tight mb-6">
+              <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 lg:p-10 shadow-lg">
+                <h3 className="font-display font-semibold text-black text-xl sm:text-2xl tracking-tight mb-6">
                   Good Fit
                 </h3>
-                <ul className="space-y-4 font-sans text-white text-[15px] sm:text-base leading-relaxed">
+                <ul className="space-y-4 font-sans text-black/85 text-[15px] sm:text-base leading-relaxed">
                   {goodFitProjects.map((item) => (
                     <li key={item} className="flex gap-3">
                       <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
@@ -229,14 +229,14 @@ export default function Services() {
               </div>
 
               {/* Not a Fit */}
-              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 lg:p-10 shadow-md">
-                <h3 className="font-display font-semibold text-white/80 text-xl sm:text-2xl tracking-tight mb-6">
+              <div className="rounded-2xl border border-black/10 bg-black/[0.02] backdrop-blur-sm p-8 lg:p-10 shadow-md">
+                <h3 className="font-display font-semibold text-black/70 text-xl sm:text-2xl tracking-tight mb-6">
                   Not a Fit
                 </h3>
-                <ul className="space-y-4 font-sans text-white/70 text-[15px] sm:text-base leading-relaxed">
+                <ul className="space-y-4 font-sans text-black/65 text-[15px] sm:text-base leading-relaxed">
                   {notFitProjects.map((item) => (
                     <li key={item} className="flex gap-3">
-                      <span className="text-white/50 shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span className="text-black/50 shrink-0 mt-0.5" aria-hidden>•</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -292,24 +292,24 @@ export default function Services() {
           </div>
         </section>
 
-        {/* What Clients Need to Provide Section — BLACK SECTION */}
-        <section className="w-full px-6 py-24 sm:py-32 bg-black">
+        {/* What Clients Need to Provide Section — WHITE SECTION */}
+        <section className="w-full px-6 py-24 sm:py-32 bg-white">
           <div className="w-full max-w-6xl mx-auto">
-            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-3xl mx-auto mb-6">
+            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-3xl mx-auto mb-6">
               What Clients Need to Provide
             </h2>
             
             <p className="font-sans text-[#FFFF3A] text-[15px] sm:text-base text-center max-w-2xl mx-auto leading-relaxed mb-16">
-              Great projects are <strong className="font-semibold text-[#FFFF3A]">collaborative</strong>. Here's what helps us deliver the best results.
+              Great projects are collaborative. Here's what helps us deliver the best results.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
               {/* Required */}
-              <div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-8 lg:p-10 shadow-lg">
-                <h3 className="font-display font-semibold text-white text-xl sm:text-2xl tracking-tight mb-6">
+              <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 lg:p-10 shadow-lg">
+                <h3 className="font-display font-semibold text-black text-xl sm:text-2xl tracking-tight mb-6">
                   Required
                 </h3>
-                <ul className="space-y-4 font-sans text-white text-[15px] sm:text-base leading-relaxed">
+                <ul className="space-y-4 font-sans text-black/85 text-[15px] sm:text-base leading-relaxed">
                   {requiredItems.map((item) => (
                     <li key={item} className="flex gap-3">
                       <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
@@ -320,14 +320,14 @@ export default function Services() {
               </div>
 
               {/* Nice to Have */}
-              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 lg:p-10 shadow-md">
-                <h3 className="font-display font-semibold text-white/80 text-xl sm:text-2xl tracking-tight mb-6">
+              <div className="rounded-2xl border border-black/10 bg-black/[0.02] backdrop-blur-sm p-8 lg:p-10 shadow-md">
+                <h3 className="font-display font-semibold text-black/70 text-xl sm:text-2xl tracking-tight mb-6">
                   Nice to Have
                 </h3>
-                <ul className="space-y-4 font-sans text-white/70 text-[15px] sm:text-base leading-relaxed">
+                <ul className="space-y-4 font-sans text-black/65 text-[15px] sm:text-base leading-relaxed">
                   {niceToHaveItems.map((item) => (
                     <li key={item} className="flex gap-3">
-                      <span className="text-white/50 shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span className="text-black/50 shrink-0 mt-0.5" aria-hidden>•</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -366,22 +366,22 @@ export default function Services() {
           </div>
         </section>
 
-        {/* Soft Call to Action Section — BLACK SECTION */}
-        <section className="w-full px-6 py-20 sm:py-28 bg-black">
+        {/* Soft Call to Action Section — WHITE SECTION */}
+        <section className="w-full px-6 py-20 sm:py-28 bg-white border-t border-black/10">
           <div className="w-full max-w-4xl mx-auto text-center">
-            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
+            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
               If This Approach Aligns With You
             </h2>
             <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] leading-relaxed max-w-2xl mx-auto">
               Let's start a conversation
             </p>
-            <p className="mt-4 font-sans text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
+            <p className="mt-4 font-sans text-base sm:text-lg text-black/70 leading-relaxed max-w-2xl mx-auto">
               This page explains how we work. If you're looking for a development partner who values clarity, quality, and collaboration, reach out.
             </p>
             <div className="mt-10">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#FFFF3A] text-black hover:bg-[#FFFF3A]/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#FFFF3A] focus:ring-offset-2 focus:ring-offset-black"
+                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#212121] text-white hover:bg-black transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#212121] focus:ring-offset-2"
               >
                 Start a Conversation
               </Link>
