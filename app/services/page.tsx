@@ -24,39 +24,38 @@ const heroCards = [
 
 const timelineBlocks = [
   {
-    title: "Small Scoped Builds",
-    timeframe: "2–4 weeks",
+    title: "Small Projects",
+    timeframe: "1–3 weeks",
     items: [
-      "Marketing websites",
-      "Simple rebuilds",
-      "Clearly defined scope",
+      "Landing pages",
+      "Portfolio sites",
+      "Basic business websites",
     ],
   },
   {
-    title: "Medium Builds",
-    timeframe: "4–8 weeks",
+    title: "Medium Projects",
+    timeframe: "3–6 weeks",
     items: [
-      "Custom functionality",
+      "E-commerce stores",
+      "Custom web applications",
       "CMS integration",
-      "Multi-page structured sites",
-      "Moderate integrations",
+      "Multi-page sites",
     ],
   },
   {
-    title: "Larger / Complex Systems",
-    timeframe: "8–12+ weeks",
+    title: "Large Projects",
+    timeframe: "6–12 weeks",
     items: [
-      "Internal tools",
-      "Multi-role dashboards",
-      "API-heavy builds",
-      "Complex business logic",
+      "Complex e-commerce platforms",
+      "Custom SaaS applications",
+      "Enterprise websites",
+      "Advanced integrations",
     ],
   },
 ];
 
 const requiredItems = [
   "Clear objective and success criteria",
-  "A single decision-maker",
   "Access to necessary tools and accounts",
   "Content or structured requirements",
   "Timely feedback during review phases",
@@ -66,7 +65,6 @@ const niceToHaveItems = [
   "Existing brand guidelines",
   "Sitemap or rough structure",
   "Example references",
-  "Pre-written content",
   "Technical documentation (if applicable)",
 ];
 
@@ -108,20 +106,20 @@ const notFitProjects = [
 
 const finishedBuildItems = [
   {
-    title: "Deployed to Production",
-    description: "Hosted on a real, live environment (e.g., Vercel or similar). Fully accessible and operational.",
+    title: "Fully Functional Website",
+    description: "All features working as specified, tested across devices and browsers, ready for real-world use.",
   },
   {
-    title: "Cross-Environment Reliability",
-    description: "Works across modern browsers and devices. Tested under expected usage conditions.",
+    title: "Deployed & Live",
+    description: "Hosted on production environment with SSL certificate, custom domain configured, and accessible to users.",
   },
   {
-    title: "Documentation & Handover",
-    description: "Clear handover notes, instructions for managing or updating the site, and any necessary setup documentation.",
+    title: "Documentation Provided",
+    description: "Complete handover documentation including how to manage content, update the site, and access all systems.",
   },
   {
-    title: "Access & Ownership",
-    description: "Full access to hosting, repository, and CMS (if applicable). Client retains ownership of final build.",
+    title: "Full Ownership Transfer",
+    description: "Complete access to hosting, domain, repository, and all accounts. You own everything we build.",
   },
 ];
 
@@ -159,11 +157,11 @@ export default function Services() {
           <div className="flex-1 flex items-center justify-center pb-32">
             <div className="w-full max-w-6xl mx-auto">
               <h1 className="font-display font-bold text-black text-4xl sm:text-5xl md:text-6xl leading-[1.15] tracking-tight text-center max-w-3xl mx-auto animate-fadeInUp">
-                Development built for growth
+                Services we provide
               </h1>
               
               <p className="mt-10 font-sans text-base sm:text-lg text-black/85 text-center max-w-2xl mx-auto leading-relaxed animate-fadeInUp animation-delay-200">
-                Production-ready websites that scale with your business.
+                We develop solutions that help scale your business.
               </p>
             </div>
           </div>
@@ -176,7 +174,7 @@ export default function Services() {
         <section className="w-full px-6 py-24 sm:py-32">
           <div className="w-full max-w-7xl mx-auto">
             <h2 className="font-display font-semibold text-black text-2xl sm:text-3xl tracking-tight text-center mb-16">
-              What development includes
+              What we offer
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
@@ -205,41 +203,153 @@ export default function Services() {
         {/* Types of Projects We Take Section — WHITE SECTION */}
         <section className="w-full px-6 py-24 sm:py-32 bg-white">
           <div className="w-full max-w-6xl mx-auto">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-3xl mx-auto mb-8">
+            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-3xl mx-auto mb-16">
               Types of Projects We Take
             </h2>
-            <p className="font-sans text-base sm:text-lg text-[#FFFF3A] text-center max-w-2xl mx-auto leading-relaxed mb-16">
-              We work best with teams who have clear goals and defined requirements.
-            </p>
 
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-              {/* Good Fit */}
-              <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 lg:p-10 shadow-lg">
-                <h3 className="font-display font-semibold text-black text-xl sm:text-2xl tracking-tight mb-6">
-                  Good Fit
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              {/* E-commerce */}
+              <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 shadow-lg">
+                <h3 className="font-display font-semibold text-black text-xl tracking-tight mb-4">
+                  E-commerce
                 </h3>
-                <ul className="space-y-4 font-sans text-black/85 text-[15px] sm:text-base leading-relaxed">
-                  {goodFitProjects.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
+                <ul className="space-y-2.5 font-sans text-black/85 text-sm leading-relaxed">
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>WooCommerce/WordPress stores</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Shopify custom themes</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Custom Next.js e-commerce</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Payment gateway integration</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Product catalog management</span>
+                  </li>
                 </ul>
               </div>
 
-              {/* Not a Fit */}
-              <div className="rounded-2xl border border-black/10 bg-black/[0.02] backdrop-blur-sm p-8 lg:p-10 shadow-md">
-                <h3 className="font-display font-semibold text-black/70 text-xl sm:text-2xl tracking-tight mb-6">
-                  Not a Fit
+              {/* Business Web Design */}
+              <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 shadow-lg">
+                <h3 className="font-display font-semibold text-black text-xl tracking-tight mb-4">
+                  Business Web Design
                 </h3>
-                <ul className="space-y-4 font-sans text-black/65 text-[15px] sm:text-base leading-relaxed">
-                  {notFitProjects.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span className="text-black/50 shrink-0 mt-0.5" aria-hidden>•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
+                <ul className="space-y-2.5 font-sans text-black/85 text-sm leading-relaxed">
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Corporate websites</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Landing pages</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Portfolio sites</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Service-based business sites</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Responsive design implementation</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Custom Web Development */}
+              <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 shadow-lg">
+                <h3 className="font-display font-semibold text-black text-xl tracking-tight mb-4">
+                  Custom Web Development
+                </h3>
+                <ul className="space-y-2.5 font-sans text-black/85 text-sm leading-relaxed">
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Hand-coded HTML/CSS/JS</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>React/Next.js applications</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Custom CMS integration</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>API development & integration</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Progressive Web Apps (PWA)</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Website Management */}
+              <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 shadow-lg">
+                <h3 className="font-display font-semibold text-black text-xl tracking-tight mb-4">
+                  Website Management
+                </h3>
+                <ul className="space-y-2.5 font-sans text-black/85 text-sm leading-relaxed">
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Regular content updates</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Security monitoring & patches</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Performance optimization</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Backup & recovery services</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Technical support</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* SEO */}
+              <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 shadow-lg">
+                <h3 className="font-display font-semibold text-black text-xl tracking-tight mb-4">
+                  Search Engine Optimisation (SEO)
+                </h3>
+                <ul className="space-y-2.5 font-sans text-black/85 text-sm leading-relaxed">
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>On-page SEO optimization</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Technical SEO audits</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Keyword research & strategy</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Meta tags & schema markup</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <span>Google Analytics setup</span>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -340,24 +450,20 @@ export default function Services() {
         {/* What a Finished Build Looks Like Section */}
         <section className="w-full px-6 py-24 sm:py-32">
           <div className="w-full max-w-6xl mx-auto">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-3xl mx-auto mb-6">
+            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-3xl mx-auto mb-16">
               What a Finished Build Looks Like
             </h2>
-            
-            <p className="font-sans text-black/75 text-[15px] sm:text-base text-center max-w-2xl mx-auto leading-relaxed mb-16">
-              A project is considered complete when it is fully implemented, deployed, and handed over. The goal is ownership and long-term usability.
-            </p>
 
-            <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {finishedBuildItems.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-black/20 bg-white/60 backdrop-blur-sm p-8 lg:p-10 shadow-lg"
+                  className="rounded-2xl border border-black/20 bg-white/60 backdrop-blur-sm p-8 shadow-lg flex flex-col"
                 >
-                  <h3 className="font-display font-semibold text-black text-lg sm:text-xl tracking-tight mb-4">
+                  <h3 className="font-display font-semibold text-black text-lg tracking-tight mb-4">
                     {item.title}
                   </h3>
-                  <p className="font-sans text-black/75 text-[15px] sm:text-base leading-relaxed">
+                  <p className="font-sans text-black/75 text-sm leading-relaxed flex-1">
                     {item.description}
                   </p>
                 </div>

@@ -162,6 +162,13 @@ export default function Navbar({
               
               {servicesOpen && (
                 <div className="absolute top-full left-0 mt-2 w-64 bg-white border border-black/10 rounded-lg shadow-xl py-2 z-50">
+                  <Link
+                    href="/services"
+                    className="block px-4 py-2.5 text-[15px] text-black font-medium hover:bg-[#FFFF3A]/10 transition-colors"
+                  >
+                    Services
+                  </Link>
+                  <div className="border-t border-black/10 my-2" />
                   {serviceLinks.map(({ href, label }) => (
                     <Link
                       key={href}

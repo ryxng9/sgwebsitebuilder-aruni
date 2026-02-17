@@ -66,9 +66,42 @@ export default function Home() {
               </Link>
             </div>
 
-            <p className="mt-10 font-sans text-base sm:text-lg text-black/90 max-w-xl leading-relaxed animate-fadeInUp animation-delay-400">
-              • We develop websites for startups and SMEs that turn visitors into customers.
-            </p>
+            {/* Stats */}
+            <div className="mt-10 flex gap-12 animate-fadeInUp animation-delay-400">
+              {/* Projects Completed */}
+              <div className="text-left">
+                <div className="font-display font-bold text-4xl sm:text-5xl text-black mb-2">
+                  120+
+                </div>
+                <div className="flex gap-1 mb-1">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-4 h-4 text-[#FFFF3A]" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="font-sans text-black/70 text-sm">
+                  Projects completed
+                </p>
+              </div>
+
+              {/* Rating */}
+              <div className="text-left">
+                <div className="font-display font-bold text-4xl sm:text-5xl text-black mb-2">
+                  4.9
+                </div>
+                <div className="flex gap-1 mb-1">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-4 h-4 text-[#FFFF3A]" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="font-sans text-black/70 text-sm">
+                  Rating from clients
+                </p>
+              </div>
+            </div>
           </div>
         </div>
         {/* Animated Wave */}
@@ -131,7 +164,7 @@ export default function Home() {
           </p>
 
           <div className="mt-16 px-6 max-w-[1600px] mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
               {/* E-commerce */}
               <div className="rounded-2xl border border-black/10 bg-white/60 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
                 <h3 className="font-display font-semibold text-black text-lg tracking-tight">
@@ -196,8 +229,8 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* SEO - Spans full width on mobile, takes 1 column on larger screens */}
-              <div className="rounded-2xl border border-black/10 bg-white/60 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col md:col-span-2 lg:col-span-1">
+              {/* SEO */}
+              <div className="rounded-2xl border border-black/10 bg-white/60 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
                 <h3 className="font-display font-semibold text-black text-lg tracking-tight">
                   Search Engine Optimisation (SEO)
                 </h3>
@@ -214,13 +247,13 @@ export default function Home() {
             </div>
           </div>
 
-          {/* See All Services Button */}
+          {/* View Our Services Button */}
           <div className="mt-12 text-center">
             <Link
               href="/services"
               className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#212121] text-white hover:bg-black transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
-              See All Services
+              View Our Services
             </Link>
           </div>
         </div>
@@ -245,7 +278,7 @@ export default function Home() {
                 <span className="font-sans text-black/75 text-sm">Project Preview</span>
               </div>
               <p className="font-sans text-black text-[15px] sm:text-base font-semibold leading-relaxed">
-                E-commerce
+                E-commerce Example
               </p>
               <p className="mt-3 font-sans text-[#212121] text-sm sm:text-[15px] leading-relaxed">
                 Built to improve enquiry quality and page speed
@@ -258,7 +291,7 @@ export default function Home() {
                 <span className="font-sans text-black/75 text-sm">Project Preview</span>
               </div>
               <p className="font-sans text-black text-[15px] sm:text-base font-semibold leading-relaxed">
-                Business Web Design
+                Business Web Design Example
               </p>
               <p className="mt-3 font-sans text-[#212121] text-sm sm:text-[15px] leading-relaxed">
                 Scalable architecture designed for conversion and retention
@@ -271,7 +304,7 @@ export default function Home() {
                 <span className="font-sans text-black/75 text-sm">Project Preview</span>
               </div>
               <p className="font-sans text-black text-[15px] sm:text-base font-semibold leading-relaxed">
-                Custom Web Development
+                Custom Web Development Example
               </p>
               <p className="mt-3 font-sans text-[#212121] text-sm sm:text-[15px] leading-relaxed">
                 Clean design focused on trial signups and feature clarity
@@ -364,6 +397,72 @@ export default function Home() {
       {/* Quality Assurance Section — WHITE SECTION */}
       <section className="w-full px-6 py-24 sm:py-32 bg-white border-t border-black/10">
         <div className="w-full max-w-6xl mx-auto">
+          {/* Stats and Company Marquee */}
+          <div className="mb-16 flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+            {/* Stats Group - Aligned Left */}
+            <div className="flex gap-12 lg:gap-16">
+              {/* Projects Completed */}
+              <div className="text-left">
+                <div className="font-display font-bold text-5xl sm:text-6xl text-black mb-3">
+                  120+
+                </div>
+                <div className="flex gap-1 mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-[#FFFF3A]" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="font-sans text-black/70 text-base">
+                  Projects completed
+                </p>
+              </div>
+
+              {/* Rating */}
+              <div className="text-left">
+                <div className="font-display font-bold text-5xl sm:text-6xl text-black mb-3">
+                  4.9
+                </div>
+                <div className="flex gap-1 mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-[#FFFF3A]" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="font-sans text-black/70 text-base">
+                  Rating from clients
+                </p>
+              </div>
+            </div>
+
+            {/* Company Marquee - Stretched */}
+            <div className="flex-1 w-full lg:w-auto">
+              <div className="overflow-hidden bg-transparent py-4">
+                <div className="company-marquee-container">
+                  <div className="company-marquee-content">
+                    {['Palamie', 'IRHA', 'Topify', 'DigiSnap'].map((company, index) => (
+                      <span
+                        key={`company-1-${index}`}
+                        className="inline-block mx-6 font-display font-semibold text-lg text-black/60"
+                      >
+                        {company}
+                      </span>
+                    ))}
+                    {['Palamie', 'IRHA', 'Topify', 'DigiSnap'].map((company, index) => (
+                      <span
+                        key={`company-2-${index}`}
+                        className="inline-block mx-6 font-display font-semibold text-lg text-black/60"
+                      >
+                        {company}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {/* Quality Assurance */}
             <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">

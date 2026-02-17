@@ -54,3 +54,25 @@ body {
   animation-delay: 0.4s;
   opacity: 0;
 }
+
+/* Company Marquee Animation */
+.company-marquee-container {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+}
+
+.company-marquee-content {
+  display: flex;
+  animation: scroll-companies 20s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes scroll-companies {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -19,18 +19,12 @@ const principles = [
     title: "Clean handover, no lock-in",
     description: "You own everything. Full access to code, hosting, and systems from day one.",
   },
-  {
-    title: "Respect timelines and scope",
-    description: "We commit to realistic timelines and communicate clearly when scope changes.",
-  },
 ];
 
 const idealClients = [
   "Founders with validated ideas",
   "SMEs rebuilding or upgrading systems",
-  "Teams with a clear decision-maker",
   "Businesses that value clean execution",
-  "Clients who understand development is collaboration",
 ];
 
 const companyColorScheme: ColorScheme = {
@@ -64,7 +58,7 @@ export default function Company() {
             </h1>
             
             <p className="font-sans text-base sm:text-lg text-black/85 leading-relaxed max-w-3xl animate-fadeInUp animation-delay-200">
-              We're a small, focused development studio. We specialize in implementation, not marketing. We build clean, scalable, production-ready systems for businesses that need them. We care about doing the job properly.
+              We're a focused team of developers who build business websites that actually work. Too many businesses treat their website as decoration. We treat it as part of the business system, built to communicate clearly, automate where it matters, and support real growth.
             </p>
           </div>
         </section>
@@ -90,26 +84,26 @@ export default function Company() {
           </div>
         </section>
 
-        {/* Our Standards Section — BLACK SECTION */}
-        <section className="w-full px-6 py-24 sm:py-32 bg-black">
+        {/* Our Standards Section — WHITE SECTION */}
+        <section className="w-full px-6 py-24 sm:py-32 bg-white">
           <div className="w-full max-w-5xl mx-auto">
-            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-8">
+            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-8">
               Our Standards
             </h2>
             <p className="font-sans text-base sm:text-lg text-[#FFFF3A] text-center max-w-2xl mx-auto leading-relaxed mb-16">
-              We hold ourselves to <strong className="font-semibold text-[#FFFF3A]">high standards</strong> in everything we deliver.
+              We hold ourselves to high standards in everything we deliver.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {principles.map((principle) => (
                 <div
                   key={principle.title}
-                  className="rounded-xl border border-white/20 bg-white/10 backdrop-blur-sm p-8 lg:p-10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
+                  className="rounded-xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 lg:p-10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
                 >
-                  <h3 className="font-display font-semibold text-white text-lg sm:text-xl tracking-tight mb-3">
+                  <h3 className="font-display font-semibold text-black text-lg sm:text-xl tracking-tight mb-3">
                     {principle.title}
                   </h3>
-                  <p className="font-sans text-white text-[15px] sm:text-base leading-relaxed">
+                  <p className="font-sans text-black/85 text-[15px] sm:text-base leading-relaxed">
                     {principle.description}
                   </p>
                 </div>
@@ -125,7 +119,7 @@ export default function Company() {
               Who We Work Best With
             </h2>
 
-            <ul className="space-y-4 font-sans text-black/85 text-base sm:text-lg leading-relaxed mb-8">
+            <ul className="space-y-4 font-sans text-black/85 text-base sm:text-lg leading-relaxed">
               {idealClients.map((client) => (
                 <li key={client} className="flex gap-3">
                   <span className="text-black/60 shrink-0 mt-1" aria-hidden>•</span>
@@ -133,10 +127,6 @@ export default function Company() {
                 </li>
               ))}
             </ul>
-
-            <p className="font-sans text-black/75 text-base sm:text-lg leading-relaxed pt-6 border-t border-black/20">
-              We work best when expectations are clear and communication is direct.
-            </p>
           </div>
         </section>
 

@@ -11,7 +11,7 @@ export default function EmojiMarquee() {
           {businesses.map((business, index) => (
             <span
               key={`business-1-${index}`}
-              className="inline-block mx-12 font-display font-bold text-2xl sm:text-3xl text-black/40 hover:text-black/70 transition-colors"
+              className="inline-block mx-12 font-display font-bold text-2xl sm:text-3xl text-black/40"
             >
               {business}
             </span>
@@ -20,7 +20,7 @@ export default function EmojiMarquee() {
           {businesses.map((business, index) => (
             <span
               key={`business-2-${index}`}
-              className="inline-block mx-12 font-display font-bold text-2xl sm:text-3xl text-black/40 hover:text-black/70 transition-colors"
+              className="inline-block mx-12 font-display font-bold text-2xl sm:text-3xl text-black/40"
             >
               {business}
             </span>
@@ -48,10 +48,6 @@ export default function EmojiMarquee() {
           100% {
             transform: translateX(-50%);
           }
-        }
-
-        .marquee-content:hover {
-          animation-play-state: paused;
         }
       `}</style>
     </div>
