@@ -20,12 +20,30 @@ const ecommerceColorScheme: ColorScheme = {
 };
 
 const technologies = [
-  "Next.js & React",
-  "Shopify & WooCommerce",
-  "Stripe & Payment Gateways",
-  "Headless CMS Integration",
-  "Custom Cart Solutions",
-  "Inventory Management",
+  {
+    title: "Core Stack",
+    items: ["Next.js", "React", "TypeScript"],
+    description: "Modern, type-safe frameworks that ensure scalability, maintainability, and exceptional performance for your e-commerce platform.",
+    imagePosition: "left" as const,
+  },
+  {
+    title: "Commerce Platforms",
+    items: ["Shopify", "WooCommerce"],
+    description: "Industry-leading platforms that provide robust product management, secure payments, and seamless inventory control.",
+    imagePosition: "right" as const,
+  },
+  {
+    title: "Architecture",
+    items: ["Headless CMS (Sanity/Contentful)", "Custom API Integrations", "Webhook-based automation"],
+    description: "Flexible content management and API-driven architecture that allows for custom workflows and third-party integrations.",
+    imagePosition: "left" as const,
+  },
+  {
+    title: "Operations",
+    items: ["Inventory syncing", "Order management logic", "Automated fulfilment flows"],
+    description: "Streamlined operational systems that reduce manual work and ensure accurate, real-time synchronization across platforms.",
+    imagePosition: "right" as const,
+  },
 ];
 
 const results = [
@@ -34,11 +52,19 @@ const results = [
     description: "Increase in conversion rate",
   },
   {
+    metric: "+130%",
+    description: "Organic traffic growth",
+  },
+  {
     metric: "45% faster",
     description: "Page load times",
   },
   {
-    metric: "+$250K",
+    metric: "+70% reduction",
+    description: "Manual operational workload",
+  },
+  {
+    metric: "+30%",
     description: "Additional revenue in 6 months",
   },
 ];
@@ -65,19 +91,45 @@ export default function EcommercePage() {
         {/* Technologies Section */}
         <section className="w-full px-6 py-24 sm:py-32 bg-white/30">
           <div className="w-full max-w-6xl mx-auto">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight mb-12">
+            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight mb-16">
               Technologies We Use
             </h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <div className="space-y-8">
               {technologies.map((tech) => (
                 <div
-                  key={tech}
-                  className="rounded-xl border border-black/10 bg-white/60 backdrop-blur-sm p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
+                  key={tech.title}
+                  className={`rounded-2xl border border-black/10 bg-white/60 backdrop-blur-sm shadow-lg overflow-hidden flex flex-col ${tech.imagePosition === 'left' ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
                 >
-                  <p className="font-sans text-black text-base sm:text-lg font-medium">
-                    {tech}
-                  </p>
+                  {/* Image Section */}
+                  <div className="lg:w-1/2 bg-gradient-to-br from-[#FFFF3A]/20 to-black/5 p-12 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="inline-block p-8 rounded-2xl bg-white/80 backdrop-blur-sm shadow-lg">
+                        <div className="font-display font-bold text-black text-3xl mb-4">
+                          {tech.title}
+                        </div>
+                        <div className="w-16 h-1 bg-[#FFFF3A] mx-auto"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Content Section */}
+                  <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+                    <h3 className="font-display font-semibold text-black text-2xl tracking-tight mb-6">
+                      {tech.title}
+                    </h3>
+                    <ul className="space-y-3 mb-6">
+                      {tech.items.map((item) => (
+                        <li key={item} className="flex gap-3">
+                          <span className="text-[#FFFF3A] shrink-0 mt-1" aria-hidden>•</span>
+                          <span className="font-sans text-black/85 text-base">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="font-sans text-black/75 text-sm leading-relaxed">
+                      {tech.description}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -127,16 +179,16 @@ export default function EcommercePage() {
               Client Results
             </h2>
 
-            <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
               {results.map((result) => (
                 <div
                   key={result.metric}
-                  className="rounded-xl border border-black/15 bg-white/60 backdrop-blur-sm p-8 shadow-lg text-center"
+                  className="rounded-xl border border-black/15 bg-white/60 backdrop-blur-sm p-6 shadow-lg text-center"
                 >
-                  <div className="font-display font-bold text-[#FFFF3A] text-4xl sm:text-5xl mb-3">
+                  <div className="font-display font-bold text-[#FFFF3A] text-3xl sm:text-4xl mb-3">
                     {result.metric}
                   </div>
-                  <p className="font-sans text-black/75 text-base sm:text-lg leading-relaxed">
+                  <p className="font-sans text-black/75 text-sm leading-relaxed">
                     {result.description}
                   </p>
                 </div>

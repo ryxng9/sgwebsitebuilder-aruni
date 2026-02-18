@@ -70,7 +70,7 @@ export default function HeroWave() {
 
         .wave-glow {
           opacity: 0;
-          animation: glowFlow 3s ease-in-out infinite;
+          animation: glowFlow 6s linear infinite;
           animation-delay: 2s;
           stroke-dasharray: 300;
           stroke-dashoffset: 0;
@@ -84,15 +84,12 @@ export default function HeroWave() {
 
         @keyframes glowFlow {
           0% {
-            opacity: 0;
-            stroke-dashoffset: 0;
-          }
-          10% {
             opacity: 0.8;
+            stroke-dashoffset: 0;
           }
           100% {
             opacity: 0.8;
-            stroke-dashoffset: -600;
+            stroke-dashoffset: -1200;
           }
         }
       `}</style>

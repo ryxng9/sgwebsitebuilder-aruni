@@ -32,6 +32,7 @@ export default function Contact() {
     name: "",
     email: "",
     company: "",
+    projectType: "",
     budget: "",
     projectDescription: "",
   });
@@ -58,14 +59,47 @@ export default function Contact() {
         {/* Hero Section */}
         <section className="w-full px-6 pt-32 sm:pt-40 pb-16 sm:pb-20">
           <div className={NAVBAR_HEIGHT_CLASS} aria-hidden="true" />
-          <div className="w-full max-w-4xl mx-auto text-center">
-            <h1 className="font-display font-bold text-black text-4xl sm:text-5xl md:text-6xl leading-[1.15] tracking-tight mb-8 animate-fadeInUp">
-              Let's Talk About Your Project
-            </h1>
-            
-            <p className="font-sans text-base sm:text-lg text-black/75 max-w-2xl mx-auto leading-relaxed animate-fadeInUp animation-delay-200">
-              Share your project details below and we'll get back to you within 24 hours. This is a scoped conversation, not a sales call.
-            </p>
+          <div className="w-full max-w-4xl mx-auto">
+            {/* Contact Cards */}
+            <div className="grid sm:grid-cols-2 gap-6 mb-12 animate-fadeInUp">
+              {/* Email Card */}
+              <a
+                href="mailto:hello@sgwebsitebuilder.com"
+                className="rounded-xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 group"
+              >
+                <h3 className="font-display font-semibold text-black text-lg tracking-tight mb-2">
+                  Email
+                </h3>
+                <p className="font-sans text-black/75 text-base group-hover:text-[#FFFF3A] transition-colors">
+                  hello@sgwebsitebuilder.com
+                </p>
+              </a>
+
+              {/* WhatsApp Card */}
+              <a
+                href="https://wa.me/6512345678"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 group"
+              >
+                <h3 className="font-display font-semibold text-black text-lg tracking-tight mb-2">
+                  Whatsapp
+                </h3>
+                <p className="font-sans text-black/75 text-base group-hover:text-[#FFFF3A] transition-colors">
+                  +65 1234 5678
+                </p>
+              </a>
+            </div>
+
+            <div className="text-center">
+              <h1 className="font-display font-bold text-black text-4xl sm:text-5xl md:text-6xl leading-[1.15] tracking-tight mb-8 animate-fadeInUp animation-delay-200">
+                Let's Talk About Your Project
+              </h1>
+              
+              <p className="font-sans text-base sm:text-lg text-black/75 max-w-2xl mx-auto leading-relaxed animate-fadeInUp animation-delay-400">
+                Share your project details below and we'll get back to you within 24 hours. This is a scoped conversation, not a sales call.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -130,6 +164,31 @@ export default function Contact() {
                   className="w-full px-4 py-3 rounded-lg border border-black/15 bg-white/60 backdrop-blur-sm text-black font-sans text-base focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
                   placeholder="Your company name"
                 />
+              </div>
+
+              {/* Project Type Field */}
+              <div>
+                <label
+                  htmlFor="projectType"
+                  className="block font-sans text-black text-sm font-medium mb-2"
+                >
+                  Project Type
+                </label>
+                <select
+                  id="projectType"
+                  name="projectType"
+                  value={formData.projectType}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-lg border border-black/15 bg-white/60 backdrop-blur-sm text-black font-sans text-base focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
+                >
+                  <option value="">Select a project type</option>
+                  <option value="e-commerce">E-commerce</option>
+                  <option value="business-web-design">Business Web Design</option>
+                  <option value="custom-web-development">Custom Web Development</option>
+                  <option value="website-management">Website Management</option>
+                  <option value="seo">SEO</option>
+                  <option value="others">Others</option>
+                </select>
               </div>
 
               {/* Budget Range Field */}
