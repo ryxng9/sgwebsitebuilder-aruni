@@ -153,10 +153,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services we provide — WHITE SECTION */}
-      <section className="w-full px-6 pt-32 sm:pt-40 pb-24 sm:pb-32 bg-white">
+      {/* Services we provide — BLACK SECTION */}
+      <section className="w-full px-6 pt-32 sm:pt-40 pb-24 sm:pb-32 bg-[#212121]">
         <div className="w-full mx-auto">
-          <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-2xl mx-auto">
+          <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-2xl mx-auto">
             Services we provide
           </h2>
           <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] text-center max-w-xl mx-auto leading-relaxed">
@@ -166,80 +166,80 @@ export default function Home() {
           <div className="mt-16 px-6 max-w-[1600px] mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
               {/* E-commerce */}
-              <div className="rounded-2xl border border-black/10 bg-white/60 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
-                <h3 className="font-display font-semibold text-black text-lg tracking-tight">
+              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
+                <h3 className="font-display font-semibold text-white text-lg tracking-tight">
                   E-commerce
                 </h3>
-                <p className="mt-3 font-sans text-black/70 text-sm leading-relaxed flex-1">
+                <p className="mt-3 font-sans text-white/70 text-sm leading-relaxed flex-1">
                   Build powerful online stores that drive sales and deliver seamless shopping experiences.
                 </p>
                 <Link
                   href="/services/e-commerce"
-                  className="mt-4 inline-flex items-center justify-center font-sans text-sm font-medium px-4 py-2 rounded-lg border border-black/20 text-black bg-transparent hover:bg-black/5 transition-all duration-200"
+                  className="mt-4 inline-flex items-center justify-center font-sans text-sm font-medium px-4 py-2 rounded-lg border border-white/20 text-white bg-transparent hover:bg-white/5 transition-all duration-200"
                 >
                   Read More
                 </Link>
               </div>
 
               {/* Business Web Design */}
-              <div className="rounded-2xl border border-black/10 bg-white/60 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
-                <h3 className="font-display font-semibold text-black text-lg tracking-tight">
+              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
+                <h3 className="font-display font-semibold text-white text-lg tracking-tight">
                   Business Web Design
                 </h3>
-                <p className="mt-3 font-sans text-black/70 text-sm leading-relaxed flex-1">
+                <p className="mt-3 font-sans text-white/70 text-sm leading-relaxed flex-1">
                   Professional websites that establish credibility and convert visitors into customers.
                 </p>
                 <Link
                   href="/services/business-web-design"
-                  className="mt-4 inline-flex items-center justify-center font-sans text-sm font-medium px-4 py-2 rounded-lg border border-black/20 text-black bg-transparent hover:bg-black/5 transition-all duration-200"
+                  className="mt-4 inline-flex items-center justify-center font-sans text-sm font-medium px-4 py-2 rounded-lg border border-white/20 text-white bg-transparent hover:bg-white/5 transition-all duration-200"
                 >
                   Read More
                 </Link>
               </div>
 
               {/* Custom Web Development */}
-              <div className="rounded-2xl border border-black/10 bg-white/60 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
-                <h3 className="font-display font-semibold text-black text-lg tracking-tight">
+              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
+                <h3 className="font-display font-semibold text-white text-lg tracking-tight">
                   Custom Web Development
                 </h3>
-                <p className="mt-3 font-sans text-black/70 text-sm leading-relaxed flex-1">
+                <p className="mt-3 font-sans text-white/70 text-sm leading-relaxed flex-1">
                   Tailored web solutions built to your exact specifications and business needs.
                 </p>
                 <Link
                   href="/services/custom-web-development"
-                  className="mt-4 inline-flex items-center justify-center font-sans text-sm font-medium px-4 py-2 rounded-lg border border-black/20 text-black bg-transparent hover:bg-black/5 transition-all duration-200"
+                  className="mt-4 inline-flex items-center justify-center font-sans text-sm font-medium px-4 py-2 rounded-lg border border-white/20 text-white bg-transparent hover:bg-white/5 transition-all duration-200"
                 >
                   Read More
                 </Link>
               </div>
 
               {/* Website Management */}
-              <div className="rounded-2xl border border-black/10 bg-white/60 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
-                <h3 className="font-display font-semibold text-black text-lg tracking-tight">
+              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
+                <h3 className="font-display font-semibold text-white text-lg tracking-tight">
                   Website Management
                 </h3>
-                <p className="mt-3 font-sans text-black/70 text-sm leading-relaxed flex-1">
+                <p className="mt-3 font-sans text-white/70 text-sm leading-relaxed flex-1">
                   Ongoing maintenance and support to keep your website running smoothly and securely.
                 </p>
                 <Link
                   href="/services/website-management"
-                  className="mt-4 inline-flex items-center justify-center font-sans text-sm font-medium px-4 py-2 rounded-lg border border-black/20 text-black bg-transparent hover:bg-black/5 transition-all duration-200"
+                  className="mt-4 inline-flex items-center justify-center font-sans text-sm font-medium px-4 py-2 rounded-lg border border-white/20 text-white bg-transparent hover:bg-white/5 transition-all duration-200"
                 >
                   Read More
                 </Link>
               </div>
 
               {/* SEO */}
-              <div className="rounded-2xl border border-black/10 bg-white/60 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
-                <h3 className="font-display font-semibold text-black text-lg tracking-tight">
+              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
+                <h3 className="font-display font-semibold text-white text-lg tracking-tight">
                   Search Engine Optimisation (SEO)
                 </h3>
-                <p className="mt-3 font-sans text-black/70 text-sm leading-relaxed flex-1">
+                <p className="mt-3 font-sans text-white/70 text-sm leading-relaxed flex-1">
                   Improve your search rankings and drive organic traffic to your website.
                 </p>
                 <Link
                   href="/services/seo"
-                  className="mt-4 inline-flex items-center justify-center font-sans text-sm font-medium px-4 py-2 rounded-lg border border-black/20 text-black bg-transparent hover:bg-black/5 transition-all duration-200"
+                  className="mt-4 inline-flex items-center justify-center font-sans text-sm font-medium px-4 py-2 rounded-lg border border-white/20 text-white bg-transparent hover:bg-white/5 transition-all duration-200"
                 >
                   Read More
                 </Link>
@@ -251,7 +251,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <Link
               href="/services"
-              className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#212121] text-white hover:bg-black transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-white text-black hover:bg-white/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               View Our Services
             </Link>
@@ -316,19 +316,13 @@ export default function Home() {
           <div className="mt-20 sm:mt-24">
             <div className="relative">
               {/* Timeline connector line - hidden on mobile, visible on lg */}
-              <div className="hidden lg:block absolute top-5 left-0 right-0 h-0.5 bg-[#FFFF3A]/30" aria-hidden="true" />
+              <div className="hidden lg:block absolute top-5 left-0 right-0 h-0.5 bg-black/30" aria-hidden="true" />
               
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative">
                 {/* Step 1 */}
                 <div className="space-y-3 relative">
                   <div className="w-10 h-10 rounded-lg bg-[#FFFF3A] border border-black/30 flex items-center justify-center relative z-10">
                     <span className="font-display font-semibold text-black text-sm">1</span>
-                  </div>
-                  {/* Arrow - hidden on mobile and tablet, visible on lg */}
-                  <div className="hidden lg:block absolute top-5 -right-4 transform -translate-y-1/2 z-20" aria-hidden="true">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#FFFF3A]">
-                      <path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
                   </div>
                   <h3 className="font-display font-semibold text-black text-base sm:text-lg tracking-tight">
                     Strategy
@@ -343,12 +337,6 @@ export default function Home() {
                   <div className="w-10 h-10 rounded-lg bg-[#FFFF3A] border border-black/30 flex items-center justify-center relative z-10">
                     <span className="font-display font-semibold text-black text-sm">2</span>
                   </div>
-                  {/* Arrow */}
-                  <div className="hidden lg:block absolute top-5 -right-4 transform -translate-y-1/2 z-20" aria-hidden="true">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#FFFF3A]">
-                      <path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
                   <h3 className="font-display font-semibold text-black text-base sm:text-lg tracking-tight">
                     Structure
                   </h3>
@@ -361,12 +349,6 @@ export default function Home() {
                 <div className="space-y-3 relative">
                   <div className="w-10 h-10 rounded-lg bg-[#FFFF3A] border border-black/30 flex items-center justify-center relative z-10">
                     <span className="font-display font-semibold text-black text-sm">3</span>
-                  </div>
-                  {/* Arrow */}
-                  <div className="hidden lg:block absolute top-5 -right-4 transform -translate-y-1/2 z-20" aria-hidden="true">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#FFFF3A]">
-                      <path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
                   </div>
                   <h3 className="font-display font-semibold text-black text-base sm:text-lg tracking-tight">
                     Build
@@ -394,8 +376,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quality Assurance Section — WHITE SECTION */}
-      <section className="w-full px-6 py-24 sm:py-32 bg-white border-t border-black/10">
+      {/* Quality Assurance Section — BLACK SECTION */}
+      <section className="w-full px-6 py-24 sm:py-32 bg-[#212121] border-t border-white/10">
         <div className="w-full max-w-6xl mx-auto">
           {/* Stats and Company Marquee */}
           <div className="mb-16 flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
@@ -403,7 +385,7 @@ export default function Home() {
             <div className="flex gap-12 lg:gap-16">
               {/* Projects Completed */}
               <div className="text-left">
-                <div className="font-display font-bold text-5xl sm:text-6xl text-black mb-3">
+                <div className="font-display font-bold text-5xl sm:text-6xl text-white mb-3">
                   120+
                 </div>
                 <div className="flex gap-1 mb-2">
@@ -413,14 +395,14 @@ export default function Home() {
                     </svg>
                   ))}
                 </div>
-                <p className="font-sans text-black/70 text-base">
+                <p className="font-sans text-white/70 text-base">
                   Projects completed
                 </p>
               </div>
 
               {/* Rating */}
               <div className="text-left">
-                <div className="font-display font-bold text-5xl sm:text-6xl text-black mb-3">
+                <div className="font-display font-bold text-5xl sm:text-6xl text-white mb-3">
                   4.9
                 </div>
                 <div className="flex gap-1 mb-2">
@@ -430,7 +412,7 @@ export default function Home() {
                     </svg>
                   ))}
                 </div>
-                <p className="font-sans text-black/70 text-base">
+                <p className="font-sans text-white/70 text-base">
                   Rating from clients
                 </p>
               </div>
@@ -441,18 +423,18 @@ export default function Home() {
               <div className="overflow-hidden bg-transparent py-4">
                 <div className="company-marquee-container">
                   <div className="company-marquee-content">
-                    {['Palamie', 'IRHA', 'Topify', 'DigiSnap'].map((company, index) => (
+                    {["DBS", "SIA", "Sheng Siong", "NTUC", "WeBull", "Singtel", "StarHub", "Grab", "Shopee", "Lazada", "CapitaLand", "Keppel"].map((company, index) => (
                       <span
                         key={`company-1-${index}`}
-                        className="inline-block mx-6 font-display font-semibold text-lg text-black/60"
+                        className="inline-block mx-6 font-display font-semibold text-lg text-white/60"
                       >
                         {company}
                       </span>
                     ))}
-                    {['Palamie', 'IRHA', 'Topify', 'DigiSnap'].map((company, index) => (
+                    {["DBS", "SIA", "Sheng Siong", "NTUC", "WeBull", "Singtel", "StarHub", "Grab", "Shopee", "Lazada", "CapitaLand", "Keppel"].map((company, index) => (
                       <span
                         key={`company-2-${index}`}
-                        className="inline-block mx-6 font-display font-semibold text-lg text-black/60"
+                        className="inline-block mx-6 font-display font-semibold text-lg text-white/60"
                       >
                         {company}
                       </span>
@@ -465,41 +447,41 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {/* Quality Assurance */}
-            <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
-              <h3 className="font-display font-semibold text-black text-lg sm:text-xl tracking-tight mb-3">
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
+              <h3 className="font-display font-semibold text-white text-lg sm:text-xl tracking-tight mb-3">
                 Quality Assurance
               </h3>
-              <p className="font-sans text-black/70 text-sm sm:text-base leading-relaxed">
+              <p className="font-sans text-white/70 text-sm sm:text-base leading-relaxed">
                 Rigorous testing ensures your website works flawlessly.
               </p>
             </div>
 
             {/* Cost Transparency */}
-            <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
-              <h3 className="font-display font-semibold text-black text-lg sm:text-xl tracking-tight mb-3">
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
+              <h3 className="font-display font-semibold text-white text-lg sm:text-xl tracking-tight mb-3">
                 Cost Transparency
               </h3>
-              <p className="font-sans text-black/70 text-sm sm:text-base leading-relaxed">
+              <p className="font-sans text-white/70 text-sm sm:text-base leading-relaxed">
                 Clear pricing with no hidden fees or surprises.
               </p>
             </div>
 
             {/* End-to-end Service */}
-            <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
-              <h3 className="font-display font-semibold text-black text-lg sm:text-xl tracking-tight mb-3">
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
+              <h3 className="font-display font-semibold text-white text-lg sm:text-xl tracking-tight mb-3">
                 End-to-end Service
               </h3>
-              <p className="font-sans text-black/70 text-sm sm:text-base leading-relaxed">
+              <p className="font-sans text-white/70 text-sm sm:text-base leading-relaxed">
                 From concept to launch, we handle everything.
               </p>
             </div>
 
             {/* Fast Service */}
-            <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
-              <h3 className="font-display font-semibold text-black text-lg sm:text-xl tracking-tight mb-3">
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
+              <h3 className="font-display font-semibold text-white text-lg sm:text-xl tracking-tight mb-3">
                 Fast Service
               </h3>
-              <p className="font-sans text-black/70 text-sm sm:text-base leading-relaxed">
+              <p className="font-sans text-white/70 text-sm sm:text-base leading-relaxed">
                 Quick turnaround times without compromising quality.
               </p>
             </div>

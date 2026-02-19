@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Navbar, { NAVBAR_HEIGHT_CLASS, ColorScheme } from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HeroWaveServices from "@/components/HeroWaveServices";
+import HeroWave from "@/components/HeroWave";
 
 const heroCards = [
   {
@@ -153,6 +153,21 @@ export default function Services() {
           {/* Spacer for fixed navbar */}
           <div className={NAVBAR_HEIGHT_CLASS} aria-hidden="true" />
         
+          {/* Collaboration text */}
+          <div className="w-full text-center pt-4">
+            <p className="font-sans text-sm text-black/60">
+              In collaboration with{" "}
+              <a
+                href="https://www.retroxpect.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black font-medium hover:text-[#FFFF3A] transition-colors duration-200"
+              >
+                retroXpect
+              </a>
+            </p>
+          </div>
+        
           {/* Content area — fills remaining space and centers higher */}
           <div className="flex-1 flex items-center justify-center pb-32">
             <div className="w-full max-w-6xl mx-auto">
@@ -167,7 +182,7 @@ export default function Services() {
           </div>
         
           {/* Animated Wave */}
-          <HeroWaveServices />
+          <HeroWave />
         </section>
 
         {/* What Development Includes - Cards Section */}
@@ -200,157 +215,217 @@ export default function Services() {
           </div>
         </section>
 
-        {/* Types of Projects We Take Section — WHITE SECTION */}
-        <section className="w-full px-6 py-24 sm:py-32 bg-white">
+        {/* Types of Projects We Take Section — BLACK SECTION */}
+        <section className="w-full px-6 py-24 sm:py-32 bg-[#212121]">
           <div className="w-full max-w-6xl mx-auto">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-3xl mx-auto mb-16">
+            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-3xl mx-auto mb-16">
               Types of Projects We Take
             </h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {/* E-commerce */}
-              <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 shadow-lg">
-                <h3 className="font-display font-semibold text-black text-xl tracking-tight mb-4">
-                  E-commerce
-                </h3>
-                <ul className="space-y-2.5 font-sans text-black/85 text-sm leading-relaxed">
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>WooCommerce/WordPress stores</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Shopify custom themes</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Custom Next.js e-commerce</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Payment gateway integration</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Product catalog management</span>
-                  </li>
-                </ul>
+              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-lg overflow-hidden">
+                {/* Image Placeholder */}
+                <div className="aspect-video bg-gradient-to-br from-[#FFFF3A]/30 to-white/5 flex items-center justify-center border-b border-white/10">
+                  <span className="font-sans text-white/40 text-sm">E-commerce Image</span>
+                </div>
+                <div className="p-8">
+                  <h3 className="font-display font-semibold text-white text-xl tracking-tight mb-4">
+                    E-commerce
+                  </h3>
+                  <ul className="space-y-2.5 font-sans text-white/85 text-sm leading-relaxed mb-6">
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>WooCommerce/WordPress stores</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Shopify custom themes</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Custom Next.js e-commerce</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Payment gateway integration</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Product catalog management</span>
+                    </li>
+                  </ul>
+                  <Link
+                    href="/services/e-commerce"
+                    className="inline-flex items-center justify-center font-sans text-sm font-medium px-6 py-3 rounded-lg bg-white text-black hover:bg-white/90 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                  >
+                    Read More
+                  </Link>
+                </div>
               </div>
 
               {/* Business Web Design */}
-              <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 shadow-lg">
-                <h3 className="font-display font-semibold text-black text-xl tracking-tight mb-4">
-                  Business Web Design
-                </h3>
-                <ul className="space-y-2.5 font-sans text-black/85 text-sm leading-relaxed">
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Corporate websites</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Landing pages</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Portfolio sites</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Service-based business sites</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Responsive design implementation</span>
-                  </li>
-                </ul>
+              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-lg overflow-hidden">
+                {/* Image Placeholder */}
+                <div className="aspect-video bg-gradient-to-br from-[#FFFF3A]/30 to-white/5 flex items-center justify-center border-b border-white/10">
+                  <span className="font-sans text-white/40 text-sm">Business Web Design Image</span>
+                </div>
+                <div className="p-8">
+                  <h3 className="font-display font-semibold text-white text-xl tracking-tight mb-4">
+                    Business Web Design
+                  </h3>
+                  <ul className="space-y-2.5 font-sans text-white/85 text-sm leading-relaxed mb-6">
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Corporate websites</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Landing pages</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Portfolio sites</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Service-based business sites</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Responsive design implementation</span>
+                    </li>
+                  </ul>
+                  <Link
+                    href="/services/business-web-design"
+                    className="inline-flex items-center justify-center font-sans text-sm font-medium px-6 py-3 rounded-lg bg-white text-black hover:bg-white/90 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                  >
+                    Read More
+                  </Link>
+                </div>
               </div>
 
               {/* Custom Web Development */}
-              <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 shadow-lg">
-                <h3 className="font-display font-semibold text-black text-xl tracking-tight mb-4">
-                  Custom Web Development
-                </h3>
-                <ul className="space-y-2.5 font-sans text-black/85 text-sm leading-relaxed">
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Hand-coded HTML/CSS/JS</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>React/Next.js applications</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Custom CMS integration</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>API development & integration</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Progressive Web Apps (PWA)</span>
-                  </li>
-                </ul>
+              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-lg overflow-hidden">
+                {/* Image Placeholder */}
+                <div className="aspect-video bg-gradient-to-br from-[#FFFF3A]/30 to-white/5 flex items-center justify-center border-b border-white/10">
+                  <span className="font-sans text-white/40 text-sm">Custom Development Image</span>
+                </div>
+                <div className="p-8">
+                  <h3 className="font-display font-semibold text-white text-xl tracking-tight mb-4">
+                    Custom Web Development
+                  </h3>
+                  <ul className="space-y-2.5 font-sans text-white/85 text-sm leading-relaxed mb-6">
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Hand-coded HTML/CSS/JS</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>React/Next.js applications</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Custom CMS integration</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>API development & integration</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Progressive Web Apps (PWA)</span>
+                    </li>
+                  </ul>
+                  <Link
+                    href="/services/custom-web-development"
+                    className="inline-flex items-center justify-center font-sans text-sm font-medium px-6 py-3 rounded-lg bg-white text-black hover:bg-white/90 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                  >
+                    Read More
+                  </Link>
+                </div>
               </div>
 
               {/* Website Management */}
-              <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 shadow-lg">
-                <h3 className="font-display font-semibold text-black text-xl tracking-tight mb-4">
-                  Website Management
-                </h3>
-                <ul className="space-y-2.5 font-sans text-black/85 text-sm leading-relaxed">
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Regular content updates</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Security monitoring & patches</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Performance optimization</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Backup & recovery services</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Technical support</span>
-                  </li>
-                </ul>
+              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-lg overflow-hidden">
+                {/* Image Placeholder */}
+                <div className="aspect-video bg-gradient-to-br from-[#FFFF3A]/30 to-white/5 flex items-center justify-center border-b border-white/10">
+                  <span className="font-sans text-white/40 text-sm">Website Management Image</span>
+                </div>
+                <div className="p-8">
+                  <h3 className="font-display font-semibold text-white text-xl tracking-tight mb-4">
+                    Website Management
+                  </h3>
+                  <ul className="space-y-2.5 font-sans text-white/85 text-sm leading-relaxed mb-6">
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Regular content updates</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Security monitoring & patches</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Performance optimization</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Backup & recovery services</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Technical support</span>
+                    </li>
+                  </ul>
+                  <Link
+                    href="/services/website-management"
+                    className="inline-flex items-center justify-center font-sans text-sm font-medium px-6 py-3 rounded-lg bg-white text-black hover:bg-white/90 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                  >
+                    Read More
+                  </Link>
+                </div>
               </div>
 
               {/* SEO */}
-              <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 shadow-lg">
-                <h3 className="font-display font-semibold text-black text-xl tracking-tight mb-4">
-                  Search Engine Optimisation (SEO)
-                </h3>
-                <ul className="space-y-2.5 font-sans text-black/85 text-sm leading-relaxed">
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>On-page SEO optimization</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Technical SEO audits</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Keyword research & strategy</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Meta tags & schema markup</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>Google Analytics setup</span>
-                  </li>
-                </ul>
+              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-lg overflow-hidden">
+                {/* Image Placeholder */}
+                <div className="aspect-video bg-gradient-to-br from-[#FFFF3A]/30 to-white/5 flex items-center justify-center border-b border-white/10">
+                  <span className="font-sans text-white/40 text-sm">SEO Image</span>
+                </div>
+                <div className="p-8">
+                  <h3 className="font-display font-semibold text-white text-xl tracking-tight mb-4">
+                    Search Engine Optimisation (SEO)
+                  </h3>
+                  <ul className="space-y-2.5 font-sans text-white/85 text-sm leading-relaxed mb-6">
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>On-page SEO optimization</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Technical SEO audits</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Keyword research & strategy</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Meta tags & schema markup</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span>Google Analytics setup</span>
+                    </li>
+                  </ul>
+                  <Link
+                    href="/services/seo"
+                    className="inline-flex items-center justify-center font-sans text-sm font-medium px-6 py-3 rounded-lg bg-white text-black hover:bg-white/90 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                  >
+                    Read More
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -402,10 +477,10 @@ export default function Services() {
           </div>
         </section>
 
-        {/* What Clients Need to Provide Section — WHITE SECTION */}
-        <section className="w-full px-6 py-24 sm:py-32 bg-white">
+        {/* What Clients Need to Provide Section — BLACK SECTION */}
+        <section className="w-full px-6 py-24 sm:py-32 bg-[#212121]">
           <div className="w-full max-w-6xl mx-auto">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-3xl mx-auto mb-6">
+            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-3xl mx-auto mb-6">
               What Clients Need to Provide
             </h2>
             
@@ -415,11 +490,11 @@ export default function Services() {
 
             <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
               {/* Required */}
-              <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 lg:p-10 shadow-lg">
-                <h3 className="font-display font-semibold text-black text-xl sm:text-2xl tracking-tight mb-6">
+              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 lg:p-10 shadow-lg">
+                <h3 className="font-display font-semibold text-white text-xl sm:text-2xl tracking-tight mb-6">
                   Required
                 </h3>
-                <ul className="space-y-4 font-sans text-black/85 text-[15px] sm:text-base leading-relaxed">
+                <ul className="space-y-4 font-sans text-white/85 text-[15px] sm:text-base leading-relaxed">
                   {requiredItems.map((item) => (
                     <li key={item} className="flex gap-3">
                       <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
@@ -430,14 +505,14 @@ export default function Services() {
               </div>
 
               {/* Nice to Have */}
-              <div className="rounded-2xl border border-black/10 bg-black/[0.02] backdrop-blur-sm p-8 lg:p-10 shadow-md">
-                <h3 className="font-display font-semibold text-black/70 text-xl sm:text-2xl tracking-tight mb-6">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm p-8 lg:p-10 shadow-md">
+                <h3 className="font-display font-semibold text-white/70 text-xl sm:text-2xl tracking-tight mb-6">
                   Nice to Have
                 </h3>
-                <ul className="space-y-4 font-sans text-black/65 text-[15px] sm:text-base leading-relaxed">
+                <ul className="space-y-4 font-sans text-white/65 text-[15px] sm:text-base leading-relaxed">
                   {niceToHaveItems.map((item) => (
                     <li key={item} className="flex gap-3">
-                      <span className="text-black/50 shrink-0 mt-0.5" aria-hidden>•</span>
+                      <span className="text-white/50 shrink-0 mt-0.5" aria-hidden>•</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -458,36 +533,42 @@ export default function Services() {
               {finishedBuildItems.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-black/20 bg-white/60 backdrop-blur-sm p-8 shadow-lg flex flex-col"
+                  className="rounded-2xl border border-black/20 bg-white/60 backdrop-blur-sm shadow-lg flex flex-col overflow-hidden"
                 >
-                  <h3 className="font-display font-semibold text-black text-lg tracking-tight mb-4">
-                    {item.title}
-                  </h3>
-                  <p className="font-sans text-black/75 text-sm leading-relaxed flex-1">
-                    {item.description}
-                  </p>
+                  {/* Image Placeholder */}
+                  <div className="aspect-square bg-gradient-to-br from-[#FFFF3A]/20 to-black/5 flex items-center justify-center border-b border-black/10">
+                    <span className="font-sans text-black/40 text-xs">Icon Placeholder</span>
+                  </div>
+                  <div className="p-8 flex-1 flex flex-col">
+                    <h3 className="font-display font-semibold text-black text-lg tracking-tight mb-4">
+                      {item.title}
+                    </h3>
+                    <p className="font-sans text-black/75 text-sm leading-relaxed flex-1">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Soft Call to Action Section — WHITE SECTION */}
-        <section className="w-full px-6 py-20 sm:py-28 bg-white border-t border-black/10">
+        {/* Soft Call to Action Section — BLACK SECTION */}
+        <section className="w-full px-6 py-20 sm:py-28 bg-[#212121] border-t border-white/10">
           <div className="w-full max-w-4xl mx-auto text-center">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
+            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
               If This Approach Aligns With You
             </h2>
             <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] leading-relaxed max-w-2xl mx-auto">
               Let's start a conversation
             </p>
-            <p className="mt-4 font-sans text-base sm:text-lg text-black/70 leading-relaxed max-w-2xl mx-auto">
+            <p className="mt-4 font-sans text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
               This page explains how we work. If you're looking for a development partner who values clarity, quality, and collaboration, reach out.
             </p>
             <div className="mt-10">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#212121] text-white hover:bg-black transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#212121] focus:ring-offset-2"
+                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-white text-black hover:bg-white/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
               >
                 Start a Conversation
               </Link>

@@ -94,15 +94,31 @@ export default async function Blog() {
   return (
     <>
       <Navbar colorScheme={blogColorScheme} />
-      <main className="bg-white text-black">
+      <main className="bg-[#212121] text-white">
         {/* Hero Section */}
-        <section className="w-full px-6 pt-32 sm:pt-40 pb-12 sm:pb-16">
+        <section className="w-full px-6 pt-32 sm:pt-40 pb-12 sm:pb-16 bg-[#212121]">
           <div className={NAVBAR_HEIGHT_CLASS} aria-hidden="true" />
+          
           <div className="w-full max-w-6xl mx-auto">
-            <h1 className="font-display font-bold text-black text-4xl sm:text-5xl md:text-6xl leading-[1.15] tracking-tight mb-6">
+            {/* Collaboration text */}
+            <div className="mb-8">
+              <p className="font-sans text-sm text-white/60">
+                In collaboration with{" "}
+                <a
+                  href="https://www.retroxpect.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white font-medium hover:text-[#FFFF3A] transition-colors duration-200"
+                >
+                  retroXpect
+                </a>
+              </p>
+            </div>
+            
+            <h1 className="font-display font-bold text-white text-4xl sm:text-5xl md:text-6xl leading-[1.15] tracking-tight mb-6 animate-fadeInUp">
               Blog
             </h1>
-            <p className="font-sans text-base sm:text-lg text-black/75 leading-relaxed max-w-2xl">
+            <p className="font-sans text-base sm:text-lg text-white/75 leading-relaxed max-w-2xl animate-fadeInUp animation-delay-200">
               Read about our latest announcements
             </p>
           </div>
@@ -115,14 +131,14 @@ export default async function Blog() {
 
         {/* Latest Post Section */}
         {latestPost ? (
-          <section className="w-full px-6 py-16 sm:py-20">
+          <section className="w-full px-6 py-16 sm:py-20 bg-[#212121]">
             <div className="w-full max-w-6xl mx-auto">
               <Link
                 href={`/blog/${latestPost.slug.current}`}
-                className="group grid md:grid-cols-2 gap-8 lg:gap-12 items-center"
+                className="group grid md:grid-cols-2 gap-8 lg:gap-12 items-center animate-fadeInUp"
               >
                 {/* Image - Left Side */}
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-[#FFFF3A]/20 to-black/5">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-[#FFFF3A]/20 to-black/5 animate-fadeInUp animation-delay-200">
                   {latestPost.image ? (
                     <Image
                       src={urlFor(latestPost.image).width(800).height(600).url()}
@@ -139,11 +155,11 @@ export default async function Blog() {
 
                 {/* Content - Right Side */}
                 <div>
-                  <h2 className="font-display font-bold text-black text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight mb-4 group-hover:text-black/80 transition-colors">
+                  <h2 className="font-display font-bold text-white text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight mb-8 animate-fadeInUp">
                     {latestPost.title}
                   </h2>
                   
-                  <p className="font-sans text-black/75 text-base sm:text-lg leading-relaxed mb-6 line-clamp-3">
+                  <p className="font-sans text-white/75 text-base sm:text-lg leading-relaxed mb-6 line-clamp-3">
                     {getExcerpt(latestPost)}
                   </p>
 
@@ -184,21 +200,21 @@ export default async function Blog() {
         )}
 
         {/* CTA Section — WHITE SECTION */}
-        <section className="w-full px-6 py-20 sm:py-28 bg-white border-t border-black/10">
+        <section className="w-full px-6 py-20 sm:py-28 bg-[#212121] border-t border-white/10">
           <div className="w-full max-w-4xl mx-auto text-center">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
+            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
               Want to Work With Us?
             </h2>
             <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] leading-relaxed max-w-2xl mx-auto">
               Let's create something exceptional
             </p>
-            <p className="mt-4 font-sans text-base sm:text-lg text-black/70 leading-relaxed max-w-2xl mx-auto">
+            <p className="mt-4 font-sans text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
               Discuss your project and see how we can help bring your vision to life.
             </p>
             <div className="mt-10">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#212121] text-white hover:bg-black transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#212121] focus:ring-offset-2"
+                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-white text-black hover:bg-white/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
               >
                 Get in Touch
               </Link>

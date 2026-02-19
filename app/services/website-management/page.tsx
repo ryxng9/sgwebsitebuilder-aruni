@@ -20,12 +20,30 @@ const websiteManagementColorScheme: ColorScheme = {
 };
 
 const services = [
-  "Content Updates",
-  "Security Monitoring",
-  "Performance Optimization",
-  "Bug Fixes & Maintenance",
-  "Backup Management",
-  "Analytics & Reporting",
+  {
+    title: "Maintenance & Updates",
+    items: ["Content Updates", "Plugin & Theme Updates", "Bug Fixes & Patches"],
+    description: "Regular maintenance ensuring your website stays current, secure, and functioning optimally without disruptions.",
+    imagePosition: "left" as const,
+  },
+  {
+    title: "Security & Monitoring",
+    items: ["24/7 Uptime Monitoring", "Security Scans", "Malware Protection"],
+    description: "Proactive security measures and constant monitoring to protect your website from threats and ensure maximum uptime.",
+    imagePosition: "right" as const,
+  },
+  {
+    title: "Performance",
+    items: ["Speed Optimization", "Database Cleanup", "Caching Configuration"],
+    description: "Continuous performance tuning to ensure fast load times and smooth user experiences across all devices.",
+    imagePosition: "left" as const,
+  },
+  {
+    title: "Support & Reporting",
+    items: ["Priority Support", "Monthly Reports", "Analytics Tracking"],
+    description: "Dedicated support team and detailed monthly reports keeping you informed about your website's performance and health.",
+    imagePosition: "right" as const,
+  },
 ];
 
 const results = [
@@ -41,43 +59,77 @@ const results = [
     metric: "50+ sites",
     description: "Currently managed",
   },
+  {
+    metric: "90% reduction",
+    description: "Security incidents prevented",
+  },
+  {
+    metric: "40% faster",
+    description: "Average site speed improvement",
+  },
 ];
 
 export default function WebsiteManagementPage() {
   return (
     <>
       <Navbar colorScheme={websiteManagementColorScheme} />
-      <main className="bg-white text-black">
+      <main className="bg-[#212121] text-white">
         {/* Hero Section */}
-        <section className="w-full px-6 pt-32 sm:pt-40 pb-24 sm:pb-32">
+        <section className="w-full px-6 pt-32 sm:pt-40 pb-24 sm:pb-32 bg-[#212121]">
           <div className={NAVBAR_HEIGHT_CLASS} aria-hidden="true" />
           <div className="w-full max-w-4xl mx-auto">
-            <h1 className="font-display font-bold text-black text-4xl sm:text-5xl md:text-6xl leading-[1.15] tracking-tight mb-8 animate-fadeInUp">
+            <h1 className="font-display font-bold text-white text-4xl sm:text-5xl md:text-6xl leading-[1.15] tracking-tight mb-8 animate-fadeInUp">
               Website Management
             </h1>
             
-            <p className="font-sans text-base sm:text-lg text-black/85 leading-relaxed max-w-3xl animate-fadeInUp animation-delay-200">
+            <p className="font-sans text-base sm:text-lg text-white/85 leading-relaxed max-w-3xl animate-fadeInUp animation-delay-200">
               Keep your website running smoothly with our comprehensive management services. From regular updates to security monitoring, we handle the technical details so you can focus on your business.
             </p>
           </div>
         </section>
 
         {/* Services Section */}
-        <section className="w-full px-6 py-24 sm:py-32 bg-white/30">
+        <section className="w-full px-6 py-24 sm:py-32 bg-[#212121]">
           <div className="w-full max-w-6xl mx-auto">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight mb-12">
+            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight mb-16">
               What's Included
             </h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <div className="space-y-8">
               {services.map((service) => (
                 <div
-                  key={service}
-                  className="rounded-xl border border-black/10 bg-white/60 backdrop-blur-sm p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
+                  key={service.title}
+                  className={`rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm shadow-lg overflow-hidden flex flex-col ${service.imagePosition === 'left' ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
                 >
-                  <p className="font-sans text-black text-base sm:text-lg font-medium">
-                    {service}
-                  </p>
+                  {/* Image Section */}
+                  <div className="lg:w-1/2 bg-gradient-to-br from-[#FFFF3A]/20 to-white/5 p-12 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="inline-block p-8 rounded-2xl bg-white/10 backdrop-blur-sm shadow-lg">
+                        <div className="font-display font-bold text-white text-3xl mb-4">
+                          {service.title}
+                        </div>
+                        <div className="w-16 h-1 bg-[#FFFF3A] mx-auto"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Content Section */}
+                  <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+                    <h3 className="font-display font-semibold text-white text-2xl tracking-tight mb-6">
+                      {service.title}
+                    </h3>
+                    <ul className="space-y-3 mb-6">
+                      {service.items.map((item) => (
+                        <li key={item} className="flex gap-3">
+                          <span className="text-[#FFFF3A] shrink-0 mt-1" aria-hidden>•</span>
+                          <span className="font-sans text-white/85 text-base">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="font-sans text-white/75 text-sm leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -85,34 +137,34 @@ export default function WebsiteManagementPage() {
         </section>
 
         {/* Example Section */}
-        <section className="w-full px-6 py-24 sm:py-32">
+        <section className="w-full px-6 py-24 sm:py-32 bg-[#212121]">
           <div className="w-full max-w-6xl mx-auto">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-16">
+            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-16">
               Management in Action
             </h2>
 
-            <div className="rounded-2xl border border-black/20 bg-white/60 backdrop-blur-sm p-8 lg:p-12 shadow-lg">
+            <div className="rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm p-8 lg:p-12 shadow-lg">
               {/* Placeholder for dashboard preview */}
-              <div className="aspect-video rounded-lg bg-gradient-to-br from-[#FFFF3A]/20 to-black/5 mb-8 flex items-center justify-center border border-black/10">
-                <span className="font-sans text-black/60 text-lg">Management Dashboard Preview</span>
+              <div className="aspect-video rounded-lg bg-gradient-to-br from-[#FFFF3A]/20 to-white/5 mb-8 flex items-center justify-center border border-white/10">
+                <span className="font-sans text-white/60 text-lg">Management Dashboard Preview</span>
               </div>
 
-              <h3 className="font-display font-semibold text-black text-xl sm:text-2xl tracking-tight mb-4">
+              <h3 className="font-display font-semibold text-white text-xl sm:text-2xl tracking-tight mb-4">
                 Enterprise Client Portfolio
               </h3>
               
-              <p className="font-sans text-black/85 text-base sm:text-lg leading-relaxed mb-6">
+              <p className="font-sans text-white/85 text-base sm:text-lg leading-relaxed mb-6">
                 We manage a portfolio of 50+ websites for various clients, ensuring 99.9% uptime, regular security updates, performance optimization, and content updates. Our proactive monitoring catches issues before they impact users, and our rapid response team resolves problems in under 2 hours on average.
               </p>
 
               <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 rounded-lg bg-[#FFFF3A]/20 text-black text-sm font-medium">
+                <span className="px-4 py-2 rounded-lg bg-[#FFFF3A]/20 text-white text-sm font-medium">
                   24/7 Monitoring
                 </span>
-                <span className="px-4 py-2 rounded-lg bg-[#FFFF3A]/20 text-black text-sm font-medium">
+                <span className="px-4 py-2 rounded-lg bg-[#FFFF3A]/20 text-white text-sm font-medium">
                   Monthly Reports
                 </span>
-                <span className="px-4 py-2 rounded-lg bg-[#FFFF3A]/20 text-black text-sm font-medium">
+                <span className="px-4 py-2 rounded-lg bg-[#FFFF3A]/20 text-white text-sm font-medium">
                   Priority Support
                 </span>
               </div>
@@ -121,22 +173,22 @@ export default function WebsiteManagementPage() {
         </section>
 
         {/* Results Section */}
-        <section className="w-full px-6 py-24 sm:py-32 bg-white/30">
+        <section className="w-full px-6 py-24 sm:py-32 bg-[#212121]">
           <div className="w-full max-w-6xl mx-auto">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-16">
+            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-16">
               Our Track Record
             </h2>
 
-            <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
               {results.map((result) => (
                 <div
                   key={result.metric}
-                  className="rounded-xl border border-black/15 bg-white/60 backdrop-blur-sm p-8 shadow-lg text-center"
+                  className="rounded-xl border border-white/15 bg-white/5 backdrop-blur-sm p-6 shadow-lg text-center"
                 >
-                  <div className="font-display font-bold text-[#FFFF3A] text-4xl sm:text-5xl mb-3">
+                  <div className="font-display font-bold text-[#FFFF3A] text-3xl sm:text-4xl mb-3">
                     {result.metric}
                   </div>
-                  <p className="font-sans text-black/75 text-base sm:text-lg leading-relaxed">
+                  <p className="font-sans text-white/75 text-sm leading-relaxed">
                     {result.description}
                   </p>
                 </div>
@@ -146,18 +198,18 @@ export default function WebsiteManagementPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full px-6 py-20 sm:py-28">
+        <section className="w-full px-6 py-20 sm:py-28 bg-[#212121]">
           <div className="w-full max-w-4xl mx-auto text-center">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
+            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
               Let Us Manage Your Website
             </h2>
-            <p className="mt-6 font-sans text-base sm:text-lg text-black/75 leading-relaxed max-w-2xl mx-auto">
+            <p className="mt-6 font-sans text-base sm:text-lg text-white/75 leading-relaxed max-w-2xl mx-auto">
               Focus on your business while we keep your website secure, fast, and up-to-date.
             </p>
             <div className="mt-10">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#212121] text-white hover:bg-black transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-white"
+                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-white text-black hover:bg-white/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-white"
               >
                 Get Started
               </Link>

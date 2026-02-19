@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Navbar, { NAVBAR_HEIGHT_CLASS, ColorScheme } from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HeroWavePricing from "@/components/HeroWavePricing";
+import HeroWave from "@/components/HeroWave";
 
 const pricingCards = [
   {
@@ -83,6 +83,21 @@ export default function Pricing() {
           {/* Spacer for fixed navbar */}
           <div className={NAVBAR_HEIGHT_CLASS} aria-hidden="true" />
         
+          {/* Collaboration text */}
+          <div className="w-full text-center pt-4">
+            <p className="font-sans text-sm text-black/60">
+              In collaboration with{" "}
+              <a
+                href="https://www.retroxpect.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black font-medium hover:text-[#FFFF3A] transition-colors duration-200"
+              >
+                retroXpect
+              </a>
+            </p>
+          </div>
+        
           {/* Content area — fills remaining space and centers higher */}
           <div className="flex-1 flex items-center justify-center pb-32">
             <div className="w-full max-w-4xl mx-auto text-center">
@@ -97,7 +112,7 @@ export default function Pricing() {
           </div>
         
           {/* Animated Wave */}
-          <HeroWavePricing />
+          <HeroWave />
         </section>
 
         {/* How Pricing Works Section */}
@@ -113,10 +128,10 @@ export default function Pricing() {
           </div>
         </section>
 
-        {/* Typical Project Ranges Section — WHITE SECTION */}
-        <section className="w-full px-6 py-24 sm:py-32 bg-white">
+        {/* Typical Project Ranges Section — BLACK SECTION */}
+        <section className="w-full px-6 py-24 sm:py-32 bg-[#212121]">
           <div className="w-full max-w-6xl mx-auto">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-8">
+            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-8">
               Typical Project Ranges
             </h2>
             <p className="font-sans text-base sm:text-lg text-[#FFFF3A] text-center max-w-2xl mx-auto leading-relaxed mb-16">
@@ -127,15 +142,15 @@ export default function Pricing() {
               {pricingCards.map((card) => (
                 <div
                   key={card.title}
-                  className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 lg:p-10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
+                  className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 lg:p-10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
                 >
-                  <h3 className="font-display font-semibold text-black text-xl sm:text-2xl tracking-tight mb-4">
+                  <h3 className="font-display font-semibold text-white text-xl sm:text-2xl tracking-tight mb-4">
                     {card.title}
                   </h3>
                   <div className="font-display font-bold text-[#FFFF3A] text-2xl sm:text-3xl mb-6">
                     {card.price}
                   </div>
-                  <p className="font-sans text-black/85 text-[15px] sm:text-base leading-relaxed">
+                  <p className="font-sans text-white/85 text-[15px] sm:text-base leading-relaxed">
                     {card.description}
                   </p>
                 </div>
@@ -144,17 +159,17 @@ export default function Pricing() {
           </div>
         </section>
 
-        {/* What Affects Cost Section — WHITE SECTION */}
-        <section className="w-full px-6 py-24 sm:py-32 bg-white">
+        {/* What Affects Cost Section — BLACK SECTION */}
+        <section className="w-full px-6 py-24 sm:py-32 bg-[#212121]">
           <div className="w-full max-w-4xl mx-auto">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-8">
+            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-8">
               What Affects Cost
             </h2>
             <p className="font-sans text-base sm:text-lg text-[#FFFF3A] text-center max-w-2xl mx-auto leading-relaxed mb-12">
               Several factors influence project pricing.
             </p>
 
-            <ul className="space-y-4 font-sans text-black/85 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+            <ul className="space-y-4 font-sans text-white/85 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
               {costFactors.map((factor) => (
                 <li key={factor} className="flex gap-3">
                   <span className="text-[#FFFF3A] shrink-0 mt-1" aria-hidden>•</span>
@@ -166,9 +181,9 @@ export default function Pricing() {
         </section>
 
         {/* What Happens After You Contact Us Section */}
-        <section className="w-full px-6 py-24 sm:py-32">
+        <section className="w-full px-6 py-24 sm:py-32 bg-[#212121]">
           <div className="w-full max-w-5xl mx-auto">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-16">
+            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-16">
               What Happens After You Reach Out
             </h2>
 
@@ -176,19 +191,19 @@ export default function Pricing() {
               {processSteps.map((step) => (
                 <div
                   key={step.number}
-                  className="rounded-xl border border-black/15 bg-white/60 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
+                  className="rounded-xl border border-white/15 bg-white/5 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-[#FFFF3A]/20 border border-[#FFFF3A]/30 flex items-center justify-center shrink-0">
-                      <span className="font-display font-semibold text-black text-lg">
+                      <span className="font-display font-semibold text-white text-lg">
                         {step.number}
                       </span>
                     </div>
                     <div>
-                      <h3 className="font-display font-semibold text-black text-lg sm:text-xl tracking-tight mb-2">
+                      <h3 className="font-display font-semibold text-white text-lg sm:text-xl tracking-tight mb-2">
                         {step.title}
                       </h3>
-                      <p className="font-sans text-black/75 text-[15px] sm:text-base leading-relaxed">
+                      <p className="font-sans text-white/75 text-[15px] sm:text-base leading-relaxed">
                         {step.description}
                       </p>
                     </div>

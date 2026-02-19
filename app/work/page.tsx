@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Navbar, { NAVBAR_HEIGHT_CLASS, ColorScheme } from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HeroWavePricing from "@/components/HeroWavePricing";
+import HeroWave from "@/components/HeroWave";
 import ProjectsGrid from "@/components/ProjectsGrid";
 import { client } from "@/sanity/lib/client";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
@@ -65,7 +65,7 @@ export default async function Work() {
   return (
     <>
       <Navbar colorScheme={workColorScheme} />
-      <main className="bg-white text-black">
+      <main className="bg-[#212121] text-white">
         {/* Hero Section */}
         <section
           className="h-screen flex flex-col px-6 relative overflow-hidden"
@@ -74,21 +74,36 @@ export default async function Work() {
           {/* Spacer for fixed navbar */}
           <div className={NAVBAR_HEIGHT_CLASS} aria-hidden="true" />
         
+          {/* Collaboration text */}
+          <div className="w-full text-center pt-4">
+            <p className="font-sans text-sm text-black/60">
+              In collaboration with{" "}
+              <a
+                href="https://www.retroxpect.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black font-medium hover:text-[#FFFF3A] transition-colors duration-200"
+              >
+                retroXpect
+              </a>
+            </p>
+          </div>
+        
           {/* Content area — fills remaining space and centers higher */}
           <div className="flex-1 flex items-center justify-center pb-32">
             <div className="w-full max-w-4xl mx-auto text-center">
-              <h1 className="font-display font-bold text-black text-4xl sm:text-5xl md:text-6xl leading-[1.15] tracking-tight animate-fadeInUp">
+              <h1 className="font-display font-bold text-white text-4xl sm:text-5xl md:text-6xl leading-[1.15] tracking-tight animate-fadeInUp">
                 Our Projects
               </h1>
               
-              <p className="mt-8 font-sans text-base sm:text-lg text-black/75 max-w-2xl mx-auto leading-relaxed animate-fadeInUp animation-delay-200">
+              <p className="mt-8 font-sans text-base sm:text-lg text-white/75 max-w-2xl mx-auto leading-relaxed animate-fadeInUp animation-delay-200">
                 A showcase of the work we've delivered for our clients. From e-commerce platforms to custom web applications.
               </p>
             </div>
           </div>
         
           {/* Animated Wave */}
-          <HeroWavePricing />
+          <HeroWave />
         </section>
 
         {/* Projects Grid Section */}
@@ -110,22 +125,22 @@ export default async function Work() {
           </div>
         </section>
 
-        {/* CTA Section — WHITE SECTION */}
-        <section className="w-full px-6 py-20 sm:py-28 bg-white border-t border-black/10">
+        {/* CTA Section — BLACK SECTION */}
+        <section className="w-full px-6 py-20 sm:py-28 bg-black">
           <div className="w-full max-w-4xl mx-auto text-center">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
+            <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
               Ready to Start Your Project?
             </h2>
             <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] leading-relaxed max-w-2xl mx-auto">
               Let's create something exceptional
             </p>
-            <p className="mt-4 font-sans text-base sm:text-lg text-black/70 leading-relaxed max-w-2xl mx-auto">
+            <p className="mt-4 font-sans text-base sm:text-lg text-white/75 leading-relaxed max-w-2xl mx-auto">
               Discuss your project and see how we can help bring your vision to life.
             </p>
             <div className="mt-10">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#212121] text-white hover:bg-black transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#212121] focus:ring-offset-2"
+                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-white text-black hover:bg-white/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
               >
                 Get in Touch
               </Link>
