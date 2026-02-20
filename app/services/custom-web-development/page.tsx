@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Navbar, { NAVBAR_HEIGHT_CLASS, ColorScheme } from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Zap, Shield, Users, TrendingUp, Clock } from "lucide-react";
+import Image from "next/image";
 
 const customWebDevColorScheme: ColorScheme = {
   initial: {
@@ -25,45 +27,54 @@ const technologies = [
     items: ["Next.js", "React", "TypeScript"],
     description: "Modern, type-safe frontend frameworks that deliver exceptional user experiences with maintainable, scalable code.",
     imagePosition: "left" as const,
+    image: "/images/services/custom-web-development/nextjs.svg",
   },
   {
     title: "Backend & APIs",
     items: ["Node.js", "Express", "RESTful & GraphQL APIs"],
     description: "Robust server-side architecture with flexible API design for seamless data flow and third-party integrations.",
     imagePosition: "right" as const,
+    image: "/images/services/custom-web-development/nodejs.svg",
   },
   {
     title: "Database Solutions",
     items: ["PostgreSQL", "MongoDB", "Redis Caching"],
     description: "Reliable data storage solutions optimized for performance, scalability, and data integrity across all use cases.",
     imagePosition: "left" as const,
+    image: "/images/services/custom-web-development/postgresql.png",
   },
   {
     title: "Infrastructure",
     items: ["AWS/Vercel Deployment", "CI/CD Pipelines", "Monitoring & Analytics"],
     description: "Enterprise-grade infrastructure with automated deployments, real-time monitoring, and 99.9% uptime guarantees.",
     imagePosition: "right" as const,
+    image: "/images/services/custom-web-development/vercel.svg",
   },
 ];
 
 const results = [
   {
+    icon: Zap,
     metric: "60%",
     description: "Faster development",
   },
   {
+    icon: Shield,
     metric: "99.9%",
     description: "Uptime reliability",
   },
   {
+    icon: Users,
     metric: "100K+",
     description: "Daily users",
   },
   {
+    icon: TrendingUp,
     metric: "+200%",
     description: "Workflow efficiency",
   },
   {
+    icon: Clock,
     metric: "50%",
     description: "Less manual work",
   },
@@ -118,13 +129,13 @@ export default function CustomWebDevelopmentPage() {
                 >
                   {/* Image Section */}
                   <div className="lg:w-1/2 bg-gradient-to-br from-[#FFFF3A]/20 to-white/5 p-12 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="inline-block p-8 rounded-2xl bg-white/10 backdrop-blur-sm shadow-lg">
-                        <div className="font-display font-bold text-white text-3xl mb-4">
-                          {tech.title}
-                        </div>
-                        <div className="w-16 h-1 bg-[#FFFF3A] mx-auto"></div>
-                      </div>
+                    <div className="relative w-64 h-64">
+                      <Image
+                        src={tech.image}
+                        alt={tech.title}
+                        fill
+                        className="object-contain"
+                      />
                     </div>
                   </div>
 
@@ -198,19 +209,23 @@ export default function CustomWebDevelopmentPage() {
             </h2>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
-              {results.map((result) => (
-                <div
-                  key={result.metric}
-                  className="rounded-xl border border-white/15 bg-white/5 backdrop-blur-sm p-6 shadow-lg text-center flex flex-col justify-between min-h-[140px]"
-                >
-                  <div className="font-display font-bold text-[#FFFF3A] text-3xl sm:text-4xl">
-                    {result.metric}
+              {results.map((result) => {
+                const Icon = result.icon;
+                return (
+                  <div
+                    key={result.metric}
+                    className="rounded-xl border border-white/15 bg-white/5 backdrop-blur-sm p-6 shadow-lg text-center flex flex-col items-center gap-4 min-h-[180px]"
+                  >
+                    <Icon className="w-10 h-10" style={{ color: '#FFFF3A' }} />
+                    <div className="font-display font-bold text-white text-3xl sm:text-4xl">
+                      {result.metric}
+                    </div>
+                    <p className="font-sans text-white text-sm leading-relaxed">
+                      {result.description}
+                    </p>
                   </div>
-                  <p className="font-sans text-white/75 text-sm leading-relaxed mt-auto pt-3">
-                    {result.description}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

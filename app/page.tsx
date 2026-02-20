@@ -3,6 +3,8 @@ import Navbar, { NAVBAR_HEIGHT_CLASS } from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroWave from "@/components/HeroWave";
 import EmojiMarquee from "@/components/EmojiMarquee";
+import { ShoppingCart, BriefcaseBusiness, FolderCode, Wrench, Search } from "lucide-react";
+import Image from "next/image";
 
 const whoWeWorkBestWith = [
   "Teams using their website to generate leads or sales",
@@ -26,6 +28,16 @@ export default function Home() {
           className="h-screen flex flex-col px-6 relative overflow-hidden"
           aria-label="Hero"
         >
+        {/* Grain Background Image */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <Image
+            src="/images/homepage/grain-background.jpg"
+            alt=""
+            fill
+            className="object-cover opacity-[0.08]"
+            priority
+          />
+        </div>
         {/* Spacer for fixed navbar */}
         <div className={NAVBAR_HEIGHT_CLASS} aria-hidden="true" />
         
@@ -45,7 +57,7 @@ export default function Home() {
         </div>
         
         {/* Content area — fills remaining space and centers */}
-        <div className="flex-1 flex items-center justify-center">
+        <div className="flex-1 flex items-center justify-center relative z-10">
           <div className="w-full max-w-6xl mx-auto">
             <h1 className="font-display font-bold text-black text-4xl sm:text-5xl md:text-6xl leading-[1.15] tracking-tight max-w-3xl animate-fadeInUp">
               Singapore's #1 Web Builder for Businesses.
@@ -126,7 +138,9 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
               {/* E-commerce */}
               <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
-                <div className="text-5xl mb-4 text-center">🛒</div>
+                <div className="mb-4 flex justify-center">
+                  <ShoppingCart className="w-12 h-12" style={{ color: '#FFFF3A' }} />
+                </div>
                 <h3 className="font-display font-semibold text-white text-lg tracking-tight">
                   E-commerce
                 </h3>
@@ -143,7 +157,9 @@ export default function Home() {
 
               {/* Business Web Design */}
               <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
-                <div className="text-5xl mb-4 text-center">💼</div>
+                <div className="mb-4 flex justify-center">
+                  <BriefcaseBusiness className="w-12 h-12" style={{ color: '#FFFF3A' }} />
+                </div>
                 <h3 className="font-display font-semibold text-white text-lg tracking-tight">
                   Business Web Design
                 </h3>
@@ -160,7 +176,9 @@ export default function Home() {
 
               {/* Custom Web Development */}
               <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
-                <div className="text-5xl mb-4 text-center">⚙️</div>
+                <div className="mb-4 flex justify-center">
+                  <FolderCode className="w-12 h-12" style={{ color: '#FFFF3A' }} />
+                </div>
                 <h3 className="font-display font-semibold text-white text-lg tracking-tight">
                   Custom Web Development
                 </h3>
@@ -177,7 +195,9 @@ export default function Home() {
 
               {/* Website Management */}
               <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
-                <div className="text-5xl mb-4 text-center">🛠️</div>
+                <div className="mb-4 flex justify-center">
+                  <Wrench className="w-12 h-12" style={{ color: '#FFFF3A' }} />
+                </div>
                 <h3 className="font-display font-semibold text-white text-lg tracking-tight">
                   Website Management
                 </h3>
@@ -194,7 +214,9 @@ export default function Home() {
 
               {/* SEO */}
               <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
-                <div className="text-5xl mb-4 text-center">🔍</div>
+                <div className="mb-4 flex justify-center">
+                  <Search className="w-12 h-12" style={{ color: '#FFFF3A' }} />
+                </div>
                 <h3 className="font-display font-semibold text-white text-lg tracking-tight">
                   Search Engine Optimisation (SEO)
                 </h3>
@@ -383,7 +405,11 @@ export default function Home() {
             </div>
 
             {/* Company Marquee - Stretched */}
-            <div className="flex-1 w-full lg:w-auto relative">
+            <div className="flex-1 w-full lg:w-auto relative overflow-hidden">
+              {/* Left Fade */}
+              <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#212121] to-transparent z-10 pointer-events-none"></div>
+              {/* Right Fade */}
+              <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#212121] to-transparent z-10 pointer-events-none"></div>
               <div className="overflow-hidden bg-transparent py-4">
                 <div className="company-marquee-container">
                   <div className="company-marquee-content">

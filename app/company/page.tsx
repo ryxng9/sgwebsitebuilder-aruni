@@ -2,6 +2,7 @@ import Link from "next/link";
 import Navbar, { NAVBAR_HEIGHT_CLASS, ColorScheme } from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroWave from "@/components/HeroWave";
+import { Rocket, Building2, Sparkles } from "lucide-react";
 
 const principles = [
   {
@@ -23,9 +24,21 @@ const principles = [
 ];
 
 const idealClients = [
-  "Founders with validated ideas",
-  "SMEs rebuilding or upgrading systems",
-  "Businesses that value clean execution",
+  {
+    icon: Rocket,
+    title: "Founders with validated ideas",
+    description: "Entrepreneurs who have proven their concept and are ready to build a scalable web presence that supports growth and customer acquisition.",
+  },
+  {
+    icon: Building2,
+    title: "SMEs rebuilding or upgrading systems",
+    description: "Established businesses looking to modernize their digital infrastructure with clean, maintainable solutions that improve efficiency and user experience.",
+  },
+  {
+    icon: Sparkles,
+    title: "Businesses that value clean execution",
+    description: "Organizations that prioritize quality code, proper architecture, and long-term maintainability over quick fixes and shortcuts.",
+  },
 ];
 
 const companyColorScheme: ColorScheme = {
@@ -141,25 +154,38 @@ export default function Company() {
 
         {/* Who We Work Best With Section */}
         <section className="w-full px-6 py-24 sm:py-32 bg-white/30">
-          <div className="w-full max-w-4xl mx-auto">
-            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight mb-12">
+          <div className="w-full max-w-5xl mx-auto">
+            <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-16">
               Who We Work Best With
             </h2>
 
-            <ul className="space-y-4 font-sans text-black/85 text-base sm:text-lg leading-relaxed">
-              <li className="flex gap-3 items-start">
-                <span className="text-2xl shrink-0">🚀</span>
-                <span>Founders with validated ideas</span>
-              </li>
-              <li className="flex gap-3 items-start">
-                <span className="text-2xl shrink-0">🏢</span>
-                <span>SMEs rebuilding or upgrading systems</span>
-              </li>
-              <li className="flex gap-3 items-start">
-                <span className="text-2xl shrink-0">✨</span>
-                <span>Businesses that value clean execution</span>
-              </li>
-            </ul>
+            <div className="rounded-2xl border border-black/20 bg-white/60 backdrop-blur-sm p-8 lg:p-12 shadow-lg">
+              <div className="space-y-8">
+                {idealClients.map((client, index) => {
+                  const Icon = client.icon;
+                  return (
+                    <div key={client.title}>
+                      <div className="flex gap-6 items-start">
+                        <div className="shrink-0">
+                          <Icon className="w-8 h-8 text-black" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="font-display font-semibold text-black text-xl sm:text-2xl tracking-tight mb-3">
+                            {client.title}
+                          </h3>
+                          <p className="font-sans text-black/75 text-base leading-relaxed">
+                            {client.description}
+                          </p>
+                        </div>
+                      </div>
+                      {index < idealClients.length - 1 && (
+                        <div className="mt-8 border-t border-black/10" />
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </section>
 

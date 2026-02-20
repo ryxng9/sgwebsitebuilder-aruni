@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Navbar, { NAVBAR_HEIGHT_CLASS, ColorScheme } from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { UserPlus, Gauge, Rocket, Smartphone, TrendingDown } from "lucide-react";
+import Image from "next/image";
 
 const businessWebDesignColorScheme: ColorScheme = {
   initial: {
@@ -25,45 +27,54 @@ const technologies = [
     items: ["Next.js", "React", "TailwindCSS"],
     description: "Modern frameworks that deliver fast, responsive, and maintainable websites with exceptional user experiences.",
     imagePosition: "left" as const,
+    image: "/images/services/business-web-development/nextjs.svg",
   },
   {
     title: "Design Systems",
     items: ["Figma to Code", "Component Libraries", "Brand Guidelines Integration"],
     description: "Systematic approach to design implementation ensuring consistency and scalability across your entire web presence.",
     imagePosition: "right" as const,
+    image: "/images/services/business-web-development/figma.png",
   },
   {
     title: "User Experience",
     items: ["Responsive Design", "Accessibility Standards (WCAG)", "Mobile-First Approach"],
     description: "Ensuring your website works flawlessly across all devices and is accessible to all users, including those with disabilities.",
     imagePosition: "left" as const,
+    image: "/images/services/business-web-development/css3.png",
   },
   {
     title: "Performance",
     items: ["Core Web Vitals Optimization", "SEO Best Practices", "Fast Load Times"],
     description: "Optimized for speed and search engines, ensuring your website ranks well and provides instant user experiences.",
     imagePosition: "right" as const,
+    image: "/images/services/business-web-development/yoast.png",
   },
 ];
 
 const results = [
   {
+    icon: UserPlus,
     metric: "+250%",
     description: "Lead generation",
   },
   {
+    icon: Gauge,
     metric: "92/100",
     description: "PageSpeed score",
   },
   {
+    icon: Rocket,
     metric: "3x",
     description: "Faster to market",
   },
   {
+    icon: Smartphone,
     metric: "+85%",
     description: "Mobile conversion",
   },
   {
+    icon: TrendingDown,
     metric: "60%",
     description: "Lower bounce rate",
   },
@@ -118,13 +129,13 @@ export default function BusinessWebDesignPage() {
                 >
                   {/* Image Section */}
                   <div className="lg:w-1/2 bg-gradient-to-br from-[#FFFF3A]/20 to-white/5 p-12 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="inline-block p-8 rounded-2xl bg-white/10 backdrop-blur-sm shadow-lg">
-                        <div className="font-display font-bold text-white text-3xl mb-4">
-                          {tech.title}
-                        </div>
-                        <div className="w-16 h-1 bg-[#FFFF3A] mx-auto"></div>
-                      </div>
+                    <div className="relative w-64 h-64">
+                      <Image
+                        src={tech.image}
+                        alt={tech.title}
+                        fill
+                        className="object-contain"
+                      />
                     </div>
                   </div>
 
@@ -195,19 +206,23 @@ export default function BusinessWebDesignPage() {
             </h2>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
-              {results.map((result) => (
-                <div
-                  key={result.metric}
-                  className="rounded-xl border border-white/15 bg-white/5 backdrop-blur-sm p-6 shadow-lg text-center flex flex-col justify-between min-h-[140px]"
-                >
-                  <div className="font-display font-bold text-[#FFFF3A] text-3xl sm:text-4xl">
-                    {result.metric}
+              {results.map((result) => {
+                const Icon = result.icon;
+                return (
+                  <div
+                    key={result.metric}
+                    className="rounded-xl border border-white/15 bg-white/5 backdrop-blur-sm p-6 shadow-lg text-center flex flex-col items-center gap-4 min-h-[180px]"
+                  >
+                    <Icon className="w-10 h-10" style={{ color: '#FFFF3A' }} />
+                    <div className="font-display font-bold text-white text-3xl sm:text-4xl">
+                      {result.metric}
+                    </div>
+                    <p className="font-sans text-white text-sm leading-relaxed">
+                      {result.description}
+                    </p>
                   </div>
-                  <p className="font-sans text-white/75 text-sm leading-relaxed mt-auto pt-3">
-                    {result.description}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

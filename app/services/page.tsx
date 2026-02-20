@@ -2,23 +2,29 @@ import Link from "next/link";
 import Navbar, { NAVBAR_HEIGHT_CLASS, ColorScheme } from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroWave from "@/components/HeroWave";
+import { BatteryLow, BatteryMedium, BatteryFull, CheckCircle, Rocket, FileText, Key } from "lucide-react";
+import Image from "next/image";
 
 const heroCards = [
   {
     title: "Architecture & Setup",
     description: "Foundation planning, tech stack selection, and project scaffolding for scalable growth.",
+    image: "/images/services/architecture-and-setup.jpg",
   },
   {
     title: "Implementation",
     description: "Clean, production-grade code built with performance, maintainability, and best practices in mind.",
+    image: "/images/services/implementation.jpg",
   },
   {
     title: "Integrations",
     description: "Seamless connection of third-party tools, APIs, and services that power your business.",
+    image: "/images/services/integrations.jpg",
   },
   {
     title: "Deployment & Handover",
     description: "Launch-ready delivery with documentation, hosting setup, and knowledge transfer.",
+    image: "/images/services/deployment-and-handover.jpg",
   },
 ];
 
@@ -108,18 +114,22 @@ const finishedBuildItems = [
   {
     title: "Fully Functional Website",
     description: "All features working as specified, tested across devices and browsers, ready for real-world use.",
+    icon: CheckCircle,
   },
   {
     title: "Deployed & Live",
     description: "Hosted on production environment with SSL certificate, custom domain configured, and accessible to users.",
+    icon: Rocket,
   },
   {
     title: "Documentation Provided",
     description: "Complete handover documentation including how to manage content, update the site, and access all systems.",
+    icon: FileText,
   },
   {
     title: "Full Ownership Transfer",
     description: "Complete access to hosting, domain, repository, and all accounts. You own everything we build.",
+    icon: Key,
   },
 ];
 
@@ -196,11 +206,16 @@ export default function Services() {
               {heroCards.map((card) => (
                 <div
                   key={card.title}
-                  className="rounded-2xl border border-black/15 bg-white/40 backdrop-blur-sm p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
+                  className="rounded-2xl border border-black/15 bg-white/40 backdrop-blur-sm p-7 lg:p-9 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
                 >
-                  {/* Placeholder Image */}
-                  <div className="aspect-[4/3] rounded-lg bg-gradient-to-br from-black/10 to-black/5 mb-6 flex items-center justify-center border border-black/10">
-                    <span className="font-sans text-black/40 text-sm">Visual</span>
+                  {/* Image */}
+                  <div className="aspect-[3/2] rounded-lg mb-6 relative overflow-hidden border border-black/10">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   
                   <h3 className="font-display font-semibold text-black text-lg sm:text-xl tracking-tight">
@@ -217,7 +232,7 @@ export default function Services() {
 
         {/* Types of Projects We Take Section — BLACK SECTION */}
         <section className="w-full px-6 py-24 sm:py-32 bg-[#212121]">
-          <div className="w-full max-w-6xl mx-auto">
+          <div className="w-full max-w-7xl mx-auto">
             <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-3xl mx-auto mb-16">
               Types of Projects We Take
             </h2>
@@ -225,9 +240,14 @@ export default function Services() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {/* E-commerce */}
               <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-lg overflow-hidden">
-                {/* Image Placeholder */}
-                <div className="aspect-video bg-gradient-to-br from-[#FFFF3A]/30 to-white/5 flex items-center justify-center border-b border-white/10">
-                  <span className="font-sans text-white/40 text-sm">E-commerce Image</span>
+                {/* Image */}
+                <div className="aspect-[4/3] relative border-b border-white/10">
+                  <Image
+                    src="/images/services/e-commerce.png"
+                    alt="E-commerce"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div className="p-8">
                   <h3 className="font-display font-semibold text-white text-xl tracking-tight mb-4">
@@ -266,9 +286,14 @@ export default function Services() {
 
               {/* Business Web Design */}
               <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-lg overflow-hidden">
-                {/* Image Placeholder */}
-                <div className="aspect-video bg-gradient-to-br from-[#FFFF3A]/30 to-white/5 flex items-center justify-center border-b border-white/10">
-                  <span className="font-sans text-white/40 text-sm">Business Web Design Image</span>
+                {/* Image */}
+                <div className="aspect-[4/3] relative border-b border-white/10">
+                  <Image
+                    src="/images/services/business-web-development.png"
+                    alt="Business Web Design"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div className="p-8">
                   <h3 className="font-display font-semibold text-white text-xl tracking-tight mb-4">
@@ -307,9 +332,14 @@ export default function Services() {
 
               {/* Custom Web Development */}
               <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-lg overflow-hidden">
-                {/* Image Placeholder */}
-                <div className="aspect-video bg-gradient-to-br from-[#FFFF3A]/30 to-white/5 flex items-center justify-center border-b border-white/10">
-                  <span className="font-sans text-white/40 text-sm">Custom Development Image</span>
+                {/* Image */}
+                <div className="aspect-[4/3] relative border-b border-white/10">
+                  <Image
+                    src="/images/services/custom-web-development.png"
+                    alt="Custom Web Development"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div className="p-8">
                   <h3 className="font-display font-semibold text-white text-xl tracking-tight mb-4">
@@ -348,9 +378,14 @@ export default function Services() {
 
               {/* Website Management */}
               <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-lg overflow-hidden">
-                {/* Image Placeholder */}
-                <div className="aspect-video bg-gradient-to-br from-[#FFFF3A]/30 to-white/5 flex items-center justify-center border-b border-white/10">
-                  <span className="font-sans text-white/40 text-sm">Website Management Image</span>
+                {/* Image */}
+                <div className="aspect-[4/3] relative border-b border-white/10">
+                  <Image
+                    src="/images/services/website-management.jpg"
+                    alt="Website Management"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div className="p-8">
                   <h3 className="font-display font-semibold text-white text-xl tracking-tight mb-4">
@@ -389,9 +424,14 @@ export default function Services() {
 
               {/* SEO */}
               <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-lg overflow-hidden">
-                {/* Image Placeholder */}
-                <div className="aspect-video bg-gradient-to-br from-[#FFFF3A]/30 to-white/5 flex items-center justify-center border-b border-white/10">
-                  <span className="font-sans text-white/40 text-sm">SEO Image</span>
+                {/* Image */}
+                <div className="aspect-[4/3] relative border-b border-white/10">
+                  <Image
+                    src="/images/services/seo.jpeg"
+                    alt="SEO"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div className="p-8">
                   <h3 className="font-display font-semibold text-white text-xl tracking-tight mb-4">
@@ -443,12 +483,17 @@ export default function Services() {
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-              {timelineBlocks.map((block) => (
+              {timelineBlocks.map((block, index) => (
                 <div
                   key={block.title}
                   className="rounded-2xl border border-black/20 bg-white/60 backdrop-blur-sm p-8 shadow-lg"
                 >
                   <div className="mb-6">
+                    <div className="mb-4 flex justify-center">
+                      {index === 0 && <BatteryLow className="w-12 h-12 text-black" />}
+                      {index === 1 && <BatteryMedium className="w-12 h-12 text-black" />}
+                      {index === 2 && <BatteryFull className="w-12 h-12 text-black" />}
+                    </div>
                     <div className="font-display font-bold text-black text-3xl sm:text-4xl mb-2">
                       {block.timeframe}
                     </div>
@@ -559,9 +604,12 @@ export default function Services() {
                   key={item.title}
                   className="rounded-2xl border border-black/20 bg-white/60 backdrop-blur-sm shadow-lg flex flex-col overflow-hidden"
                 >
-                  {/* Image Placeholder */}
+                  {/* Icon */}
                   <div className="aspect-square bg-gradient-to-br from-[#FFFF3A]/20 to-black/5 flex items-center justify-center border-b border-black/10">
-                    <span className="font-sans text-black/40 text-xs">Icon Placeholder</span>
+                    {(() => {
+                      const Icon = item.icon;
+                      return <Icon className="w-28 h-28 text-black" />;
+                    })()}
                   </div>
                   <div className="p-8 flex-1 flex flex-col">
                     <h3 className="font-display font-semibold text-black text-lg tracking-tight mb-4">

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar, { NAVBAR_HEIGHT_CLASS, ColorScheme } from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { TrendingUp, Trophy, Gauge, MousePointerClick, FileText, FileSearch, ShieldCheck, Code, BarChart } from "lucide-react";
 
 const seoColorScheme: ColorScheme = {
   initial: {
@@ -25,45 +26,54 @@ const services = [
     items: ["Site Architecture", "XML Sitemaps", "Robots.txt Optimization"],
     description: "Foundation-level SEO ensuring search engines can properly crawl, index, and understand your website structure.",
     imagePosition: "left" as const,
+    icon: FileSearch,
   },
   {
     title: "On-Page Optimization",
     items: ["Meta Tags & Titles", "Header Structure", "Content Optimization"],
     description: "Strategic optimization of page elements to improve relevance and rankings for target keywords.",
     imagePosition: "right" as const,
+    icon: ShieldCheck,
   },
   {
     title: "Performance & Core Web Vitals",
     items: ["Page Speed Optimization", "Mobile Responsiveness", "User Experience Metrics"],
     description: "Technical performance improvements that directly impact search rankings and user satisfaction.",
     imagePosition: "left" as const,
+    icon: Gauge,
   },
   {
     title: "Structured Data",
     items: ["Schema Markup", "Rich Snippets", "Knowledge Graph Optimization"],
     description: "Advanced markup helping search engines understand your content and display enhanced search results.",
     imagePosition: "right" as const,
+    icon: Code,
   },
 ];
 
 const results = [
   {
+    icon: TrendingUp,
     metric: "+320%",
     description: "Organic traffic",
   },
   {
+    icon: Trophy,
     metric: "Top 3",
     description: "Keyword rankings",
   },
   {
+    icon: Gauge,
     metric: "95+",
     description: "PageSpeed score",
   },
   {
+    icon: MousePointerClick,
     metric: "+150%",
     description: "Click-through rate",
   },
   {
+    icon: FileText,
     metric: "60%",
     description: "More indexed pages",
   },
@@ -116,16 +126,12 @@ export default function SEOPage() {
                   key={service.title}
                   className={`rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm shadow-lg overflow-hidden flex flex-col ${service.imagePosition === 'left' ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
                 >
-                  {/* Image Section */}
+                  {/* Icon Section */}
                   <div className="lg:w-1/2 bg-gradient-to-br from-[#FFFF3A]/20 to-white/5 p-12 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="inline-block p-8 rounded-2xl bg-white/10 backdrop-blur-sm shadow-lg">
-                        <div className="font-display font-bold text-white text-3xl mb-4">
-                          {service.title}
-                        </div>
-                        <div className="w-16 h-1 bg-[#FFFF3A] mx-auto"></div>
-                      </div>
-                    </div>
+                    {(() => {
+                      const Icon = service.icon;
+                      return <Icon className="w-32 h-32" style={{ color: '#FFFF3A' }} />;
+                    })()}
                   </div>
 
                   {/* Content Section */}
@@ -195,19 +201,23 @@ export default function SEOPage() {
             </h2>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
-              {results.map((result) => (
-                <div
-                  key={result.metric}
-                  className="rounded-xl border border-white/15 bg-white/5 backdrop-blur-sm p-6 shadow-lg text-center flex flex-col justify-between min-h-[140px]"
-                >
-                  <div className="font-display font-bold text-[#FFFF3A] text-3xl sm:text-4xl">
-                    {result.metric}
+              {results.map((result) => {
+                const Icon = result.icon;
+                return (
+                  <div
+                    key={result.metric}
+                    className="rounded-xl border border-white/15 bg-white/5 backdrop-blur-sm p-6 shadow-lg text-center flex flex-col items-center gap-4 min-h-[180px]"
+                  >
+                    <Icon className="w-10 h-10" style={{ color: '#FFFF3A' }} />
+                    <div className="font-display font-bold text-white text-3xl sm:text-4xl">
+                      {result.metric}
+                    </div>
+                    <p className="font-sans text-white text-sm leading-relaxed">
+                      {result.description}
+                    </p>
                   </div>
-                  <p className="font-sans text-white/75 text-sm leading-relaxed mt-auto pt-3">
-                    {result.description}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

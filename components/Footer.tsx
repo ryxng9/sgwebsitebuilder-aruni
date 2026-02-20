@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const pageLinks = [
     { href: "/", label: "Home" },
@@ -34,6 +35,15 @@ export default function Footer() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
                     {/* Column 1 – Brand */}
                     <div className="space-y-4">
+                        <div className="mb-4">
+                            <Image
+                                src="/images/sgwebsitebuilder/sgwb-yellow-blackbg.png"
+                                alt="SGWebsiteBuilder"
+                                width={240}
+                                height={80}
+                                className="w-auto h-16"
+                            />
+                        </div>
                         <h2 className="font-display font-semibold text-black text-lg tracking-tight">
                             SGWebsiteBuilder
                         </h2>

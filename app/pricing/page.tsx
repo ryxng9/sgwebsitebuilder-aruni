@@ -171,32 +171,32 @@ export default function Pricing() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
               <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-md">
-                <div className="text-2xl mb-3">🎯</div>
+                <div className="text-4xl mb-3">🎯</div>
                 <h3 className="font-display font-semibold text-white text-lg mb-2">Scope Clarity</h3>
                 <p className="font-sans text-white/70 text-sm leading-relaxed">Well-defined requirements lead to accurate estimates</p>
               </div>
               <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-md">
-                <div className="text-2xl mb-3">🔌</div>
+                <div className="text-4xl mb-3">🔌</div>
                 <h3 className="font-display font-semibold text-white text-lg mb-2">Number of Integrations</h3>
                 <p className="font-sans text-white/70 text-sm leading-relaxed">Third-party services and API connections</p>
               </div>
               <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-md">
-                <div className="text-2xl mb-3">⚙️</div>
+                <div className="text-4xl mb-3">⚙️</div>
                 <h3 className="font-display font-semibold text-white text-lg mb-2">Custom Functionality</h3>
                 <p className="font-sans text-white/70 text-sm leading-relaxed">Unique features tailored to your needs</p>
               </div>
               <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-md">
-                <div className="text-2xl mb-3">⏱️</div>
+                <div className="text-4xl mb-3">⏱️</div>
                 <h3 className="font-display font-semibold text-white text-lg mb-2">Timeline Urgency</h3>
                 <p className="font-sans text-white/70 text-sm leading-relaxed">Rushed timelines may require additional resources</p>
               </div>
               <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-md">
-                <div className="text-2xl mb-3">📝</div>
+                <div className="text-4xl mb-3">📝</div>
                 <h3 className="font-display font-semibold text-white text-lg mb-2">Content Readiness</h3>
                 <p className="font-sans text-white/70 text-sm leading-relaxed">Having content prepared speeds up delivery</p>
               </div>
               <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-md">
-                <div className="text-2xl mb-3">🛟</div>
+                <div className="text-4xl mb-3">🛟</div>
                 <h3 className="font-display font-semibold text-white text-lg mb-2">Ongoing Support</h3>
                 <p className="font-sans text-white/70 text-sm leading-relaxed">Maintenance and update requirements</p>
               </div>

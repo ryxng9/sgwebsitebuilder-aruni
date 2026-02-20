@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar, { NAVBAR_HEIGHT_CLASS, ColorScheme } from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Shield, Clock, Globe, TrendingDown, Zap, Settings, Lock, Gauge, Headphones } from "lucide-react";
 
 const websiteManagementColorScheme: ColorScheme = {
   initial: {
@@ -25,45 +26,54 @@ const services = [
     items: ["Content Updates", "Plugin & Theme Updates", "Bug Fixes & Patches"],
     description: "Regular maintenance ensuring your website stays current, secure, and functioning optimally without disruptions.",
     imagePosition: "left" as const,
+    icon: Settings,
   },
   {
     title: "Security & Monitoring",
     items: ["24/7 Uptime Monitoring", "Security Scans", "Malware Protection"],
     description: "Proactive security measures and constant monitoring to protect your website from threats and ensure maximum uptime.",
     imagePosition: "right" as const,
+    icon: Lock,
   },
   {
     title: "Performance",
     items: ["Speed Optimization", "Database Cleanup", "Caching Configuration"],
     description: "Continuous performance tuning to ensure fast load times and smooth user experiences across all devices.",
     imagePosition: "left" as const,
+    icon: Gauge,
   },
   {
     title: "Support & Reporting",
     items: ["Priority Support", "Monthly Reports", "Analytics Tracking"],
     description: "Dedicated support team and detailed monthly reports keeping you informed about your website's performance and health.",
     imagePosition: "right" as const,
+    icon: Headphones,
   },
 ];
 
 const results = [
   {
+    icon: Shield,
     metric: "99.9%",
     description: "Uptime guarantee",
   },
   {
+    icon: Clock,
     metric: "<2hrs",
     description: "Response time",
   },
   {
+    icon: Globe,
     metric: "50+",
     description: "Sites managed",
   },
   {
+    icon: TrendingDown,
     metric: "90%",
     description: "Fewer incidents",
   },
   {
+    icon: Zap,
     metric: "40%",
     description: "Faster sites",
   },
@@ -116,16 +126,12 @@ export default function WebsiteManagementPage() {
                   key={service.title}
                   className={`rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm shadow-lg overflow-hidden flex flex-col ${service.imagePosition === 'left' ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
                 >
-                  {/* Image Section */}
+                  {/* Icon Section */}
                   <div className="lg:w-1/2 bg-gradient-to-br from-[#FFFF3A]/20 to-white/5 p-12 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="inline-block p-8 rounded-2xl bg-white/10 backdrop-blur-sm shadow-lg">
-                        <div className="font-display font-bold text-white text-3xl mb-4">
-                          {service.title}
-                        </div>
-                        <div className="w-16 h-1 bg-[#FFFF3A] mx-auto"></div>
-                      </div>
-                    </div>
+                    {(() => {
+                      const Icon = service.icon;
+                      return <Icon className="w-32 h-32" style={{ color: '#FFFF3A' }} />;
+                    })()}
                   </div>
 
                   {/* Content Section */}
@@ -195,19 +201,23 @@ export default function WebsiteManagementPage() {
             </h2>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
-              {results.map((result) => (
-                <div
-                  key={result.metric}
-                  className="rounded-xl border border-white/15 bg-white/5 backdrop-blur-sm p-6 shadow-lg text-center flex flex-col justify-between min-h-[140px]"
-                >
-                  <div className="font-display font-bold text-[#FFFF3A] text-3xl sm:text-4xl">
-                    {result.metric}
+              {results.map((result) => {
+                const Icon = result.icon;
+                return (
+                  <div
+                    key={result.metric}
+                    className="rounded-xl border border-white/15 bg-white/5 backdrop-blur-sm p-6 shadow-lg text-center flex flex-col items-center gap-4 min-h-[180px]"
+                  >
+                    <Icon className="w-10 h-10" style={{ color: '#FFFF3A' }} />
+                    <div className="font-display font-bold text-white text-3xl sm:text-4xl">
+                      {result.metric}
+                    </div>
+                    <p className="font-sans text-white text-sm leading-relaxed">
+                      {result.description}
+                    </p>
                   </div>
-                  <p className="font-sans text-white/75 text-sm leading-relaxed mt-auto pt-3">
-                    {result.description}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

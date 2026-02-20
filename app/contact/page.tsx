@@ -228,7 +228,7 @@ export default function Contact() {
                     Email
                   </h4>
                   <p className="font-sans text-white/75 text-base">
-                    hello@sgwebsitebuilder.com
+                    retroxpect@gmail.com
                   </p>
                 </div>
 
@@ -238,7 +238,7 @@ export default function Contact() {
                     WhatsApp
                   </h4>
                   <p className="font-sans text-white/75 text-base">
-                    +65 1234 5678
+                    +65 9636 7885
                   </p>
                 </div>
               </div>
@@ -246,13 +246,13 @@ export default function Contact() {
               {/* Contact Buttons */}
               <div className="grid sm:grid-cols-2 gap-4">
                 <a
-                  href="mailto:hello@sgwebsitebuilder.com"
+                  href="mailto:retroxpect@gmail.com"
                   className="inline-flex items-center justify-center font-sans text-sm font-medium px-6 py-3 rounded-lg bg-[#FFFF3A] text-black hover:bg-white transition-all duration-200 shadow-md hover:shadow-lg"
                 >
                   Send Email
                 </a>
                 <a
-                  href="https://wa.me/6512345678"
+                  href="https://wa.me/6596367885"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center font-sans text-sm font-medium px-6 py-3 rounded-lg bg-[#FFFF3A] text-black hover:bg-white transition-all duration-200 shadow-md hover:shadow-lg"

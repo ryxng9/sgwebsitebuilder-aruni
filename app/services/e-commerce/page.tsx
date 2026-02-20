@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Navbar, { NAVBAR_HEIGHT_CLASS, ColorScheme } from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { TrendingUp, Users, Zap, Clock, DollarSign } from "lucide-react";
+import Image from "next/image";
 
 const ecommerceColorScheme: ColorScheme = {
   initial: {
@@ -25,45 +27,54 @@ const technologies = [
     items: ["Next.js", "React", "TypeScript"],
     description: "Modern, type-safe frameworks that ensure scalability, maintainability, and exceptional performance for your e-commerce platform.",
     imagePosition: "left" as const,
+    image: "/images/services/e-commerce/nextjs.svg",
   },
   {
     title: "Commerce Platforms",
     items: ["Shopify", "WooCommerce", "Ecwid"],
     description: "Industry-leading platforms that provide robust product management, secure payments, and seamless inventory control.",
     imagePosition: "right" as const,
+    image: "/images/services/e-commerce/shopify.png",
   },
   {
     title: "Architecture",
     items: ["Headless CMS (Sanity/Contentful)", "Custom API Integrations", "Webhook-based automation"],
     description: "Flexible content management and API-driven architecture that allows for custom workflows and third-party integrations.",
     imagePosition: "left" as const,
+    image: "/images/services/e-commerce/sanity.webp",
   },
   {
     title: "Operations",
     items: ["Inventory syncing", "Order management logic", "Automated fulfilment flows"],
     description: "Streamlined operational systems that reduce manual work and ensure accurate, real-time synchronization across platforms.",
     imagePosition: "right" as const,
+    image: "/images/services/e-commerce/zapier.png",
   },
 ];
 
 const results = [
   {
+    icon: TrendingUp,
     metric: "+180%",
     description: "Conversion rate",
   },
   {
+    icon: Users,
     metric: "+130%",
     description: "Organic traffic",
   },
   {
+    icon: Zap,
     metric: "45%",
     description: "Faster load times",
   },
   {
+    icon: Clock,
     metric: "70%",
     description: "Less manual work",
   },
   {
+    icon: DollarSign,
     metric: "+30%",
     description: "Revenue growth",
   },
@@ -118,13 +129,13 @@ export default function EcommercePage() {
                 >
                   {/* Image Section */}
                   <div className="lg:w-1/2 bg-gradient-to-br from-[#FFFF3A]/20 to-white/5 p-12 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="inline-block p-8 rounded-2xl bg-white/10 backdrop-blur-sm shadow-lg">
-                        <div className="font-display font-bold text-white text-3xl mb-4">
-                          {tech.title}
-                        </div>
-                        <div className="w-16 h-1 bg-[#FFFF3A] mx-auto"></div>
-                      </div>
+                    <div className="relative w-64 h-64">
+                      <Image
+                        src={tech.image}
+                        alt={tech.title}
+                        fill
+                        className="object-contain"
+                      />
                     </div>
                   </div>
 
@@ -195,19 +206,23 @@ export default function EcommercePage() {
             </h2>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
-              {results.map((result) => (
-                <div
-                  key={result.metric}
-                  className="rounded-xl border border-white/15 bg-white/5 backdrop-blur-sm p-6 shadow-lg text-center flex flex-col justify-between min-h-[140px]"
-                >
-                  <div className="font-display font-bold text-[#FFFF3A] text-3xl sm:text-4xl">
-                    {result.metric}
+              {results.map((result) => {
+                const Icon = result.icon;
+                return (
+                  <div
+                    key={result.metric}
+                    className="rounded-xl border border-white/15 bg-white/5 backdrop-blur-sm p-6 shadow-lg text-center flex flex-col items-center gap-4 min-h-[180px]"
+                  >
+                    <Icon className="w-10 h-10" style={{ color: '#FFFF3A' }} />
+                    <div className="font-display font-bold text-white text-3xl sm:text-4xl">
+                      {result.metric}
+                    </div>
+                    <p className="font-sans text-white text-sm leading-relaxed">
+                      {result.description}
+                    </p>
                   </div>
-                  <p className="font-sans text-white/75 text-sm leading-relaxed mt-auto pt-3">
-                    {result.description}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

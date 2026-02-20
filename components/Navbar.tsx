@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 /** Navbar height when at top (6rem). Use for fixed navbar container / hero spacer. */
@@ -133,12 +134,16 @@ export default function Navbar({
           {/* Left: Brand */}
           <Link
             href={brandHref}
-            className={`font-display tracking-tight transition-all duration-300 ${isCompact
-              ? `${colors.text} hover:opacity-90 text-lg`
-              : `${colors.text} hover:opacity-90 text-xl`
-              }`}
+            className={`transition-all duration-300 hover:opacity-90 ${isCompact ? 'h-12' : 'h-14'}`}
           >
-            {brandName}
+            <Image
+              src="/images/sgwebsitebuilder/sgwb-black-yellowbg.png"
+              alt="SGWebsiteBuilder"
+              width={isCompact ? 180 : 220}
+              height={isCompact ? 48 : 56}
+              className="h-full w-auto"
+              priority
+            />
           </Link>
 
           {/* Center: Nav Links */}
