@@ -46,7 +46,7 @@ const blogColorScheme: ColorScheme = {
     buttonHoverBg: "hover:bg-black",
   },
   scrolled: {
-    bg: "bg-white",
+    bg: "bg-[#FFFF3A]",
     text: "text-black",
     buttonBg: "bg-[#212121]",
     buttonText: "text-white",
@@ -101,14 +101,14 @@ export default async function Blog() {
           
           <div className="w-full max-w-6xl mx-auto">
             {/* Collaboration text */}
-            <div className="mb-8">
-              <p className="font-sans text-sm text-white/60">
+            <div className="mb-6">
+              <p className="font-sans text-sm text-white/75">
                 In collaboration with{" "}
                 <a
                   href="https://www.retroxpect.org/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white font-medium hover:text-[#FFFF3A] transition-colors duration-200"
+                  className="text-[#FFFF3A] font-medium hover:text-white transition-colors duration-200"
                 >
                   retroXpect
                 </a>
@@ -126,7 +126,7 @@ export default async function Blog() {
 
         {/* Separator Line */}
         <div className="w-full px-6">
-          <div className="w-full max-w-6xl mx-auto border-t border-black/10"></div>
+          <div className="w-full max-w-6xl mx-auto border-t border-white/10"></div>
         </div>
 
         {/* Latest Post Section */}
@@ -138,7 +138,7 @@ export default async function Blog() {
                 className="group grid md:grid-cols-2 gap-8 lg:gap-12 items-center animate-fadeInUp"
               >
                 {/* Image - Left Side */}
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-[#FFFF3A]/20 to-black/5 animate-fadeInUp animation-delay-200">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-[#FFFF3A]/20 to-white/5 animate-fadeInUp animation-delay-200">
                   {latestPost.image ? (
                     <Image
                       src={urlFor(latestPost.image).width(800).height(600).url()}
@@ -148,7 +148,7 @@ export default async function Blog() {
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
-                      <span className="font-sans text-black/40 text-lg">No image</span>
+                      <span className="font-sans text-white/40 text-lg">No image</span>
                     </div>
                   )}
                 </div>
@@ -165,10 +165,10 @@ export default async function Blog() {
 
                   {/* Type and Date */}
                   <div className="flex items-center justify-between text-sm">
-                    <span className="inline-block px-3 py-1 rounded-full bg-[#FFFF3A]/20 text-black font-medium uppercase tracking-wide">
+                    <span className="inline-block px-3 py-1 rounded-full bg-[#FFFF3A]/20 text-white font-medium uppercase tracking-wide">
                       {typeLabels[latestPost.type] || latestPost.type}
                     </span>
-                    <span className="font-sans text-black/60">
+                    <span className="font-sans text-white/60">
                       {formatDate(latestPost.publishedAt)}
                     </span>
                   </div>
@@ -192,7 +192,7 @@ export default async function Blog() {
 
         {/* Blog Grid Section */}
         {otherPosts.length > 0 && (
-          <section className="w-full px-6 py-16 sm:py-20 bg-white/30">
+          <section className="w-full px-6 py-16 sm:py-20 bg-[#212121]">
             <div className="w-full max-w-6xl mx-auto">
               <BlogGrid posts={otherPosts} />
             </div>
@@ -214,7 +214,7 @@ export default async function Blog() {
             <div className="mt-10">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-white text-black hover:bg-white/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-white text-black hover:bg-[#FFFF3A] transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
               >
                 Get in Touch
               </Link>

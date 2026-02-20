@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Navbar, { NAVBAR_HEIGHT_CLASS, ColorScheme } from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HeroWave from "@/components/HeroWave";
 import ProjectsGrid from "@/components/ProjectsGrid";
+import HeroWaveWork from "@/components/HeroWaveWork";
 import { client } from "@/sanity/lib/client";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
@@ -43,7 +43,7 @@ const workColorScheme: ColorScheme = {
     buttonHoverBg: "hover:bg-black",
   },
   scrolled: {
-    bg: "bg-white",
+    bg: "bg-[#FFFF3A]",
     text: "text-black",
     buttonBg: "bg-[#212121]",
     buttonText: "text-white",
@@ -76,13 +76,13 @@ export default async function Work() {
         
           {/* Collaboration text */}
           <div className="w-full text-center pt-4">
-            <p className="font-sans text-sm text-black/60">
+            <p className="font-sans text-sm text-white/75">
               In collaboration with{" "}
               <a
                 href="https://www.retroxpect.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black font-medium hover:text-[#FFFF3A] transition-colors duration-200"
+                className="text-[#FFFF3A] font-medium hover:text-white transition-colors duration-200"
               >
                 retroXpect
               </a>
@@ -103,7 +103,7 @@ export default async function Work() {
           </div>
         
           {/* Animated Wave */}
-          <HeroWave />
+          <HeroWaveWork />
         </section>
 
         {/* Projects Grid Section */}
@@ -126,7 +126,7 @@ export default async function Work() {
         </section>
 
         {/* CTA Section — BLACK SECTION */}
-        <section className="w-full px-6 py-20 sm:py-28 bg-black">
+        <section className="w-full px-6 py-20 sm:py-28 bg-[#212121]">
           <div className="w-full max-w-4xl mx-auto text-center">
             <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
               Ready to Start Your Project?
@@ -140,7 +140,7 @@ export default async function Work() {
             <div className="mt-10">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-white text-black hover:bg-white/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-white text-black hover:bg-[#FFFF3A] transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
               >
                 Get in Touch
               </Link>

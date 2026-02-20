@@ -16,7 +16,7 @@ const pricingCards = [
   },
   {
     title: "Complex Systems",
-    price: "From $15,000+",
+    price: "Starting from $15,000+",
     description: "Internal tools, dashboards, API-heavy systems with complex business logic.",
   },
 ];
@@ -134,7 +134,7 @@ export default function Pricing() {
             <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-8">
               Typical Project Ranges
             </h2>
-            <p className="font-sans text-base sm:text-lg text-[#FFFF3A] text-center max-w-2xl mx-auto leading-relaxed mb-16">
+            <p className="font-sans text-base sm:text-lg text-white/75 text-center max-w-2xl mx-auto leading-relaxed mb-16">
               Projects are priced based on scope and complexity. These are general ranges.
             </p>
 
@@ -165,18 +165,42 @@ export default function Pricing() {
             <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-8">
               What Affects Cost
             </h2>
-            <p className="font-sans text-base sm:text-lg text-[#FFFF3A] text-center max-w-2xl mx-auto leading-relaxed mb-12">
+            <p className="font-sans text-base sm:text-lg text-white/75 text-center max-w-2xl mx-auto leading-relaxed mb-12">
               Several factors influence project pricing.
             </p>
 
-            <ul className="space-y-4 font-sans text-white/85 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-              {costFactors.map((factor) => (
-                <li key={factor} className="flex gap-3">
-                  <span className="text-[#FFFF3A] shrink-0 mt-1" aria-hidden>•</span>
-                  <span>{factor}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+              <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-md">
+                <div className="text-2xl mb-3">🎯</div>
+                <h3 className="font-display font-semibold text-white text-lg mb-2">Scope Clarity</h3>
+                <p className="font-sans text-white/70 text-sm leading-relaxed">Well-defined requirements lead to accurate estimates</p>
+              </div>
+              <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-md">
+                <div className="text-2xl mb-3">🔌</div>
+                <h3 className="font-display font-semibold text-white text-lg mb-2">Number of Integrations</h3>
+                <p className="font-sans text-white/70 text-sm leading-relaxed">Third-party services and API connections</p>
+              </div>
+              <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-md">
+                <div className="text-2xl mb-3">⚙️</div>
+                <h3 className="font-display font-semibold text-white text-lg mb-2">Custom Functionality</h3>
+                <p className="font-sans text-white/70 text-sm leading-relaxed">Unique features tailored to your needs</p>
+              </div>
+              <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-md">
+                <div className="text-2xl mb-3">⏱️</div>
+                <h3 className="font-display font-semibold text-white text-lg mb-2">Timeline Urgency</h3>
+                <p className="font-sans text-white/70 text-sm leading-relaxed">Rushed timelines may require additional resources</p>
+              </div>
+              <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-md">
+                <div className="text-2xl mb-3">📝</div>
+                <h3 className="font-display font-semibold text-white text-lg mb-2">Content Readiness</h3>
+                <p className="font-sans text-white/70 text-sm leading-relaxed">Having content prepared speeds up delivery</p>
+              </div>
+              <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-md">
+                <div className="text-2xl mb-3">🛟</div>
+                <h3 className="font-display font-semibold text-white text-lg mb-2">Ongoing Support</h3>
+                <p className="font-sans text-white/70 text-sm leading-relaxed">Maintenance and update requirements</p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -220,7 +244,7 @@ export default function Pricing() {
             <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
               If This Aligns With Your Expectations
             </h2>
-            <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] leading-relaxed max-w-2xl mx-auto">
+            <p className="mt-6 font-sans text-base sm:text-lg text-black leading-relaxed max-w-2xl mx-auto">
               Let's start a conversation
             </p>
             <p className="mt-4 font-sans text-base sm:text-lg text-black/70 leading-relaxed max-w-2xl mx-auto">

@@ -234,24 +234,24 @@ export default function Services() {
                     E-commerce
                   </h3>
                   <ul className="space-y-2.5 font-sans text-white/85 text-sm leading-relaxed mb-6">
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">🛒</span>
                       <span>WooCommerce/WordPress stores</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">🎨</span>
                       <span>Shopify custom themes</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">⚡</span>
                       <span>Custom Next.js e-commerce</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">💳</span>
                       <span>Payment gateway integration</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">📦</span>
                       <span>Product catalog management</span>
                     </li>
                   </ul>
@@ -275,24 +275,24 @@ export default function Services() {
                     Business Web Design
                   </h3>
                   <ul className="space-y-2.5 font-sans text-white/85 text-sm leading-relaxed mb-6">
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">🏢</span>
                       <span>Corporate websites</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">🚀</span>
                       <span>Landing pages</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">💼</span>
                       <span>Portfolio sites</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">🔧</span>
                       <span>Service-based business sites</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">📱</span>
                       <span>Responsive design implementation</span>
                     </li>
                   </ul>
@@ -316,24 +316,24 @@ export default function Services() {
                     Custom Web Development
                   </h3>
                   <ul className="space-y-2.5 font-sans text-white/85 text-sm leading-relaxed mb-6">
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">💻</span>
                       <span>Hand-coded HTML/CSS/JS</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">⚛️</span>
                       <span>React/Next.js applications</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">🔌</span>
                       <span>Custom CMS integration</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">🔗</span>
                       <span>API development & integration</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">📲</span>
                       <span>Progressive Web Apps (PWA)</span>
                     </li>
                   </ul>
@@ -357,24 +357,24 @@ export default function Services() {
                     Website Management
                   </h3>
                   <ul className="space-y-2.5 font-sans text-white/85 text-sm leading-relaxed mb-6">
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">✏️</span>
                       <span>Regular content updates</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">🔒</span>
                       <span>Security monitoring & patches</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">⚡</span>
                       <span>Performance optimization</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">💾</span>
                       <span>Backup & recovery services</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">🛟</span>
                       <span>Technical support</span>
                     </li>
                   </ul>
@@ -395,27 +395,27 @@ export default function Services() {
                 </div>
                 <div className="p-8">
                   <h3 className="font-display font-semibold text-white text-xl tracking-tight mb-4">
-                    Search Engine Optimisation (SEO)
+                    Search Engine Optimisation
                   </h3>
                   <ul className="space-y-2.5 font-sans text-white/85 text-sm leading-relaxed mb-6">
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">📄</span>
                       <span>On-page SEO optimization</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">🔍</span>
                       <span>Technical SEO audits</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">🔑</span>
                       <span>Keyword research & strategy</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">🏷️</span>
                       <span>Meta tags & schema markup</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
+                    <li className="flex gap-2.5 items-start">
+                      <span className="text-lg shrink-0">📊</span>
                       <span>Google Analytics setup</span>
                     </li>
                   </ul>
@@ -495,12 +495,26 @@ export default function Services() {
                   Required
                 </h3>
                 <ul className="space-y-4 font-sans text-white/85 text-[15px] sm:text-base leading-relaxed">
-                  {requiredItems.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
+                  <li className="flex gap-3 items-start">
+                    <span className="text-lg shrink-0">📋</span>
+                    <span>Clear project objectives</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <span className="text-lg shrink-0">✍️</span>
+                    <span>Content (text, images, or guidance)</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <span className="text-lg shrink-0">🎯</span>
+                    <span>Target audience definition</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <span className="text-lg shrink-0">💬</span>
+                    <span>Timely feedback during development</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <span className="text-lg shrink-0">🌐</span>
+                    <span>Domain & hosting access (if applicable)</span>
+                  </li>
                 </ul>
               </div>
 
@@ -510,12 +524,22 @@ export default function Services() {
                   Nice to Have
                 </h3>
                 <ul className="space-y-4 font-sans text-white/65 text-[15px] sm:text-base leading-relaxed">
-                  {niceToHaveItems.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span className="text-white/50 shrink-0 mt-0.5" aria-hidden>•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
+                  <li className="flex gap-3 items-start">
+                    <span className="text-lg shrink-0 opacity-70">🎨</span>
+                    <span>Brand guidelines or style preferences</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <span className="text-lg shrink-0 opacity-70">🖼️</span>
+                    <span>Reference sites you admire</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <span className="text-lg shrink-0 opacity-70">🔗</span>
+                    <span>Existing integrations or tools in use</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <span className="text-lg shrink-0 opacity-70">📊</span>
+                    <span>Analytics or tracking requirements</span>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -568,7 +592,7 @@ export default function Services() {
             <div className="mt-10">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-white text-black hover:bg-white/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-white text-black hover:bg-[#FFFF3A] transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
               >
                 Start a Conversation
               </Link>

@@ -20,7 +20,7 @@ const contactColorScheme: ColorScheme = {
     buttonHoverBg: "hover:bg-black",
   },
   scrolled: {
-    bg: "bg-white",
+    bg: "bg-[#FFFF3A]",
     text: "text-black",
     buttonBg: "bg-[#212121]",
     buttonText: "text-white",
@@ -197,7 +197,7 @@ export default function Contact() {
                   value={formData.projectDescription}
                   onChange={handleChange}
                   rows={6}
-                  className="w-full px-4 py-3 rounded-lg border border-white/15 bg-black text-white font-sans text-base focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-lg border border-white/15 bg-white/5 backdrop-blur-sm text-white font-sans text-base focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all resize-none placeholder:text-white/40"
                   placeholder="Tell us about your project, goals, and any specific requirements..."
                 />
               </div>
@@ -206,7 +206,7 @@ export default function Contact() {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="w-full font-sans text-base font-medium px-8 py-4 rounded-lg bg-white text-black hover:bg-white/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-white"
+                  className="w-full font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#FFFF3A] text-black hover:bg-white transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#FFFF3A] focus:ring-offset-2"
                 >
                   Start the Conversation
                 </button>
@@ -221,33 +221,43 @@ export default function Contact() {
               <h3 className="font-display font-semibold text-white text-xl sm:text-2xl tracking-tight text-center mb-6">
                 Prefer Direct Contact?
               </h3>
-              <div className="grid sm:grid-cols-2 gap-6">
+              <div className="grid sm:grid-cols-2 gap-6 mb-6">
                 {/* Email */}
-                <a
-                  href="mailto:hello@sgwebsitebuilder.com"
-                  className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:shadow-lg transition-all duration-200 hover:-translate-y-1 group"
-                >
+                <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6">
                   <h4 className="font-display font-semibold text-white text-lg tracking-tight mb-2">
                     Email
                   </h4>
-                  <p className="font-sans text-white/75 text-base group-hover:text-white transition-colors">
+                  <p className="font-sans text-white/75 text-base">
                     hello@sgwebsitebuilder.com
                   </p>
-                </a>
+                </div>
 
                 {/* WhatsApp */}
+                <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6">
+                  <h4 className="font-display font-semibold text-white text-lg tracking-tight mb-2">
+                    WhatsApp
+                  </h4>
+                  <p className="font-sans text-white/75 text-base">
+                    +65 1234 5678
+                  </p>
+                </div>
+              </div>
+              
+              {/* Contact Buttons */}
+              <div className="grid sm:grid-cols-2 gap-4">
+                <a
+                  href="mailto:hello@sgwebsitebuilder.com"
+                  className="inline-flex items-center justify-center font-sans text-sm font-medium px-6 py-3 rounded-lg bg-[#FFFF3A] text-black hover:bg-white transition-all duration-200 shadow-md hover:shadow-lg"
+                >
+                  Send Email
+                </a>
                 <a
                   href="https://wa.me/6512345678"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:shadow-lg transition-all duration-200 hover:-translate-y-1 group"
+                  className="inline-flex items-center justify-center font-sans text-sm font-medium px-6 py-3 rounded-lg bg-[#FFFF3A] text-black hover:bg-white transition-all duration-200 shadow-md hover:shadow-lg"
                 >
-                  <h4 className="font-display font-semibold text-white text-lg tracking-tight mb-2">
-                    WhatsApp
-                  </h4>
-                  <p className="font-sans text-white/75 text-base group-hover:text-white transition-colors">
-                    +65 1234 5678
-                  </p>
+                  Message on WhatsApp
                 </a>
               </div>
             </div>

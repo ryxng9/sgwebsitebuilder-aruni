@@ -11,7 +11,7 @@ const websiteManagementColorScheme: ColorScheme = {
     buttonHoverBg: "hover:bg-black",
   },
   scrolled: {
-    bg: "bg-white",
+    bg: "bg-[#FFFF3A]",
     text: "text-black",
     buttonBg: "bg-[#212121]",
     buttonText: "text-white",
@@ -52,20 +52,20 @@ const results = [
     description: "Uptime guarantee",
   },
   {
-    metric: "<2 hours",
-    description: "Average response time",
+    metric: "<2hrs",
+    description: "Response time",
   },
   {
-    metric: "50+ sites",
-    description: "Currently managed",
+    metric: "50+",
+    description: "Sites managed",
   },
   {
-    metric: "90% reduction",
-    description: "Security incidents prevented",
+    metric: "90%",
+    description: "Fewer incidents",
   },
   {
-    metric: "40% faster",
-    description: "Average site speed improvement",
+    metric: "40%",
+    description: "Faster sites",
   },
 ];
 
@@ -78,6 +78,21 @@ export default function WebsiteManagementPage() {
         <section className="w-full px-6 pt-32 sm:pt-40 pb-24 sm:pb-32 bg-[#212121]">
           <div className={NAVBAR_HEIGHT_CLASS} aria-hidden="true" />
           <div className="w-full max-w-4xl mx-auto">
+            {/* Collaboration text */}
+            <div className="mb-6">
+              <p className="font-sans text-sm text-white/75">
+                In collaboration with{" "}
+                <a
+                  href="https://www.retroxpect.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#FFFF3A] font-medium hover:text-white transition-colors duration-200"
+                >
+                  retroXpect
+                </a>
+              </p>
+            </div>
+            
             <h1 className="font-display font-bold text-white text-4xl sm:text-5xl md:text-6xl leading-[1.15] tracking-tight mb-8 animate-fadeInUp">
               Website Management
             </h1>
@@ -120,7 +135,7 @@ export default function WebsiteManagementPage() {
                     </h3>
                     <ul className="space-y-3 mb-6">
                       {service.items.map((item) => (
-                        <li key={item} className="flex gap-3">
+                        <li key={item} className="flex gap-3 items-start">
                           <span className="text-[#FFFF3A] shrink-0 mt-1" aria-hidden>•</span>
                           <span className="font-sans text-white/85 text-base">{item}</span>
                         </li>
@@ -183,12 +198,12 @@ export default function WebsiteManagementPage() {
               {results.map((result) => (
                 <div
                   key={result.metric}
-                  className="rounded-xl border border-white/15 bg-white/5 backdrop-blur-sm p-6 shadow-lg text-center"
+                  className="rounded-xl border border-white/15 bg-white/5 backdrop-blur-sm p-6 shadow-lg text-center flex flex-col justify-between min-h-[140px]"
                 >
-                  <div className="font-display font-bold text-[#FFFF3A] text-3xl sm:text-4xl mb-3">
+                  <div className="font-display font-bold text-[#FFFF3A] text-3xl sm:text-4xl">
                     {result.metric}
                   </div>
-                  <p className="font-sans text-white/75 text-sm leading-relaxed">
+                  <p className="font-sans text-white/75 text-sm leading-relaxed mt-auto pt-3">
                     {result.description}
                   </p>
                 </div>
@@ -209,7 +224,7 @@ export default function WebsiteManagementPage() {
             <div className="mt-10">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-white text-black hover:bg-white/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-white"
+                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-white text-black hover:bg-[#FFFF3A] transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-white"
               >
                 Get Started
               </Link>

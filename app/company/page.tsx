@@ -121,7 +121,7 @@ export default function Company() {
               We hold ourselves to high standards in everything we deliver.
             </p>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
               {principles.map((principle) => (
                 <div
                   key={principle.title}
@@ -147,12 +147,18 @@ export default function Company() {
             </h2>
 
             <ul className="space-y-4 font-sans text-black/85 text-base sm:text-lg leading-relaxed">
-              {idealClients.map((client) => (
-                <li key={client} className="flex gap-3">
-                  <span className="text-black/60 shrink-0 mt-1" aria-hidden>•</span>
-                  <span>{client}</span>
-                </li>
-              ))}
+              <li className="flex gap-3 items-start">
+                <span className="text-2xl shrink-0">🚀</span>
+                <span>Founders with validated ideas</span>
+              </li>
+              <li className="flex gap-3 items-start">
+                <span className="text-2xl shrink-0">🏢</span>
+                <span>SMEs rebuilding or upgrading systems</span>
+              </li>
+              <li className="flex gap-3 items-start">
+                <span className="text-2xl shrink-0">✨</span>
+                <span>Businesses that value clean execution</span>
+              </li>
             </ul>
           </div>
         </section>

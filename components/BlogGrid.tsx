@@ -85,7 +85,7 @@ export default function BlogGrid({ posts }: BlogGridProps) {
       {/* Type Filter */}
       {availableTypes.length > 0 && (
         <div className="mb-8">
-          <h3 className="font-sans font-medium text-black/80 text-sm uppercase tracking-wide mb-4">
+          <h3 className="font-sans font-medium text-[#FFFF3A] text-sm uppercase tracking-wide mb-4">
             Filter by Type
           </h3>
           <div className="flex flex-wrap gap-3">
@@ -96,7 +96,7 @@ export default function BlogGrid({ posts }: BlogGridProps) {
                 className={`px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wide transition-all duration-200 ${
                   selectedTypes.includes(type)
                     ? 'bg-[#FFFF3A] text-black shadow-md'
-                    : 'bg-white border border-black/20 text-black/70 hover:border-black/40'
+                    : 'bg-white/5 border border-white/20 text-white/70 hover:border-white/40'
                 }`}
               >
                 {typeLabels[type] || type}
@@ -108,13 +108,13 @@ export default function BlogGrid({ posts }: BlogGridProps) {
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {displayedPosts.map((post) => (
-          <Link
+          <div
             key={post._id}
-            href={`/blog/${post.slug.current}`}
-            className="group rounded-xl border border-black/15 bg-white/60 backdrop-blur-sm overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
+            className="group rounded-xl border border-white/15 bg-[#212121] backdrop-blur-sm overflow-hidden shadow-lg flex flex-col"
           >
             {/* Post Image */}
-            <div className="relative aspect-video bg-gradient-to-br from-[#FFFF3A]/20 to-black/5">
+            <Link href={`/blog/${post.slug.current}`} className="block">
+              <div className="relative aspect-video bg-gradient-to-br from-[#FFFF3A]/20 to-white/5">
               {post.image ? (
                 <Image
                   src={urlFor(post.image).width(600).height(400).url()}
@@ -124,38 +124,49 @@ export default function BlogGrid({ posts }: BlogGridProps) {
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center">
-                  <span className="font-sans text-black/40 text-sm">No image</span>
+                  <span className="font-sans text-white/40 text-sm">No image</span>
                 </div>
               )}
             </div>
+            </Link>
 
             {/* Post Content */}
-            <div className="p-5">
+            <div className="p-5 flex flex-col flex-1">
               {/* Type Badge */}
               <div className="mb-3">
-                <span className="inline-block px-3 py-1 rounded-full bg-[#FFFF3A]/20 text-black text-xs font-medium uppercase tracking-wide">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#FFFF3A]/20 text-white text-xs font-medium uppercase tracking-wide">
                   {typeLabels[post.type] || post.type}
                 </span>
               </div>
 
               {/* Title */}
-              <h3 className="font-display font-semibold text-black text-lg tracking-tight mb-3 group-hover:text-black/80 transition-colors line-clamp-2">
+              <h3 className="font-display font-semibold text-white text-lg tracking-tight mb-3 line-clamp-2">
                 {post.title}
               </h3>
 
               {/* Content/Excerpt */}
-              <p className="font-sans text-black/75 text-sm leading-relaxed mb-4 line-clamp-3">
+              <p className="font-sans text-white/75 text-sm leading-relaxed mb-4 line-clamp-3">
                 {getExcerpt(post)}
               </p>
 
+              {/* View More Button */}
+              <div className="mt-auto">
+                <Link
+                  href={`/blog/${post.slug.current}`}
+                  className="inline-flex items-center justify-center font-sans text-sm font-medium px-6 py-2.5 rounded-lg bg-white text-black hover:bg-[#FFFF3A] transition-all duration-200 shadow-md hover:shadow-lg mb-3"
+                >
+                  View More
+                </Link>
+              </div>
+              
               {/* Publish Date */}
-              <div className="pt-3 border-t border-black/10">
-                <span className="font-sans text-black/60 text-xs">
+              <div className="pt-3 border-t border-white/10">
+                <span className="font-sans text-white/60 text-xs">
                   {formatDate(post.publishedAt)}
                 </span>
               </div>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
 

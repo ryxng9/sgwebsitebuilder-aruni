@@ -112,47 +112,6 @@ export default function Home() {
       <EmojiMarquee />
 
       {/* Who it's for — centered, loose spacing */}
-      <section className="w-full px-6 py-24 sm:py-32 pb-32 sm:pb-40">
-        <div className="w-full max-w-6xl mx-auto">
-          <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-2xl mx-auto">
-            Built for teams that want results.
-          </h2>
-          <p className="mt-6 font-sans text-base sm:text-lg text-black/80 text-center max-w-xl mx-auto leading-relaxed">
-            We work best with teams who value performance.
-          </p>
-
-          <div className="mt-16 grid sm:grid-cols-2 gap-8 sm:gap-10 max-w-4xl mx-auto">
-            <div className="rounded-2xl border border-black/10 bg-[#FFFF3A]/10 backdrop-blur-sm p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
-              <h3 className="font-display font-semibold text-black text-lg sm:text-xl tracking-tight">
-                We work best with
-              </h3>
-              <ul className="mt-6 font-sans text-black/85 text-[15px] sm:text-base leading-relaxed space-y-4">
-                {whoWeWorkBestWith.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="text-[#FFFF3A] shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="rounded-2xl border border-black/10 bg-black/[0.02] backdrop-blur-sm p-8 sm:p-10 shadow-md hover:shadow-lg transition-all duration-200">
-              <h3 className="font-display font-semibold text-black/70 text-lg sm:text-xl tracking-tight">
-                Less suitable if you are
-              </h3>
-              <ul className="mt-6 font-sans text-black/65 text-[15px] sm:text-base leading-relaxed space-y-4">
-                {lessSuitableIf.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="text-[#212121]/50 shrink-0 mt-0.5" aria-hidden>•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Services we provide — BLACK SECTION */}
       <section className="w-full px-6 pt-32 sm:pt-40 pb-24 sm:pb-32 bg-[#212121]">
         <div className="w-full mx-auto">
@@ -167,6 +126,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
               {/* E-commerce */}
               <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
+                <div className="text-5xl mb-4 text-center">🛒</div>
                 <h3 className="font-display font-semibold text-white text-lg tracking-tight">
                   E-commerce
                 </h3>
@@ -183,6 +143,7 @@ export default function Home() {
 
               {/* Business Web Design */}
               <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
+                <div className="text-5xl mb-4 text-center">💼</div>
                 <h3 className="font-display font-semibold text-white text-lg tracking-tight">
                   Business Web Design
                 </h3>
@@ -199,6 +160,7 @@ export default function Home() {
 
               {/* Custom Web Development */}
               <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
+                <div className="text-5xl mb-4 text-center">⚙️</div>
                 <h3 className="font-display font-semibold text-white text-lg tracking-tight">
                   Custom Web Development
                 </h3>
@@ -215,6 +177,7 @@ export default function Home() {
 
               {/* Website Management */}
               <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
+                <div className="text-5xl mb-4 text-center">🛠️</div>
                 <h3 className="font-display font-semibold text-white text-lg tracking-tight">
                   Website Management
                 </h3>
@@ -231,6 +194,7 @@ export default function Home() {
 
               {/* SEO */}
               <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
+                <div className="text-5xl mb-4 text-center">🔍</div>
                 <h3 className="font-display font-semibold text-white text-lg tracking-tight">
                   Search Engine Optimisation (SEO)
                 </h3>
@@ -251,7 +215,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <Link
               href="/services"
-              className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-white text-black hover:bg-white/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-white text-black hover:bg-[#FFFF3A] transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               View Our Services
             </Link>
@@ -419,7 +383,7 @@ export default function Home() {
             </div>
 
             {/* Company Marquee - Stretched */}
-            <div className="flex-1 w-full lg:w-auto">
+            <div className="flex-1 w-full lg:w-auto relative">
               <div className="overflow-hidden bg-transparent py-4">
                 <div className="company-marquee-container">
                   <div className="company-marquee-content">
@@ -442,6 +406,8 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              {/* Fade overlay on the right */}
+              <div className="absolute top-0 right-0 bottom-0 w-48 bg-gradient-to-l from-[#212121] via-[#212121]/80 to-transparent pointer-events-none"></div>
             </div>
           </div>
 
@@ -495,7 +461,7 @@ export default function Home() {
           <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
             Have a project in mind?
           </h2>
-          <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] leading-relaxed max-w-2xl mx-auto">
+          <p className="mt-6 font-sans text-base sm:text-lg text-black leading-relaxed max-w-2xl mx-auto">
             Let's talk
           </p>
           <p className="mt-4 font-sans text-base sm:text-lg text-black/70 leading-relaxed max-w-2xl mx-auto">

@@ -11,7 +11,7 @@ const ecommerceColorScheme: ColorScheme = {
     buttonHoverBg: "hover:bg-black",
   },
   scrolled: {
-    bg: "bg-white",
+    bg: "bg-[#FFFF3A]",
     text: "text-black",
     buttonBg: "bg-[#212121]",
     buttonText: "text-white",
@@ -49,23 +49,23 @@ const technologies = [
 const results = [
   {
     metric: "+180%",
-    description: "Increase in conversion rate",
+    description: "Conversion rate",
   },
   {
     metric: "+130%",
-    description: "Organic traffic growth",
+    description: "Organic traffic",
   },
   {
-    metric: "45% faster",
-    description: "Page load times",
+    metric: "45%",
+    description: "Faster load times",
   },
   {
-    metric: "+70% reduction",
-    description: "Manual operational workload",
+    metric: "70%",
+    description: "Less manual work",
   },
   {
     metric: "+30%",
-    description: "Additional revenue in 6 months",
+    description: "Revenue growth",
   },
 ];
 
@@ -78,6 +78,21 @@ export default function EcommercePage() {
         <section className="w-full px-6 pt-32 sm:pt-40 pb-24 sm:pb-32 bg-[#212121]">
           <div className={NAVBAR_HEIGHT_CLASS} aria-hidden="true" />
           <div className="w-full max-w-4xl mx-auto">
+            {/* Collaboration text */}
+            <div className="mb-6">
+              <p className="font-sans text-sm text-white/75">
+                In collaboration with{" "}
+                <a
+                  href="https://www.retroxpect.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#FFFF3A] font-medium hover:text-white transition-colors duration-200"
+                >
+                  retroXpect
+                </a>
+              </p>
+            </div>
+            
             <h1 className="font-display font-bold text-white text-4xl sm:text-5xl md:text-6xl leading-[1.15] tracking-tight mb-8 animate-fadeInUp">
               E-commerce Development
             </h1>
@@ -120,7 +135,7 @@ export default function EcommercePage() {
                     </h3>
                     <ul className="space-y-3 mb-6">
                       {tech.items.map((item) => (
-                        <li key={item} className="flex gap-3">
+                        <li key={item} className="flex gap-3 items-start">
                           <span className="text-[#FFFF3A] shrink-0 mt-1" aria-hidden>•</span>
                           <span className="font-sans text-white/85 text-base">{item}</span>
                         </li>
@@ -183,12 +198,12 @@ export default function EcommercePage() {
               {results.map((result) => (
                 <div
                   key={result.metric}
-                  className="rounded-xl border border-white/15 bg-white/5 backdrop-blur-sm p-6 shadow-lg text-center"
+                  className="rounded-xl border border-white/15 bg-white/5 backdrop-blur-sm p-6 shadow-lg text-center flex flex-col justify-between min-h-[140px]"
                 >
-                  <div className="font-display font-bold text-[#FFFF3A] text-3xl sm:text-4xl mb-3">
+                  <div className="font-display font-bold text-[#FFFF3A] text-3xl sm:text-4xl">
                     {result.metric}
                   </div>
-                  <p className="font-sans text-white/75 text-sm leading-relaxed">
+                  <p className="font-sans text-white/75 text-sm leading-relaxed mt-auto pt-3">
                     {result.description}
                   </p>
                 </div>
@@ -209,7 +224,7 @@ export default function EcommercePage() {
             <div className="mt-10">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-white text-black hover:bg-white/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+                className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-white text-black hover:bg-[#FFFF3A] transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
               >
                 Start Your Project
               </Link>
