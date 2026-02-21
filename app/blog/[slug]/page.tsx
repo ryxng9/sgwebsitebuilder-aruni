@@ -39,7 +39,7 @@ async function getBlogPost(slug: string): Promise<BlogPost | null> {
 
 const blogColorScheme: ColorScheme = {
   initial: {
-    bg: "bg-[#FFFF3A]",
+    bg: "bg-white",
     text: "text-black",
     buttonBg: "bg-[#212121]",
     buttonText: "text-white",

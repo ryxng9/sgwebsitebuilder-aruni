@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { ShoppingCart, BriefcaseBusiness, FolderCode, Wrench, Search, Palette } from "lucide-react";
 
 /** Navbar height when at top (6rem). Use for fixed navbar container / hero spacer. */
 export const NAVBAR_HEIGHT_CLASS = "h-24";
@@ -12,11 +13,11 @@ const NAVBAR_SCROLLED_HEIGHT_CLASS = "h-20";
 export const NAVBAR_OFFSET_CLASS = "pt-24";
 
 const serviceLinks = [
-  { href: "/services/e-commerce", label: "E-commerce" },
-  { href: "/services/business-web-design", label: "Business Web Design" },
-  { href: "/services/custom-web-development", label: "Custom Web Development" },
-  { href: "/services/website-management", label: "Website Management" },
-  { href: "/services/seo", label: "SEO" },
+  { href: "/services/e-commerce", label: "E-commerce", icon: ShoppingCart, description: "Build powerful online stores" },
+  { href: "/services/business-web-design", label: "Business Web Design", icon: BriefcaseBusiness, description: "Professional websites for businesses" },
+  { href: "/services/custom-web-development", label: "Custom Web Development", icon: FolderCode, description: "Tailored web solutions" },
+  { href: "/services/website-management", label: "Website Management", icon: Wrench, description: "Ongoing maintenance & support" },
+  { href: "/services/seo", label: "SEO", icon: Search, description: "Improve search rankings" },
 ];
 
 const defaultNavLinks = [
@@ -119,12 +120,12 @@ export default function Navbar({
   };
 
   const isCompact = scrolled;
-  const colors = isCompact ? colorScheme.scrolled : colorScheme.initial;
+  const colors = colorScheme.initial; // Always use initial colors
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 flex items-center transition-all duration-300 ease-out ${className} ${isCompact
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center transition-all duration-300 ease-out border-b border-black/10 ${className} ${isCompact
           ? `${NAVBAR_SCROLLED_HEIGHT_CLASS} ${colors.bg}`
           : `${NAVBAR_HEIGHT_CLASS} ${colors.bg}`
           }`}
@@ -166,23 +167,51 @@ export default function Navbar({
               </Link>
               
               {servicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-white border border-black/10 rounded-lg shadow-xl py-2 z-50">
-                  <Link
-                    href="/services"
-                    className="block px-4 py-2.5 text-[15px] text-black font-medium hover:bg-[#FFFF3A]/10 transition-colors"
-                  >
-                    Services
-                  </Link>
-                  <div className="border-t border-black/10 my-2" />
-                  {serviceLinks.map(({ href, label }) => (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] bg-white border border-black/10 rounded-xl shadow-2xl p-6 z-50 opacity-0 animate-fadeIn">
+                  <style jsx>{`
+                    @keyframes fadeIn {
+                      to {
+                        opacity: 1;
+                      }
+                    }
+                    .animate-fadeIn {
+                      animation: fadeIn 0.15s ease-out forwards;
+                    }
+                  `}</style>
+                  <div className="mb-4">
+                    <h3 className="font-display font-bold text-black text-lg mb-1">Our Services</h3>
+                    <p className="text-sm text-black/60">Comprehensive web solutions for your business</p>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    {serviceLinks.map(({ href, label, icon: Icon, description }) => (
+                      <Link
+                        key={href}
+                        href={href}
+                        className="group flex items-start gap-3 p-4 rounded-lg hover:bg-[#FFFF3A] transition-all duration-200 border border-transparent hover:border-[#FFFF3A]"
+                      >
+                        <div className="flex-shrink-0 mt-0.5">
+                          <Icon className="w-5 h-5 text-black/70 group-hover:text-black transition-colors" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="font-sans font-medium text-black text-sm mb-0.5 group-hover:text-black transition-colors">
+                            {label}
+                          </div>
+                          <div className="font-sans text-xs text-black/60 leading-relaxed">
+                            {description}
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-black/10">
                     <Link
-                      key={href}
-                      href={href}
-                      className="block px-4 py-2.5 text-[15px] text-black hover:bg-[#FFFF3A]/10 transition-colors"
+                      href="/services"
+                      className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-lg bg-black/5 hover:bg-[#FFFF3A] transition-colors text-sm font-medium text-black"
                     >
-                      {label}
+                      <Palette className="w-4 h-4" />
+                      View All Services
                     </Link>
-                  ))}
+                  </div>
                 </div>
               )}
             </div>

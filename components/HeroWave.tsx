@@ -17,7 +17,7 @@ export default function HeroWave() {
     <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden pointer-events-none" style={{ height: "200px" }}>
       <svg
         className="w-full h-full"
-        viewBox="0 0 1200 200"
+        viewBox="-50 0 1300 200"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -43,7 +43,7 @@ export default function HeroWave() {
         {/* Static wave path (drawn line) */}
         <path
           ref={pathRef}
-          d="M0,100 Q150,80 300,100 T600,100 T900,100 T1200,100"
+          d="M-50,100 Q50,80 200,100 T500,100 T800,100 T1100,100 T1350,100"
           fill="none"
           stroke="#000000"
           strokeWidth="3"
@@ -53,7 +53,7 @@ export default function HeroWave() {
 
         {/* Animated gradient glow following the wave */}
         <path
-          d="M0,100 Q150,80 300,100 T600,100 T900,100 T1200,100"
+          d="M-50,100 Q50,80 200,100 T500,100 T800,100 T1100,100 T1350,100"
           fill="none"
           stroke="url(#waveGradient)"
           strokeWidth="6"
@@ -89,7 +89,7 @@ export default function HeroWave() {
           }
           100% {
             opacity: 0.8;
-            stroke-dashoffset: -1200;
+            stroke-dashoffset: -1300;
           }
         }
       `}</style>

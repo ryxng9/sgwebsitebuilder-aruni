@@ -2,22 +2,49 @@ import Link from "next/link";
 import Navbar, { NAVBAR_HEIGHT_CLASS, ColorScheme } from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroWave from "@/components/HeroWave";
+import { Sparkles, Building2, Rocket } from "lucide-react";
 
 const pricingCards = [
   {
     title: "Small Scoped Builds",
     price: "Starting from $3,000",
     description: "Marketing sites, small rebuilds, clearly defined scope with minimal integrations.",
+    icon: Sparkles,
+    projects: [
+      "Landing pages",
+      "Portfolio websites",
+      "Small business websites",
+      "Marketing campaign sites",
+      "Brochure websites",
+    ],
   },
   {
     title: "Medium Builds",
     price: "Starting from $8,000",
     description: "Custom functionality, CMS integration, multi-page sites with moderate complexity.",
+    icon: Building2,
+    projects: [
+      "E-commerce sites",
+      "Corporate websites",
+      "Multi-page platforms",
+      "Content management systems",
+      "Membership sites",
+      "Blog platforms",
+    ],
   },
   {
     title: "Complex Systems",
     price: "Starting from $15,000+",
     description: "Internal tools, dashboards, API-heavy systems with complex business logic.",
+    icon: Rocket,
+    projects: [
+      "SaaS platforms",
+      "Custom web applications",
+      "Enterprise dashboards",
+      "API-driven systems",
+      "Internal management tools",
+      "Data visualization platforms",
+    ],
   },
 ];
 
@@ -55,7 +82,7 @@ const processSteps = [
 
 const pricingColorScheme: ColorScheme = {
   initial: {
-    bg: "bg-[#FFFF3A]",
+    bg: "bg-white",
     text: "text-black",
     buttonBg: "bg-[#212121]",
     buttonText: "text-white",
@@ -139,22 +166,43 @@ export default function Pricing() {
             </p>
 
             <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
-              {pricingCards.map((card) => (
+              {pricingCards.map((card) => {
+                const Icon = card.icon;
+                return (
                 <div
                   key={card.title}
-                  className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 lg:p-10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
+                  className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 lg:p-10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col"
                 >
-                  <h3 className="font-display font-semibold text-white text-xl sm:text-2xl tracking-tight mb-4">
-                    {card.title}
-                  </h3>
-                  <div className="font-display font-bold text-[#FFFF3A] text-2xl sm:text-3xl mb-6">
-                    {card.price}
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-6 h-6 text-[#FFFF3A]" />
+                    </div>
+                    <h3 className="font-display font-semibold text-white text-xl sm:text-2xl tracking-tight">
+                      {card.title}
+                    </h3>
                   </div>
-                  <p className="font-sans text-white/85 text-[15px] sm:text-base leading-relaxed">
+                  <div className="pb-4 border-b border-white/10">
+                    <div className="font-display font-bold text-[#FFFF3A] text-2xl sm:text-3xl">
+                      {card.price}
+                    </div>
+                  </div>
+                  <p className="font-sans text-white/85 text-[15px] sm:text-base leading-relaxed py-4 border-b border-white/10">
                     {card.description}
                   </p>
+                  <div className="pt-4">
+                    <p className="font-sans text-white/60 text-xs mb-3">Ideal for:</p>
+                    <ul className="space-y-2">
+                      {card.projects.map((project, idx) => (
+                        <li key={idx} className="flex items-start gap-2 font-sans text-white/85 text-sm">
+                          <span className="text-white mt-0.5">✓</span>
+                          <span>{project}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              ))}
+              );
+              })}
             </div>
           </div>
         </section>

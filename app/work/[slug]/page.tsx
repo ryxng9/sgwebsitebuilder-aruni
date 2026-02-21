@@ -38,7 +38,7 @@ async function getWorkProject(slug: string): Promise<WorkProject | null> {
 
 const workColorScheme: ColorScheme = {
   initial: {
-    bg: "bg-[#FFFF3A]",
+    bg: "bg-white",
     text: "text-black",
     buttonBg: "bg-[#212121]",
     buttonText: "text-white",

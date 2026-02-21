@@ -1,10 +1,30 @@
 import Link from "next/link";
-import Navbar, { NAVBAR_HEIGHT_CLASS } from "@/components/Navbar";
+import Navbar, { NAVBAR_HEIGHT_CLASS, ColorScheme } from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroWave from "@/components/HeroWave";
 import EmojiMarquee from "@/components/EmojiMarquee";
+import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
+import { Sparkles, Building2, Rocket } from "lucide-react";
 import { ShoppingCart, BriefcaseBusiness, FolderCode, Wrench, Search } from "lucide-react";
 import Image from "next/image";
+
+const homeColorScheme: ColorScheme = {
+  initial: {
+    bg: "bg-white",
+    text: "text-black",
+    buttonBg: "bg-[#212121]",
+    buttonText: "text-white",
+    buttonHoverBg: "hover:bg-black",
+  },
+  scrolled: {
+    bg: "bg-white",
+    text: "text-black",
+    buttonBg: "bg-[#212121]",
+    buttonText: "text-white",
+    buttonHoverBg: "hover:bg-black",
+  },
+};
 
 const whoWeWorkBestWith = [
   "Teams using their website to generate leads or sales",
@@ -21,11 +41,11 @@ const lessSuitableIf = [
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <main className="bg-white text-black">
-        {/* Hero — full viewport; only this is visible on load */}
+      <Navbar colorScheme={homeColorScheme} />
+      <main className="bg-white text-black overflow-x-hidden">
+        {/* Hero — compact to show marquee on load */}
         <section
-          className="h-screen flex flex-col px-6 relative overflow-hidden"
+          className="min-h-[85vh] flex flex-col px-6 relative overflow-hidden"
           aria-label="Hero"
         >
         {/* Grain Background Image */}
@@ -42,7 +62,7 @@ export default function Home() {
         <div className={NAVBAR_HEIGHT_CLASS} aria-hidden="true" />
         
         {/* Collaboration text */}
-        <div className="w-full text-center pt-4">
+        <div className="w-full text-center pt-2">
           <p className="font-sans text-sm text-black/60">
             In collaboration with{" "}
             <a
@@ -56,14 +76,14 @@ export default function Home() {
           </p>
         </div>
         
-        {/* Content area — fills remaining space and centers */}
-        <div className="flex-1 flex items-center justify-center relative z-10">
+        {/* Content area — compact to fit marquee */}
+        <div className="flex-1 flex items-start justify-center relative z-10 pt-6">
           <div className="w-full max-w-6xl mx-auto">
-            <h1 className="font-display font-bold text-black text-4xl sm:text-5xl md:text-6xl leading-[1.15] tracking-tight max-w-3xl animate-fadeInUp">
+            <h1 className="font-display font-bold text-black text-4xl sm:text-5xl md:text-6xl leading-[1.15] tracking-tight max-w-3xl animate-fadeInUp mt-8">
               Singapore's #1 Web Builder for Businesses.
             </h1>
 
-            <div className="mt-12 flex flex-wrap items-center gap-4 font-sans animate-fadeInUp animation-delay-200">
+            <div className="mt-6 flex flex-wrap items-center gap-4 font-sans animate-fadeInUp animation-delay-200">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center text-[15px] font-medium px-6 py-3 rounded-lg bg-[#212121] text-white hover:bg-black transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
@@ -79,10 +99,10 @@ export default function Home() {
             </div>
 
             {/* Stats */}
-            <div className="mt-10 flex gap-12 animate-fadeInUp animation-delay-400">
+            <div className="mt-6 flex gap-12 animate-fadeInUp animation-delay-400">
               {/* Projects Completed */}
               <div className="text-left">
-                <div className="font-display font-bold text-4xl sm:text-5xl text-black mb-2">
+                <div className="font-display font-bold text-3xl sm:text-4xl text-black mb-1">
                   120+
                 </div>
                 <div className="flex gap-1 mb-1">
@@ -99,7 +119,7 @@ export default function Home() {
 
               {/* Rating */}
               <div className="text-left">
-                <div className="font-display font-bold text-4xl sm:text-5xl text-black mb-2">
+                <div className="font-display font-bold text-3xl sm:text-4xl text-black mb-1">
                   4.9
                 </div>
                 <div className="flex gap-1 mb-1">
@@ -116,404 +136,259 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* Animated Wave */}
-        <HeroWave />
-      </section>
+        
+          {/* Animated Wave */}
+          <HeroWave />
+        </section>
 
       {/* Emoji Marquee */}
       <EmojiMarquee />
 
-      {/* Who it's for — centered, loose spacing */}
-      {/* Services we provide — BLACK SECTION */}
+      {/* Our Featured Builds — BLACK SECTION */}
       <section className="w-full px-6 pt-32 sm:pt-40 pb-24 sm:pb-32 bg-[#212121]">
         <div className="w-full mx-auto">
           <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-2xl mx-auto">
-            Services we provide
+            Our featured builds
           </h2>
           <p className="mt-6 font-sans text-base sm:text-lg text-[#FFFF3A] text-center max-w-xl mx-auto leading-relaxed">
-            Websites built to convert, scale, and perform
+            Real-world builds, backed by a clear and reliable process.
           </p>
 
-          <div className="mt-16 px-6 max-w-[1600px] mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-              {/* E-commerce */}
-              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
-                <div className="mb-4 flex justify-center">
-                  <ShoppingCart className="w-12 h-12" style={{ color: '#FFFF3A' }} />
+          <div className="mt-16 space-y-8 max-w-6xl mx-auto">
+            {/* Featured Build 1 */}
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
+              <div className="aspect-[21/9] relative overflow-hidden bg-gradient-to-br from-[#1e3a8a] to-[#60a5fa]">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-white/90 text-2xl font-display font-bold">E-commerce Platform Preview</div>
                 </div>
-                <h3 className="font-display font-semibold text-white text-lg tracking-tight">
-                  E-commerce
-                </h3>
-                <p className="mt-3 font-sans text-white/70 text-sm leading-relaxed flex-1">
-                  Build powerful online stores that drive sales and deliver seamless shopping experiences.
+              </div>
+              <div className="p-8">
+                <p className="text-xs font-sans text-[#FFFF3A] uppercase tracking-wider mb-3">WEBSITE REDESIGN</p>
+                <h3 className="font-display font-bold text-white text-2xl sm:text-3xl mb-4">E-commerce Platform Redesign</h3>
+                <p className="font-sans text-white/70 text-base sm:text-lg leading-relaxed mb-6">
+                  Complete overhaul of online shopping experience with modern UI and improved conversion rates.
                 </p>
                 <Link
-                  href="/services/e-commerce"
-                  className="mt-4 inline-flex items-center justify-center font-sans text-sm font-medium px-4 py-2 rounded-lg border border-white/20 text-white bg-transparent hover:bg-white/5 transition-all duration-200"
+                  href="/work"
+                  className="inline-flex items-center justify-center font-sans text-base font-medium px-6 py-3 rounded-lg border border-white/20 text-white bg-transparent hover:bg-white/5 transition-all duration-200"
                 >
-                  Read More
+                  View Case Study
                 </Link>
               </div>
+            </div>
 
-              {/* Business Web Design */}
-              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
-                <div className="mb-4 flex justify-center">
-                  <BriefcaseBusiness className="w-12 h-12" style={{ color: '#FFFF3A' }} />
+            {/* Featured Build 2 */}
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
+              <div className="aspect-[21/9] relative overflow-hidden bg-gradient-to-br from-gray-700 to-gray-500">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-white/90 text-2xl font-display font-bold">Corporate Website Preview</div>
                 </div>
-                <h3 className="font-display font-semibold text-white text-lg tracking-tight">
-                  Business Web Design
-                </h3>
-                <p className="mt-3 font-sans text-white/70 text-sm leading-relaxed flex-1">
-                  Professional websites that establish credibility and convert visitors into customers.
+              </div>
+              <div className="p-8">
+                <p className="text-xs font-sans text-[#FFFF3A] uppercase tracking-wider mb-3">WEBSITE REDESIGN</p>
+                <h3 className="font-display font-bold text-white text-2xl sm:text-3xl mb-4">Corporate Website Transformation</h3>
+                <p className="font-sans text-white/70 text-base sm:text-lg leading-relaxed mb-6">
+                  Professional rebrand with focus on user experience and modern design principles.
                 </p>
                 <Link
-                  href="/services/business-web-design"
-                  className="mt-4 inline-flex items-center justify-center font-sans text-sm font-medium px-4 py-2 rounded-lg border border-white/20 text-white bg-transparent hover:bg-white/5 transition-all duration-200"
+                  href="/work"
+                  className="inline-flex items-center justify-center font-sans text-base font-medium px-6 py-3 rounded-lg border border-white/20 text-white bg-transparent hover:bg-white/5 transition-all duration-200"
                 >
-                  Read More
+                  View Case Study
                 </Link>
               </div>
+            </div>
 
-              {/* Custom Web Development */}
-              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
-                <div className="mb-4 flex justify-center">
-                  <FolderCode className="w-12 h-12" style={{ color: '#FFFF3A' }} />
+            {/* Featured Build 3 */}
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
+              <div className="aspect-[21/9] relative overflow-hidden bg-gradient-to-br from-emerald-600 to-emerald-400">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-white/90 text-2xl font-display font-bold">SaaS Platform Preview</div>
                 </div>
-                <h3 className="font-display font-semibold text-white text-lg tracking-tight">
-                  Custom Web Development
-                </h3>
-                <p className="mt-3 font-sans text-white/70 text-sm leading-relaxed flex-1">
-                  Tailored web solutions built to your exact specifications and business needs.
-                </p>
-                <Link
-                  href="/services/custom-web-development"
-                  className="mt-4 inline-flex items-center justify-center font-sans text-sm font-medium px-4 py-2 rounded-lg border border-white/20 text-white bg-transparent hover:bg-white/5 transition-all duration-200"
-                >
-                  Read More
-                </Link>
               </div>
-
-              {/* Website Management */}
-              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
-                <div className="mb-4 flex justify-center">
-                  <Wrench className="w-12 h-12" style={{ color: '#FFFF3A' }} />
-                </div>
-                <h3 className="font-display font-semibold text-white text-lg tracking-tight">
-                  Website Management
-                </h3>
-                <p className="mt-3 font-sans text-white/70 text-sm leading-relaxed flex-1">
-                  Ongoing maintenance and support to keep your website running smoothly and securely.
+              <div className="p-8">
+                <p className="text-xs font-sans text-[#FFFF3A] uppercase tracking-wider mb-3">WEBSITE REDESIGN</p>
+                <h3 className="font-display font-bold text-white text-2xl sm:text-3xl mb-4">SaaS Platform Launch</h3>
+                <p className="font-sans text-white/70 text-base sm:text-lg leading-relaxed mb-6">
+                  From concept to launch, a complete web solution for a modern software platform.
                 </p>
                 <Link
-                  href="/services/website-management"
-                  className="mt-4 inline-flex items-center justify-center font-sans text-sm font-medium px-4 py-2 rounded-lg border border-white/20 text-white bg-transparent hover:bg-white/5 transition-all duration-200"
+                  href="/work"
+                  className="inline-flex items-center justify-center font-sans text-base font-medium px-6 py-3 rounded-lg border border-white/20 text-white bg-transparent hover:bg-white/5 transition-all duration-200"
                 >
-                  Read More
-                </Link>
-              </div>
-
-              {/* SEO */}
-              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
-                <div className="mb-4 flex justify-center">
-                  <Search className="w-12 h-12" style={{ color: '#FFFF3A' }} />
-                </div>
-                <h3 className="font-display font-semibold text-white text-lg tracking-tight">
-                  Search Engine Optimisation (SEO)
-                </h3>
-                <p className="mt-3 font-sans text-white/70 text-sm leading-relaxed flex-1">
-                  Improve your search rankings and drive organic traffic to your website.
-                </p>
-                <Link
-                  href="/services/seo"
-                  className="mt-4 inline-flex items-center justify-center font-sans text-sm font-medium px-4 py-2 rounded-lg border border-white/20 text-white bg-transparent hover:bg-white/5 transition-all duration-200"
-                >
-                  Read More
+                  View Case Study
                 </Link>
               </div>
             </div>
           </div>
-
-          {/* View Our Services Button */}
-          <div className="mt-12 text-center">
-            <Link
-              href="/services"
-              className="inline-flex items-center justify-center font-sans text-base font-medium px-8 py-4 rounded-lg bg-white text-black hover:bg-[#FFFF3A] transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-            >
-              View Our Services
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* Proof — work samples and process — WHITE SECTION */}
+      {/* Testimonials — BLACK SECTION */}
+      <Testimonials />
+
+      {/* Pricing — WHITE SECTION */}
       <section className="w-full px-6 py-24 sm:py-32 bg-white">
         <div className="w-full max-w-6xl mx-auto">
           {/* Header */}
           <h2 className="font-display font-bold text-black text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center max-w-2xl mx-auto">
-            Proven through practice
+            Pricing
           </h2>
-          <p className="mt-6 font-sans text-base sm:text-lg text-[#212121] text-center max-w-xl mx-auto leading-relaxed">
-            Real-world builds, backed by a clear and reliable process.
+          <p className="mt-6 font-sans text-base sm:text-lg text-black/70 text-center max-w-xl mx-auto leading-relaxed">
+            Transparent pricing for quality web solutions
           </p>
 
-          {/* Work Samples */}
+          {/* Pricing Cards */}
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {/* Sample 1 */}
-            <div className="rounded-xl border border-black/30 bg-white/60 backdrop-blur-sm p-6 sm:p-8 hover:border-black/50 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-1">
-              <div className="aspect-[4/3] rounded-lg bg-gradient-to-br from-[#FFFF3A]/20 to-[#FFFF3A]/20 mb-6 flex items-center justify-center border border-black/20">
-                <span className="font-sans text-black/75 text-sm">Project Preview</span>
+            {/* Small Scoped Builds */}
+            <div className="rounded-2xl border border-black/10 bg-white p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
+              <div className="flex items-start gap-3 mb-4 h-[60px]">
+                <div className="w-12 h-12 rounded-lg bg-black/5 flex items-center justify-center flex-shrink-0">
+                  <Sparkles className="w-6 h-6 text-black" />
+                </div>
+                <h3 className="font-display font-bold text-black text-2xl leading-tight">Small Scoped Builds</h3>
               </div>
-              <p className="font-sans text-black text-[15px] sm:text-base font-semibold leading-relaxed">
-                E-commerce Example
-              </p>
-              <p className="mt-3 font-sans text-[#212121] text-sm sm:text-[15px] leading-relaxed">
-                Built to improve enquiry quality and page speed
-              </p>
-            </div>
-
-            {/* Sample 2 */}
-            <div className="rounded-xl border border-black/30 bg-white/60 backdrop-blur-sm p-6 sm:p-8 hover:border-black/50 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-1">
-              <div className="aspect-[4/3] rounded-lg bg-gradient-to-br from-[#FFFF3A]/20 to-[#FFFF3A]/20 mb-6 flex items-center justify-center border border-black/20">
-                <span className="font-sans text-black/75 text-sm">Project Preview</span>
+              <div className="pb-4 border-b border-black/10 h-[80px] flex items-start">
+                <span className="font-display font-bold text-black text-3xl">Starting from $3,000</span>
               </div>
-              <p className="font-sans text-black text-[15px] sm:text-base font-semibold leading-relaxed">
-                Business Web Design Example
+              <p className="font-sans text-black/70 text-sm leading-relaxed py-4 border-b border-black/10 h-[100px]">
+                Marketing sites, small rebuilds, clearly defined scope with minimal integrations.
               </p>
-              <p className="mt-3 font-sans text-[#212121] text-sm sm:text-[15px] leading-relaxed">
-                Scalable architecture designed for conversion and retention
-              </p>
-            </div>
-
-            {/* Sample 3 */}
-            <div className="rounded-xl border border-black/30 bg-white/60 backdrop-blur-sm p-6 sm:p-8 hover:border-black/50 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-1">
-              <div className="aspect-[4/3] rounded-lg bg-gradient-to-br from-[#FFFF3A]/20 to-[#FFFF3A]/20 mb-6 flex items-center justify-center border border-black/20">
-                <span className="font-sans text-black/75 text-sm">Project Preview</span>
-              </div>
-              <p className="font-sans text-black text-[15px] sm:text-base font-semibold leading-relaxed">
-                Custom Web Development Example
-              </p>
-              <p className="mt-3 font-sans text-[#212121] text-sm sm:text-[15px] leading-relaxed">
-                Clean design focused on trial signups and feature clarity
-              </p>
-            </div>
-          </div>
-
-          {/* Process Snapshot with Timeline */}
-          <div className="mt-20 sm:mt-24">
-            <div className="relative">
-              {/* Timeline connector line - hidden on mobile, visible on lg */}
-              <div className="hidden lg:block absolute top-5 left-0 right-0 h-0.5 bg-black/30" aria-hidden="true" />
-              
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative">
-                {/* Step 1 */}
-                <div className="space-y-3 relative">
-                  <div className="w-10 h-10 rounded-lg bg-[#FFFF3A] border border-black/30 flex items-center justify-center relative z-10">
-                    <span className="font-display font-semibold text-black text-sm">1</span>
-                  </div>
-                  <h3 className="font-display font-semibold text-black text-base sm:text-lg tracking-tight">
-                    Strategy
-                  </h3>
-                  <p className="font-sans text-[#212121] text-[15px] leading-relaxed">
-                    Define goals, audience, and conversion intent
-                  </p>
-                </div>
-
-                {/* Step 2 */}
-                <div className="space-y-3 relative">
-                  <div className="w-10 h-10 rounded-lg bg-[#FFFF3A] border border-black/30 flex items-center justify-center relative z-10">
-                    <span className="font-display font-semibold text-black text-sm">2</span>
-                  </div>
-                  <h3 className="font-display font-semibold text-black text-base sm:text-lg tracking-tight">
-                    Structure
-                  </h3>
-                  <p className="font-sans text-[#212121] text-[15px] leading-relaxed">
-                    Plan pages, content hierarchy, and user flow
-                  </p>
-                </div>
-
-                {/* Step 3 */}
-                <div className="space-y-3 relative">
-                  <div className="w-10 h-10 rounded-lg bg-[#FFFF3A] border border-black/30 flex items-center justify-center relative z-10">
-                    <span className="font-display font-semibold text-black text-sm">3</span>
-                  </div>
-                  <h3 className="font-display font-semibold text-black text-base sm:text-lg tracking-tight">
-                    Build
-                  </h3>
-                  <p className="font-sans text-[#212121] text-[15px] leading-relaxed">
-                    Clean, scalable, production-ready code
-                  </p>
-                </div>
-
-                {/* Step 4 */}
-                <div className="space-y-3 relative">
-                  <div className="w-10 h-10 rounded-lg bg-[#FFFF3A] border border-black/30 flex items-center justify-center relative z-10">
-                    <span className="font-display font-semibold text-black text-sm">4</span>
-                  </div>
-                  <h3 className="font-display font-semibold text-black text-base sm:text-lg tracking-tight">
-                    Launch
-                  </h3>
-                  <p className="font-sans text-[#212121] text-[15px] leading-relaxed">
-                    Performance, SEO, and deployment ready
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Quality Assurance Section — BLACK SECTION */}
-      <section className="w-full px-6 py-24 sm:py-32 bg-[#212121] border-t border-white/10">
-        <div className="w-full max-w-6xl mx-auto">
-          {/* Stats and Company Marquee */}
-          <div className="mb-16 flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-            {/* Stats Group - Aligned Left */}
-            <div className="flex gap-12 lg:gap-16">
-              {/* Projects Completed */}
-              <div className="text-left">
-                <div className="font-display font-bold text-5xl sm:text-6xl text-white mb-3">
-                  120+
-                </div>
-                <div className="flex gap-1 mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-[#FFFF3A]" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="font-sans text-white/70 text-base">
-                  Projects completed
-                </p>
-              </div>
-
-              {/* Rating */}
-              <div className="text-left">
-                <div className="font-display font-bold text-5xl sm:text-6xl text-white mb-3">
-                  4.9
-                </div>
-                <div className="flex gap-1 mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-[#FFFF3A]" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="font-sans text-white/70 text-base">
-                  Rating from clients
-                </p>
+              <ul className="space-y-3 pt-4 mb-auto">
+                <li className="flex items-start gap-2 font-sans text-black/80 text-sm">
+                  <span className="text-black mt-0.5">✓</span>
+                  <span>Landing pages</span>
+                </li>
+                <li className="flex items-start gap-2 font-sans text-black/80 text-sm">
+                  <span className="text-black mt-0.5">✓</span>
+                  <span>Portfolio websites</span>
+                </li>
+                <li className="flex items-start gap-2 font-sans text-black/80 text-sm">
+                  <span className="text-black mt-0.5">✓</span>
+                  <span>Small business websites</span>
+                </li>
+                <li className="flex items-start gap-2 font-sans text-black/80 text-sm">
+                  <span className="text-black mt-0.5">✓</span>
+                  <span>Marketing campaign sites</span>
+                </li>
+              </ul>
+              <div className="mt-6 space-y-3">
+                <Link
+                  href="/contact"
+                  className="block w-full text-center py-3 px-6 rounded-lg bg-black text-white hover:bg-black hover:text-white transition-all duration-200 font-medium"
+                >
+                  Get Started
+                </Link>
+                <Link
+                  href="/pricing"
+                  className="block w-full text-center py-2 px-6 rounded-lg text-black/70 hover:text-black transition-all duration-200 text-sm font-medium"
+                >
+                  View Full Pricing →
+                </Link>
               </div>
             </div>
 
-            {/* Company Marquee - Stretched */}
-            <div className="flex-1 w-full lg:w-auto relative overflow-hidden">
-              {/* Left Fade */}
-              <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#212121] to-transparent z-10 pointer-events-none"></div>
-              {/* Right Fade */}
-              <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#212121] to-transparent z-10 pointer-events-none"></div>
-              <div className="overflow-hidden bg-transparent py-4">
-                <div className="company-marquee-container">
-                  <div className="company-marquee-content">
-                    {[
-                      { src: "/images/homepage/marquee/flextronic.svg", alt: "Flextronic" },
-                      { src: "/images/homepage/marquee/grab.svg", alt: "Grab" },
-                      { src: "/images/homepage/marquee/ntu.svg", alt: "NTU" },
-                      { src: "/images/homepage/marquee/nus.svg", alt: "NUS" },
-                      { src: "/images/homepage/marquee/nyu.svg", alt: "NYU" },
-                      { src: "/images/homepage/marquee/reebok.svg", alt: "Reebok" },
-                      { src: "/images/homepage/marquee/sats.png", alt: "SATS" },
-                      { src: "/images/homepage/marquee/singtel.svg", alt: "Singtel" },
-                      { src: "/images/homepage/marquee/stryker.svg", alt: "Stryker" },
-                      { src: "/images/homepage/marquee/toysrus.svg", alt: "Toys R Us" },
-                    ].map((logo, index) => (
-                      <div
-                        key={`logo-1-${index}`}
-                        className="inline-block mx-6 relative"
-                        style={{ width: "100px", height: "50px" }}
-                      >
-                        <Image
-                          src={logo.src}
-                          alt={logo.alt}
-                          fill
-                          className="object-contain opacity-60 brightness-0 invert"
-                        />
-                      </div>
-                    ))}
-                    {[
-                      { src: "/images/homepage/marquee/flextronic.svg", alt: "Flextronic" },
-                      { src: "/images/homepage/marquee/grab.svg", alt: "Grab" },
-                      { src: "/images/homepage/marquee/ntu.svg", alt: "NTU" },
-                      { src: "/images/homepage/marquee/nus.svg", alt: "NUS" },
-                      { src: "/images/homepage/marquee/nyu.svg", alt: "NYU" },
-                      { src: "/images/homepage/marquee/reebok.svg", alt: "Reebok" },
-                      { src: "/images/homepage/marquee/sats.png", alt: "SATS" },
-                      { src: "/images/homepage/marquee/singtel.svg", alt: "Singtel" },
-                      { src: "/images/homepage/marquee/stryker.svg", alt: "Stryker" },
-                      { src: "/images/homepage/marquee/toysrus.svg", alt: "Toys R Us" },
-                    ].map((logo, index) => (
-                      <div
-                        key={`logo-2-${index}`}
-                        className="inline-block mx-6 relative"
-                        style={{ width: "100px", height: "50px" }}
-                      >
-                        <Image
-                          src={logo.src}
-                          alt={logo.alt}
-                          fill
-                          className="object-contain opacity-60 brightness-0 invert"
-                        />
-                      </div>
-                    ))}
-                  </div>
+            {/* Medium Builds */}
+            <div className="rounded-2xl border border-black/10 bg-white p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
+              <div className="flex items-start gap-3 mb-4 h-[60px]">
+                <div className="w-12 h-12 rounded-lg bg-black/5 flex items-center justify-center flex-shrink-0">
+                  <Building2 className="w-6 h-6 text-black" />
                 </div>
+                <h3 className="font-display font-bold text-black text-2xl leading-tight">Medium Builds</h3>
               </div>
-              {/* Fade overlay on the right */}
-              <div className="absolute top-0 right-0 bottom-0 w-48 bg-gradient-to-l from-[#212121] via-[#212121]/80 to-transparent pointer-events-none"></div>
-            </div>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {/* Quality Assurance */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
-              <h3 className="font-display font-semibold text-white text-lg sm:text-xl tracking-tight mb-3">
-                Quality Assurance
-              </h3>
-              <p className="font-sans text-white/70 text-sm sm:text-base leading-relaxed">
-                Rigorous testing ensures your website works flawlessly.
+              <div className="pb-4 border-b border-black/10 h-[80px] flex items-start">
+                <span className="font-display font-bold text-black text-3xl">Starting from $8,000</span>
+              </div>
+              <p className="font-sans text-black/70 text-sm leading-relaxed py-4 border-b border-black/10 h-[100px]">
+                Custom functionality, CMS integration, multi-page sites with moderate complexity.
               </p>
+              <ul className="space-y-3 pt-4 mb-auto">
+                <li className="flex items-start gap-2 font-sans text-black/80 text-sm">
+                  <span className="text-black mt-0.5">✓</span>
+                  <span>E-commerce sites</span>
+                </li>
+                <li className="flex items-start gap-2 font-sans text-black/80 text-sm">
+                  <span className="text-black mt-0.5">✓</span>
+                  <span>Corporate websites</span>
+                </li>
+                <li className="flex items-start gap-2 font-sans text-black/80 text-sm">
+                  <span className="text-black mt-0.5">✓</span>
+                  <span>Multi-page platforms</span>
+                </li>
+                <li className="flex items-start gap-2 font-sans text-black/80 text-sm">
+                  <span className="text-black mt-0.5">✓</span>
+                  <span>Content management systems</span>
+                </li>
+              </ul>
+              <div className="mt-6 space-y-3">
+                <Link
+                  href="/contact"
+                  className="block w-full text-center py-3 px-6 rounded-lg bg-black text-white hover:bg-black hover:text-white transition-all duration-200 font-medium"
+                >
+                  Get Started
+                </Link>
+                <Link
+                  href="/pricing"
+                  className="block w-full text-center py-2 px-6 rounded-lg text-black/70 hover:text-black transition-all duration-200 text-sm font-medium"
+                >
+                  View Full Pricing →
+                </Link>
+              </div>
             </div>
 
-            {/* Cost Transparency */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
-              <h3 className="font-display font-semibold text-white text-lg sm:text-xl tracking-tight mb-3">
-                Cost Transparency
-              </h3>
-              <p className="font-sans text-white/70 text-sm sm:text-base leading-relaxed">
-                Clear pricing with no hidden fees or surprises.
+            {/* Complex Systems */}
+            <div className="rounded-2xl border border-black/10 bg-white p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col">
+              <div className="flex items-start gap-3 mb-4 h-[60px]">
+                <div className="w-12 h-12 rounded-lg bg-black/5 flex items-center justify-center flex-shrink-0">
+                  <Rocket className="w-6 h-6 text-black" />
+                </div>
+                <h3 className="font-display font-bold text-black text-2xl leading-tight">Complex Systems</h3>
+              </div>
+              <div className="pb-4 border-b border-black/10 h-[80px] flex items-start">
+                <span className="font-display font-bold text-black text-3xl">Starting from $15,000+</span>
+              </div>
+              <p className="font-sans text-black/70 text-sm leading-relaxed py-4 border-b border-black/10 h-[100px]">
+                Internal tools, dashboards, API-heavy systems with complex business logic.
               </p>
-            </div>
-
-            {/* End-to-end Service */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
-              <h3 className="font-display font-semibold text-white text-lg sm:text-xl tracking-tight mb-3">
-                End-to-end Service
-              </h3>
-              <p className="font-sans text-white/70 text-sm sm:text-base leading-relaxed">
-                From concept to launch, we handle everything.
-              </p>
-            </div>
-
-            {/* Fast Service */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
-              <h3 className="font-display font-semibold text-white text-lg sm:text-xl tracking-tight mb-3">
-                Fast Service
-              </h3>
-              <p className="font-sans text-white/70 text-sm sm:text-base leading-relaxed">
-                Quick turnaround times without compromising quality.
-              </p>
+              <ul className="space-y-3 pt-4 mb-auto">
+                <li className="flex items-start gap-2 font-sans text-black/80 text-sm">
+                  <span className="text-black mt-0.5">✓</span>
+                  <span>SaaS platforms</span>
+                </li>
+                <li className="flex items-start gap-2 font-sans text-black/80 text-sm">
+                  <span className="text-black mt-0.5">✓</span>
+                  <span>Custom web applications</span>
+                </li>
+                <li className="flex items-start gap-2 font-sans text-black/80 text-sm">
+                  <span className="text-black mt-0.5">✓</span>
+                  <span>Enterprise dashboards</span>
+                </li>
+                <li className="flex items-start gap-2 font-sans text-black/80 text-sm">
+                  <span className="text-black mt-0.5">✓</span>
+                  <span>API-driven systems</span>
+                </li>
+              </ul>
+              <div className="mt-6 space-y-3">
+                <Link
+                  href="/contact"
+                  className="block w-full text-center py-3 px-6 rounded-lg bg-black text-white hover:bg-black hover:text-white transition-all duration-200 font-medium"
+                >
+                  Get Started
+                </Link>
+                <Link
+                  href="/pricing"
+                  className="block w-full text-center py-2 px-6 rounded-lg text-black/70 hover:text-black transition-all duration-200 text-sm font-medium"
+                >
+                  View Full Pricing →
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* CTA — final call-to-action — WHITE SECTION */}
       <section className="w-full px-6 py-20 sm:py-28 bg-white border-t border-black/10">

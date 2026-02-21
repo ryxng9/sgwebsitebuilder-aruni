@@ -5,18 +5,18 @@ import { TrendingUp, Trophy, Gauge, MousePointerClick, FileText, FileSearch, Shi
 
 const seoColorScheme: ColorScheme = {
   initial: {
-    bg: "bg-[#FFFF3A]",
-    text: "text-black",
-    buttonBg: "bg-[#212121]",
-    buttonText: "text-white",
-    buttonHoverBg: "hover:bg-black",
+    bg: "bg-[#212121]",
+    text: "text-white",
+    buttonBg: "bg-[#FFFF3A]",
+    buttonText: "text-black",
+    buttonHoverBg: "hover:bg-white",
   },
   scrolled: {
-    bg: "bg-[#FFFF3A]",
-    text: "text-black",
-    buttonBg: "bg-[#212121]",
-    buttonText: "text-white",
-    buttonHoverBg: "hover:bg-black",
+    bg: "bg-[#212121]",
+    text: "text-white",
+    buttonBg: "bg-[#FFFF3A]",
+    buttonText: "text-black",
+    buttonHoverBg: "hover:bg-white",
   },
 };
 

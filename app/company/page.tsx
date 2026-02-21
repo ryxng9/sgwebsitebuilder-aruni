@@ -43,7 +43,7 @@ const idealClients = [
 
 const companyColorScheme: ColorScheme = {
   initial: {
-    bg: "bg-[#FFFF3A]",
+    bg: "bg-white",
     text: "text-black",
     buttonBg: "bg-[#212121]",
     buttonText: "text-white",
