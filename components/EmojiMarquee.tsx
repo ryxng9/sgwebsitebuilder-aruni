@@ -1,29 +1,54 @@
 "use client";
 
+import Image from "next/image";
+
 export default function EmojiMarquee() {
-  const businesses = ["DBS", "SIA", "Sheng Siong", "NTUC", "WeBull", "Singtel", "StarHub", "Grab", "Shopee", "Lazada", "CapitaLand", "Keppel"];
+  const logos = [
+    { src: "/images/homepage/marquee/flextronic.svg", alt: "Flextronic" },
+    { src: "/images/homepage/marquee/grab.svg", alt: "Grab" },
+    { src: "/images/homepage/marquee/ntu.svg", alt: "NTU" },
+    { src: "/images/homepage/marquee/nus.svg", alt: "NUS" },
+    { src: "/images/homepage/marquee/nyu.svg", alt: "NYU" },
+    { src: "/images/homepage/marquee/reebok.svg", alt: "Reebok" },
+    { src: "/images/homepage/marquee/sats.png", alt: "SATS" },
+    { src: "/images/homepage/marquee/singtel.svg", alt: "Singtel" },
+    { src: "/images/homepage/marquee/stryker.svg", alt: "Stryker" },
+    { src: "/images/homepage/marquee/toysrus.svg", alt: "Toys R Us" },
+  ];
   
   return (
-    <div className="w-full overflow-hidden bg-[#FFFF3A]/5 border-y border-black/10 py-8">
+    <div className="w-full overflow-hidden bg-white border-y border-black/10 py-8">
       <div className="marquee-container">
         <div className="marquee-content">
-          {/* First set of business names */}
-          {businesses.map((business, index) => (
-            <span
-              key={`business-1-${index}`}
-              className="inline-block mx-12 font-display font-bold text-2xl sm:text-3xl text-black/40"
+          {/* First set of logos */}
+          {logos.map((logo, index) => (
+            <div
+              key={`logo-1-${index}`}
+              className="inline-block mx-12 relative"
+              style={{ width: "120px", height: "60px" }}
             >
-              {business}
-            </span>
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                fill
+                className="object-contain opacity-40 grayscale"
+              />
+            </div>
           ))}
           {/* Duplicate set for seamless loop */}
-          {businesses.map((business, index) => (
-            <span
-              key={`business-2-${index}`}
-              className="inline-block mx-12 font-display font-bold text-2xl sm:text-3xl text-black/40"
+          {logos.map((logo, index) => (
+            <div
+              key={`logo-2-${index}`}
+              className="inline-block mx-12 relative"
+              style={{ width: "120px", height: "60px" }}
             >
-              {business}
-            </span>
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                fill
+                className="object-contain opacity-40 grayscale"
+              />
+            </div>
           ))}
         </div>
       </div>

@@ -413,21 +413,55 @@ export default function Home() {
               <div className="overflow-hidden bg-transparent py-4">
                 <div className="company-marquee-container">
                   <div className="company-marquee-content">
-                    {["DBS", "SIA", "Sheng Siong", "NTUC", "WeBull", "Singtel", "StarHub", "Grab", "Shopee", "Lazada", "CapitaLand", "Keppel"].map((company, index) => (
-                      <span
-                        key={`company-1-${index}`}
-                        className="inline-block mx-6 font-display font-semibold text-lg text-white/60"
+                    {[
+                      { src: "/images/homepage/marquee/flextronic.svg", alt: "Flextronic" },
+                      { src: "/images/homepage/marquee/grab.svg", alt: "Grab" },
+                      { src: "/images/homepage/marquee/ntu.svg", alt: "NTU" },
+                      { src: "/images/homepage/marquee/nus.svg", alt: "NUS" },
+                      { src: "/images/homepage/marquee/nyu.svg", alt: "NYU" },
+                      { src: "/images/homepage/marquee/reebok.svg", alt: "Reebok" },
+                      { src: "/images/homepage/marquee/sats.png", alt: "SATS" },
+                      { src: "/images/homepage/marquee/singtel.svg", alt: "Singtel" },
+                      { src: "/images/homepage/marquee/stryker.svg", alt: "Stryker" },
+                      { src: "/images/homepage/marquee/toysrus.svg", alt: "Toys R Us" },
+                    ].map((logo, index) => (
+                      <div
+                        key={`logo-1-${index}`}
+                        className="inline-block mx-6 relative"
+                        style={{ width: "100px", height: "50px" }}
                       >
-                        {company}
-                      </span>
+                        <Image
+                          src={logo.src}
+                          alt={logo.alt}
+                          fill
+                          className="object-contain opacity-60 brightness-0 invert"
+                        />
+                      </div>
                     ))}
-                    {["DBS", "SIA", "Sheng Siong", "NTUC", "WeBull", "Singtel", "StarHub", "Grab", "Shopee", "Lazada", "CapitaLand", "Keppel"].map((company, index) => (
-                      <span
-                        key={`company-2-${index}`}
-                        className="inline-block mx-6 font-display font-semibold text-lg text-white/60"
+                    {[
+                      { src: "/images/homepage/marquee/flextronic.svg", alt: "Flextronic" },
+                      { src: "/images/homepage/marquee/grab.svg", alt: "Grab" },
+                      { src: "/images/homepage/marquee/ntu.svg", alt: "NTU" },
+                      { src: "/images/homepage/marquee/nus.svg", alt: "NUS" },
+                      { src: "/images/homepage/marquee/nyu.svg", alt: "NYU" },
+                      { src: "/images/homepage/marquee/reebok.svg", alt: "Reebok" },
+                      { src: "/images/homepage/marquee/sats.png", alt: "SATS" },
+                      { src: "/images/homepage/marquee/singtel.svg", alt: "Singtel" },
+                      { src: "/images/homepage/marquee/stryker.svg", alt: "Stryker" },
+                      { src: "/images/homepage/marquee/toysrus.svg", alt: "Toys R Us" },
+                    ].map((logo, index) => (
+                      <div
+                        key={`logo-2-${index}`}
+                        className="inline-block mx-6 relative"
+                        style={{ width: "100px", height: "50px" }}
                       >
-                        {company}
-                      </span>
+                        <Image
+                          src={logo.src}
+                          alt={logo.alt}
+                          fill
+                          className="object-contain opacity-60 brightness-0 invert"
+                        />
+                      </div>
                     ))}
                   </div>
                 </div>

@@ -15,7 +15,7 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "SGWebsiteBuilder",
+  title: "SGWB",
   description:
     "We develop conversion-focused websites for startups and SMEs that turn clarity, structure, and strategy into consistent leads.",
   icons: {
