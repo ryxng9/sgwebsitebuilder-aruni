@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
+import emailjs from "@emailjs/browser";
 import Navbar, { NAVBAR_HEIGHT_CLASS, ColorScheme } from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -29,6 +30,7 @@ const contactColorScheme: ColorScheme = {
 };
 
 export default function Contact() {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -37,11 +39,80 @@ export default function Contact() {
     budget: "",
     projectDescription: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      // Check if environment variables are set
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        console.error("EmailJS Configuration Error:", {
+          serviceId: serviceId ? "Set" : "Missing",
+          templateId: templateId ? "Set" : "Missing",
+          publicKey: publicKey ? "Set" : "Missing",
+        });
+        throw new Error("EmailJS credentials not configured. Please check your .env.local file.");
+      }
+
+      console.log("Sending email with EmailJS...");
+      const result = await emailjs.sendForm(
+        serviceId,
+        templateId,
+        formRef.current!,
+        publicKey
+      );
+
+      console.log("EmailJS Response:", result);
+
+      if (result.text === "OK") {
+        setSubmitStatus({
+          type: "success",
+          message: "Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.",
+        });
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          projectType: "",
+          budget: "",
+          projectDescription: "",
+        });
+      }
+    } catch (error: any) {
+      console.error("EmailJS Error:", error);
+      console.error("Error details:", {
+        message: error?.message,
+        text: error?.text,
+        status: error?.status,
+      });
+      
+      let errorMessage = "Oops! Something went wrong. Please try again or contact us directly via email.";
+      
+      if (error?.message?.includes("credentials not configured")) {
+        errorMessage = "Email service is not configured yet. Please contact us directly via email.";
+      } else if (error?.text) {
+        errorMessage = `Error: ${error.text}`;
+      }
+      
+      setSubmitStatus({
+        type: "error",
+        message: errorMessage,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -53,9 +124,68 @@ export default function Contact() {
     });
   };
 
+  const dismissStatus = () => {
+    setSubmitStatus({ type: null, message: "" });
+  };
+
   return (
     <>
       <Navbar colorScheme={contactColorScheme} />
+      
+      {/* Fixed Status Message */}
+      {submitStatus.type && (
+        <div className="fixed top-28 left-1/2 -translate-x-1/2 z-50 w-full max-w-md px-6 animate-slideDown">
+          <div
+            className={`p-4 rounded-lg border shadow-xl backdrop-blur-sm ${
+              submitStatus.type === "success"
+                ? "bg-green-500/90 border-green-400 text-white"
+                : "bg-red-500/90 border-red-400 text-white"
+            }`}
+          >
+            <div className="flex items-start justify-between gap-3">
+              <p className="font-sans text-sm flex-1">{submitStatus.message}</p>
+              <button
+                onClick={dismissStatus}
+                className="shrink-0 text-white/70 hover:text-[#FFFF3A] hover:scale-110 transition-all duration-200"
+                aria-label="Close message"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      
+      <style jsx>{`
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translate(-50%, -20px);
+          }
+          to {
+            opacity: 1;
+            transform: translate(-50%, 0);
+          }
+        }
+        
+        .animate-slideDown {
+          animation: slideDown 0.4s ease-out forwards;
+        }
+      `}</style>
+      
       <main className="bg-[#212121] text-white">
         {/* Hero Section */}
         <section className="w-full px-6 pt-32 sm:pt-40 pb-16 sm:pb-20 bg-[#212121]">
@@ -74,7 +204,7 @@ export default function Contact() {
         {/* Contact Form Section */}
         <section className="w-full px-6 pb-24 sm:pb-32 bg-[#212121]">
           <div className="w-full max-w-2xl mx-auto">
-            <form onSubmit={handleSubmit} className="space-y-6 animate-fadeInUp animation-delay-400">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 animate-fadeInUp animation-delay-400">
               {/* Name Field */}
               <div>
                 <label
@@ -206,9 +336,10 @@ export default function Contact() {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="w-full font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#FFFF3A] text-black hover:bg-white transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#FFFF3A] focus:ring-offset-2"
+                  disabled={isSubmitting}
+                  className="w-full font-sans text-base font-medium px-8 py-4 rounded-lg bg-[#FFFF3A] text-black hover:bg-white transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#FFFF3A] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#FFFF3A] disabled:hover:translate-y-0"
                 >
-                  Start the Conversation
+                  {isSubmitting ? "Sending..." : "Start the Conversation"}
                 </button>
                 <p className="mt-4 font-sans text-white/75 text-sm text-center">
                   We typically respond within 24 hours.
