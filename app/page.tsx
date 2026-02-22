@@ -164,7 +164,7 @@ export default function Home() {
               </div>
               <div className="p-8">
                 <p className="text-xs font-sans text-[#FFFF3A] uppercase tracking-wider mb-3">WEBSITE REDESIGN</p>
-                <h3 className="font-display font-bold text-white text-2xl sm:text-3xl mb-4">E-commerce Platform Redesign</h3>
+                <h3 className="font-display font-bold text-white text-2xl sm:text-3xl mb-4">DigiSnap (E-commerce Platform)</h3>
                 <p className="font-sans text-white/70 text-base sm:text-lg leading-relaxed mb-6">
                   Complete overhaul of online shopping experience with modern UI and improved conversion rates.
                 </p>
@@ -186,7 +186,7 @@ export default function Home() {
               </div>
               <div className="p-8">
                 <p className="text-xs font-sans text-[#FFFF3A] uppercase tracking-wider mb-3">WEBSITE REDESIGN</p>
-                <h3 className="font-display font-bold text-white text-2xl sm:text-3xl mb-4">Corporate Website Transformation</h3>
+                <h3 className="font-display font-bold text-white text-2xl sm:text-3xl mb-4">Transpeed (Business Website)</h3>
                 <p className="font-sans text-white/70 text-base sm:text-lg leading-relaxed mb-6">
                   Professional rebrand with focus on user experience and modern design principles.
                 </p>
@@ -203,12 +203,12 @@ export default function Home() {
             <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
               <div className="aspect-[21/9] relative overflow-hidden bg-gradient-to-br from-emerald-600 to-emerald-400">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white/90 text-2xl font-display font-bold">SaaS Platform Preview</div>
+                  <div className="text-white/90 text-2xl font-display font-bold">Custom Design Preview</div>
                 </div>
               </div>
               <div className="p-8">
                 <p className="text-xs font-sans text-[#FFFF3A] uppercase tracking-wider mb-3">WEBSITE REDESIGN</p>
-                <h3 className="font-display font-bold text-white text-2xl sm:text-3xl mb-4">SaaS Platform Launch</h3>
+                <h3 className="font-display font-bold text-white text-2xl sm:text-3xl mb-4">Topify (Custom Website Design)</h3>
                 <p className="font-sans text-white/70 text-base sm:text-lg leading-relaxed mb-6">
                   From concept to launch, a complete web solution for a modern software platform.
                 </p>

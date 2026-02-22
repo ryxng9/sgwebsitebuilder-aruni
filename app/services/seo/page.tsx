@@ -171,7 +171,7 @@ export default function SEOPage() {
               </div>
 
               <h3 className="font-display font-semibold text-white text-xl sm:text-2xl tracking-tight mb-4">
-                B2B SaaS Company
+                B2B Website Design
               </h3>
               
               <p className="font-sans text-white/85 text-base sm:text-lg leading-relaxed mb-6">
