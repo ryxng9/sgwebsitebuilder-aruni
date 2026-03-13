@@ -158,14 +158,13 @@ export default function WebsiteManagementPage() {
         </section>
 
         {/* Example Section */}
-        <section className="w-full px-6 py-24 sm:py-32 bg-[#212121]">
+        {/* <section className="w-full px-6 py-24 sm:py-32 bg-[#212121]">
           <div className="w-full max-w-6xl mx-auto">
             <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-16">
               Management in Action
             </h2>
 
             <div className="rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm p-8 lg:p-12 shadow-lg">
-              {/* Placeholder for dashboard preview */}
               <div className="aspect-video rounded-lg bg-gradient-to-br from-[#FFFF3A]/20 to-white/5 mb-8 flex items-center justify-center border border-white/10">
                 <span className="font-sans text-white/60 text-lg">Management Dashboard Preview</span>
               </div>
@@ -191,7 +190,7 @@ export default function WebsiteManagementPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Results Section */}
         <section className="w-full px-6 py-24 sm:py-32 bg-[#212121]">

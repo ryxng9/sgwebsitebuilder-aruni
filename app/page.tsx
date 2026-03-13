@@ -8,6 +8,9 @@ import FAQ from "@/components/FAQ";
 import { Sparkles, Building2, Rocket } from "lucide-react";
 import { ShoppingCart, BriefcaseBusiness, FolderCode, Wrench, Search } from "lucide-react";
 import Image from "next/image";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 const homeColorScheme: ColorScheme = {
   initial: {
@@ -38,7 +41,51 @@ const lessSuitableIf = [
   "One-off or experimental sites without a clear business objective",
 ];
 
-export default function Home() {
+interface WorkProject {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  image: SanityImageSource;
+  type: string;
+  features: string[];
+  description?: string;
+  technologies?: string[];
+}
+
+const WORK_QUERY = `*[_type == "work"] | order(publishedAt desc) {
+  _id,
+  title,
+  slug,
+  image,
+  type,
+  features,
+  description,
+  technologies
+}`;
+
+const options = { next: { revalidate: 30 } };
+
+async function getWorkProjects(): Promise<WorkProject[]> {
+  return client.fetch(WORK_QUERY, {}, options);
+}
+
+const typeLabels: Record<string, string> = {
+  ecommerce: "E-commerce",
+  business: "Business Website",
+  custom: "Custom Web App",
+  saas: "SaaS Platform",
+  portfolio: "Portfolio",
+};
+
+export default async function Home() {
+  const projects = await getWorkProjects();
+  
+  // Filter and order featured projects: e-commerce, business, custom only
+  const typeOrder = ['ecommerce', 'business', 'custom'];
+  const featuredProjects = typeOrder
+    .map(type => projects.find(p => p.type === type))
+    .filter((p): p is WorkProject => p !== undefined)
+    .slice(0, 3);
   return (
     <>
       <Navbar colorScheme={homeColorScheme} />
@@ -155,71 +202,61 @@ export default function Home() {
           </p>
 
           <div className="mt-16 space-y-8 max-w-6xl mx-auto">
-            {/* Featured Build 1 */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
-              <div className="aspect-[21/9] relative overflow-hidden bg-gradient-to-br from-[#1e3a8a] to-[#60a5fa]">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white/90 text-2xl font-display font-bold">E-commerce Platform Preview</div>
-                </div>
-              </div>
-              <div className="p-8">
-                <p className="text-xs font-sans text-[#FFFF3A] uppercase tracking-wider mb-3">WEBSITE REDESIGN</p>
-                <h3 className="font-display font-bold text-white text-2xl sm:text-3xl mb-4">DigiSnap (E-commerce Platform)</h3>
-                <p className="font-sans text-white/70 text-base sm:text-lg leading-relaxed mb-6">
-                  Complete overhaul of online shopping experience with modern UI and improved conversion rates.
+            {featuredProjects.length === 0 ? (
+              <div className="text-center py-20">
+                <p className="font-sans text-white/60 text-lg">
+                  No projects yet. Add projects in the{" "}
+                  <Link href="/studio" className="text-[#FFFF3A] hover:underline">
+                    Sanity Studio
+                  </Link>
+                  .
                 </p>
-                <Link
-                  href="/work"
-                  className="inline-flex items-center justify-center font-sans text-base font-medium px-6 py-3 rounded-lg border border-white/20 text-white bg-transparent hover:bg-white/5 transition-all duration-200"
-                >
-                  View Case Study
-                </Link>
               </div>
-            </div>
+            ) : (
+              featuredProjects.map((project) => (
+                <div
+                  key={project._id}
+                  className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
+                >
+                  {/* Project Image */}
+                  <Link href={`/work/${project.slug.current}`} className="block">
+                    <div className="aspect-[21/9] relative overflow-hidden bg-gradient-to-br from-[#FFFF3A]/20 to-white/5">
+                      {project.image ? (
+                        <Image
+                          src={urlFor(project.image).width(1200).height(500).url()}
+                          alt={project.title}
+                          fill
+                          className="object-cover"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="text-white/90 text-2xl font-display font-bold">{project.title}</div>
+                        </div>
+                      )}
+                    </div>
+                  </Link>
 
-            {/* Featured Build 2 */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
-              <div className="aspect-[21/9] relative overflow-hidden bg-gradient-to-br from-gray-700 to-gray-500">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white/90 text-2xl font-display font-bold">Corporate Website Preview</div>
+                  {/* Project Content */}
+                  <div className="p-8">
+                    <p className="text-xs font-sans text-[#FFFF3A] uppercase tracking-wider mb-3">
+                      {typeLabels[project.type] || project.type}
+                    </p>
+                    <h3 className="font-display font-bold text-white text-2xl sm:text-3xl mb-4">
+                      {project.title}
+                    </h3>
+                    <p className="font-sans text-white/70 text-base sm:text-lg leading-relaxed mb-6">
+                      {project.description || "A showcase of our work and expertise."}
+                    </p>
+                    <Link
+                      href={`/work/${project.slug.current}`}
+                      className="inline-flex items-center justify-center font-sans text-base font-medium px-6 py-3 rounded-lg border border-white/20 text-white bg-transparent hover:bg-white/5 transition-all duration-200"
+                    >
+                      View Case Study
+                    </Link>
+                  </div>
                 </div>
-              </div>
-              <div className="p-8">
-                <p className="text-xs font-sans text-[#FFFF3A] uppercase tracking-wider mb-3">WEBSITE REDESIGN</p>
-                <h3 className="font-display font-bold text-white text-2xl sm:text-3xl mb-4">Transpeed (Business Website)</h3>
-                <p className="font-sans text-white/70 text-base sm:text-lg leading-relaxed mb-6">
-                  Professional rebrand with focus on user experience and modern design principles.
-                </p>
-                <Link
-                  href="/work"
-                  className="inline-flex items-center justify-center font-sans text-base font-medium px-6 py-3 rounded-lg border border-white/20 text-white bg-transparent hover:bg-white/5 transition-all duration-200"
-                >
-                  View Case Study
-                </Link>
-              </div>
-            </div>
-
-            {/* Featured Build 3 */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
-              <div className="aspect-[21/9] relative overflow-hidden bg-gradient-to-br from-emerald-600 to-emerald-400">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white/90 text-2xl font-display font-bold">Custom Design Preview</div>
-                </div>
-              </div>
-              <div className="p-8">
-                <p className="text-xs font-sans text-[#FFFF3A] uppercase tracking-wider mb-3">WEBSITE REDESIGN</p>
-                <h3 className="font-display font-bold text-white text-2xl sm:text-3xl mb-4">Topify (Custom Website Design)</h3>
-                <p className="font-sans text-white/70 text-base sm:text-lg leading-relaxed mb-6">
-                  From concept to launch, a complete web solution for a modern software platform.
-                </p>
-                <Link
-                  href="/work"
-                  className="inline-flex items-center justify-center font-sans text-base font-medium px-6 py-3 rounded-lg border border-white/20 text-white bg-transparent hover:bg-white/5 transition-all duration-200"
-                >
-                  View Case Study
-                </Link>
-              </div>
-            </div>
+              ))
+            )}
           </div>
         </div>
       </section>

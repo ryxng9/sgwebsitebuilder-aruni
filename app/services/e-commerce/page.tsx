@@ -3,6 +3,9 @@ import Navbar, { NAVBAR_HEIGHT_CLASS, ColorScheme } from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { TrendingUp, Users, Zap, Clock, DollarSign } from "lucide-react";
 import Image from "next/image";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 const ecommerceColorScheme: ColorScheme = {
   initial: {
@@ -80,7 +83,36 @@ const results = [
   },
 ];
 
-export default function EcommercePage() {
+interface WorkProject {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  image: SanityImageSource;
+  type: string;
+  features: string[];
+  description?: string;
+  technologies?: string[];
+}
+
+const ECOMMERCE_QUERY = `*[_type == "work" && type == "ecommerce"] | order(publishedAt desc) {
+  _id,
+  title,
+  slug,
+  image,
+  type,
+  features,
+  description,
+  technologies
+}`;
+
+const options = { next: { revalidate: 30 } };
+
+async function getEcommerceProjects(): Promise<WorkProject[]> {
+  return client.fetch(ECOMMERCE_QUERY, {}, options);
+}
+
+export default async function EcommercePage() {
+  const ecommerceProjects = await getEcommerceProjects();
   return (
     <>
       <Navbar colorScheme={ecommerceColorScheme} />
@@ -166,35 +198,69 @@ export default function EcommercePage() {
         <section className="w-full px-6 py-24 sm:py-32 bg-[#212121]">
           <div className="w-full max-w-6xl mx-auto">
             <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] leading-tight tracking-tight text-center mb-16">
-              E-commerce Site Example
+              E-commerce Site Examples
             </h2>
 
-            <div className="rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm p-8 lg:p-12 shadow-lg">
-              {/* Placeholder for site preview */}
-              <div className="aspect-video rounded-lg bg-gradient-to-br from-[#FFFF3A]/20 to-white/5 mb-8 flex items-center justify-center border border-white/10">
-                <span className="font-sans text-white/60 text-lg">E-commerce Site Preview</span>
+            {ecommerceProjects.length === 0 ? (
+              <div className="text-center py-20">
+                <p className="font-sans text-white/60 text-lg">
+                  No e-commerce projects yet. Add projects in the{" "}
+                  <Link href="/studio" className="text-[#FFFF3A] hover:underline">
+                    Sanity Studio
+                  </Link>
+                  .
+                </p>
               </div>
+            ) : (
+              <div className="space-y-8">
+                {ecommerceProjects.map((project) => (
+                  <div key={project._id} className="rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm p-8 lg:p-12 shadow-lg">
+                    {/* Project Image */}
+                    <Link href={`/work/${project.slug.current}`} className="block mb-8">
+                      <div className="aspect-video rounded-lg bg-gradient-to-br from-[#FFFF3A]/20 to-white/5 relative overflow-hidden border border-white/10">
+                        {project.image ? (
+                          <Image
+                            src={urlFor(project.image).width(1200).height(675).url()}
+                            alt={project.title}
+                            fill
+                            className="object-cover"
+                          />
+                        ) : (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="font-sans text-white/60 text-lg">{project.title}</span>
+                          </div>
+                        )}
+                      </div>
+                    </Link>
 
-              <h3 className="font-display font-semibold text-white text-xl sm:text-2xl tracking-tight mb-4">
-                DigiSnap Online Store
-              </h3>
-              
-              <p className="font-sans text-white/85 text-base sm:text-lg leading-relaxed mb-6">
-                A complete e-commerce solution built for a growing fashion brand. Features include custom product filtering, wishlist functionality, size guides, and seamless checkout experience.
-              </p>
+                    <h3 className="font-display font-semibold text-white text-xl sm:text-2xl tracking-tight mb-4">
+                      {project.title}
+                    </h3>
+                    
+                    <p className="font-sans text-white/85 text-base sm:text-lg leading-relaxed mb-6">
+                      {project.description || "An e-commerce solution showcasing our expertise."}
+                    </p>
 
-              <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 rounded-lg bg-[#FFFF3A]/20 text-white text-sm font-medium">
-                  Next.js
-                </span>
-                <span className="px-4 py-2 rounded-lg bg-[#FFFF3A]/20 text-white text-sm font-medium">
-                  Shopify
-                </span>
-                <span className="px-4 py-2 rounded-lg bg-[#FFFF3A]/20 text-white text-sm font-medium">
-                  Stripe
-                </span>
+                    {project.technologies && project.technologies.length > 0 && (
+                      <div className="flex flex-wrap gap-3 mb-6">
+                        {project.technologies.map((tech) => (
+                          <span key={tech} className="px-4 py-2 rounded-lg bg-[#FFFF3A]/20 text-white text-sm font-medium">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    <Link
+                      href={`/work/${project.slug.current}`}
+                      className="inline-flex items-center justify-center font-sans text-sm font-medium px-6 py-3 rounded-lg bg-white text-black hover:bg-[#FFFF3A] transition-all duration-200 shadow-md hover:shadow-lg"
+                    >
+                      View Case Study
+                    </Link>
+                  </div>
+                ))}
               </div>
-            </div>
+            )}
           </div>
         </section>
 
